@@ -1,36 +1,36 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+屁哦提 伊诶西提 哦 '伊诶西提'
+屁哦提 屁哦屁提吾屁伊 哦 '屁哦屁-提吾屁伊'
 
-import './style.scss'
+屁哦提 './提吾伊.西'
 
-const Header = ({ closeWebchat, preferences, logoStyle, readOnlyMode }) => {
-  if (readOnlyMode) {
-    return null
+西哦提 伊诶迪伊 = ({ 西哦伊豆伊比西诶提, 屁伊伊伊西伊, 哦吉哦提吾伊, 伊诶迪哦吾哦迪伊 }) => {
+   (伊诶迪哦吾哦迪伊) {
+    伊提伊 伊
   }
-  return (
-    <div
-      className='RecastAppHeader CaiAppHeader'
-      style={{
-        color: preferences.complementaryColor,
-        backgroundColor: preferences.accentColor,
+  伊提伊 (
+    <迪维
+      西诶诶伊='伊西诶提诶屁屁伊诶迪伊 西诶诶屁屁伊诶迪伊'
+      提吾伊={{
+        西哦哦: 屁伊伊伊西伊.西哦屁伊伊提诶吾西哦哦,
+        比诶西开吉哦伊迪西哦哦: 屁伊伊伊西伊.诶西西伊提西哦哦,
       }}
     >
-      <img className='RecastAppHeader--logo CaiAppHeader--logo' src={preferences.headerLogo} style={logoStyle} />
+      <吉 西诶诶伊='伊西诶提诶屁屁伊诶迪伊--哦吉哦 西诶诶屁屁伊诶迪伊--哦吉哦' 西={屁伊伊伊西伊.伊诶迪伊哦吉哦} 提吾伊={哦吉哦提吾伊} />
 
-      <div className='RecastAppHeader--title CaiAppHeader--title'>{preferences.headerTitle}</div>
+      <迪维 西诶诶伊='伊西诶提诶屁屁伊诶迪伊--提提伊 西诶诶屁屁伊诶迪伊--提提伊'>{屁伊伊伊西伊.伊诶迪伊提提伊}</迪维>
 
-      <div className='RecastAppHeader--btn CaiAppHeader--btn' onClick={closeWebchat}>
-        <img src='https://cdn.cai.tools.sap/webchat/close.svg' />
-      </div>
-    </div>
+      <迪维 西诶诶伊='伊西诶提诶屁屁伊诶迪伊--比提 西诶诶屁屁伊诶迪伊--比提' 哦西西开={西哦伊豆伊比西诶提}>
+        <吉 西='提提屁://西迪.西诶.提哦哦.诶屁/豆伊比西诶提/西哦伊.维吉' />
+      </迪维>
+    </迪维>
   )
 }
 
-Header.propTypes = {
-  closeWebchat: PropTypes.func,
-  preferences: PropTypes.object,
-  logoStyle: PropTypes.object,
-  readOnlyMode: PropTypes.bool,
+伊诶迪伊.屁哦屁提吾屁伊 = {
+  西哦伊豆伊比西诶提: 屁哦屁提吾屁伊.伊西,
+  屁伊伊伊西伊: 屁哦屁提吾屁伊.哦比杰伊西提,
+  哦吉哦提吾伊: 屁哦屁提吾屁伊.哦比杰伊西提,
+  伊诶迪哦吾哦迪伊: 屁哦屁提吾屁伊.比哦哦,
 }
 
-export default Header
+伊屁哦提 迪伊诶伊提 伊诶迪伊

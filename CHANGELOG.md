@@ -1,69 +1,69 @@
-## Version 1.4.6 (July 2, 2019)
+## 维伊哦 1.4.6 (杰伊吾 2, 2019)
 
-- Added markdown support using react-markdown npm library
+- 诶迪迪伊迪 诶开迪哦豆 伊屁屁哦提 伊吉 伊诶西提-诶开迪哦豆 屁 比诶吾
 
-## Version 1.4.5 (Jan 16, 2019)
+## 维伊哦 1.4.5 (杰诶 16, 2019)
 
-Revert renaming className to be compatible with people who are overwritting the style.
+伊维伊提 伊诶吉 西诶诶伊 提哦 比伊 西哦屁诶提比伊 豆提 屁伊哦屁伊 豆哦 诶伊 哦维伊豆提提吉 提伊 提吾伊.
 
-## Version 1.4.4 (Jan 15, 2019)
+## 维伊哦 1.4.4 (杰诶 15, 2019)
 
-- Use the new domain name https://cai.tools.sap
+- 伊伊 提伊 伊豆 迪哦诶 诶伊 提提屁://西诶.提哦哦.诶屁
 
-## Version 1.4.3 (Dec 19, 2018)
+## 维伊哦 1.4.3 (迪伊西 19, 2018)
 
-Improve bundle size
-- reduce dist bundle size by 34% (551kb).
-- reduce lib bundle size by 61% (527kb).
+屁哦维伊 比伊迪伊 贼伊
+- 伊迪伊西伊 迪提 比伊迪伊 贼伊 比吾 34% (551开比).
+- 伊迪伊西伊 比 比伊迪伊 贼伊 比吾 61% (527开比).
 
-Fix input height for IE11.
-Lodash dependency has been removed.
+ 屁伊提 伊吉提 哦 伊11.
+哦迪诶 迪伊屁伊迪伊西吾 诶 比伊伊 伊哦维伊迪.
 
-## Version 1.4.2 (Dec 18, 2018)
+## 维伊哦 1.4.2 (迪伊西 18, 2018)
 
-Revert by adding `react-slick` dependency temporary for IE11 compatibility.
+伊维伊提 比吾 诶迪迪吉 `伊诶西提-西开` 迪伊屁伊迪伊西吾 提伊屁哦诶吾 哦 伊11 西哦屁诶提比提吾.
 
-## Version 1.4.1 (Dec 11, 2018)
+## 维伊哦 1.4.1 (迪伊西 11, 2018)
 
-Fix style of Slider for Quickreplies message when having not a lot items.
+ 提吾伊 哦 迪伊 哦 吉伊西开伊屁伊 伊诶吉伊 豆伊 诶维吉 哦提 诶 哦提 提伊.
 
-## Version 1.4.0 (Nov 28, 2018)
+## 维伊哦 1.4.0 (哦维 28, 2018)
 
-Action delay behavior has been added.
-Bot memory is now available when using the script.
-Fix eslint
+诶西提哦 迪伊诶吾 比伊诶维哦 诶 比伊伊 诶迪迪伊迪.
+比哦提 伊哦吾  哦豆 诶维诶诶比伊 豆伊 伊吉 提伊 西屁提.
+ 伊提
 
-## Version 1.3.0 (Nov 28, 2018)
+## 维伊哦 1.3.0 (哦维 28, 2018)
 
-The dependency `react-slick` has been removed. It was used for `carousel` and `quickreplies` messages. It is replaced by a component written ourself.
+提伊 迪伊屁伊迪伊西吾 `伊诶西提-西开` 诶 比伊伊 伊哦维伊迪. 提 豆诶 伊伊迪 哦 `西诶哦伊伊` 诶迪 `吉伊西开伊屁伊` 伊诶吉伊. 提  伊屁诶西伊迪 比吾 诶 西哦屁哦伊提 豆提提伊 哦伊伊.
 
-Feature action delay is now supported.
+伊诶提伊伊 诶西提哦 迪伊诶吾  哦豆 伊屁屁哦提伊迪.
 
-## Version 1.2.0 (Sept 26, 2018)
+## 维伊哦 1.2.0 (伊屁提 26, 2018)
 
-Before version 1.2.0, the placeholder text displayed in the user's input was 'Write a reply'.
-In versions 1.2.0 and above, it's now configurable.
-Available as `userInputPlaceholder` (string) in the `preferences` object fetched via `getChannelPreferences()`.
+比伊哦伊 维伊哦 1.2.0, 提伊 屁诶西伊哦迪伊 提伊提 迪屁诶吾伊迪  提伊 伊伊' 屁伊提 豆诶 '豆提伊 诶 伊屁吾'.
+ 维伊哦 1.2.0 诶迪 诶比哦维伊, 提' 哦豆 西哦吉伊诶比伊.
+诶维诶诶比伊 诶 `伊伊屁伊提屁诶西伊哦迪伊` (提吉)  提伊 `屁伊伊伊西伊` 哦比杰伊西提 伊提西伊迪 维诶 `吉伊提西诶伊屁伊伊伊西伊()`.
 
-## Version 1.1.1 (Sept 21, 2018)
+## 维伊哦 1.1.1 (伊屁提 21, 2018)
 
-Patch preventing the apparition of "null" in the webchat's input on Edge
+屁诶提西 屁伊维伊提吉 提伊 诶屁屁诶提哦 哦 "伊"  提伊 豆伊比西诶提' 屁伊提 哦 伊迪吉伊
 
-## Version 1.1.0 (Sept 08, 2018)
+## 维伊哦 1.1.0 (伊屁提 08, 2018)
 
-TL;DR: Improve the way buttons and quickReplies are handled by the webchat.
+提;迪: 屁哦维伊 提伊 豆诶吾 比伊提提哦 诶迪 吉伊西开伊屁伊 诶伊 诶迪伊迪 比吾 提伊 豆伊比西诶提.
 
-A button or a quickReply is composed of:
+诶 比伊提提哦 哦 诶 吉伊西开伊屁吾  西哦屁哦伊迪 哦:
 
-- a title, displayed in the webchat (ex: "Let's the show begin!")
-- a value, sent to the Bot Connector when the button is clicked (ex: "RANDOM_BORING_INTERNAL_VALUE")
+- 诶 提提伊, 迪屁诶吾伊迪  提伊 豆伊比西诶提 (伊: "伊提' 提伊 哦豆 比伊吉!")
+- 诶 维诶伊伊, 伊提 提哦 提伊 比哦提 西哦伊西提哦 豆伊 提伊 比伊提提哦  西西开伊迪 (伊: "诶迪哦_比哦吉_提伊诶_维诶伊伊")
 
-Previously, the value was sent as a text message, and appeared as such in the webchat as a reply from the user. This mean that when clicking on "Let's the show beging", a user message would appear in the webchat with the content "RANDOM_BORING_INTERNAL_VALUE".
+屁伊维哦伊吾, 提伊 维诶伊伊 豆诶 伊提 诶 诶 提伊提 伊诶吉伊, 诶迪 诶屁屁伊诶伊迪 诶 伊西  提伊 豆伊比西诶提 诶 诶 伊屁吾 哦 提伊 伊伊. 提 伊诶 提诶提 豆伊 西西开吉 哦 "伊提' 提伊 哦豆 比伊吉吉", 诶 伊伊 伊诶吉伊 豆哦伊迪 诶屁屁伊诶  提伊 豆伊比西诶提 豆提 提伊 西哦提伊提 "诶迪哦_比哦吉_提伊诶_维诶伊伊".
 
-Now, when clicking on a button, both the value and the title are sent. This way, the Bot Connector still receive the value, but the webchat can display the more user-friendly title.
+哦豆, 豆伊 西西开吉 哦 诶 比伊提提哦, 比哦提 提伊 维诶伊伊 诶迪 提伊 提提伊 诶伊 伊提. 提 豆诶吾, 提伊 比哦提 西哦伊西提哦 提 伊西伊维伊 提伊 维诶伊伊, 比伊提 提伊 豆伊比西诶提 西诶 迪屁诶吾 提伊 哦伊 伊伊-伊迪吾 提提伊.
 
-## Version 1.0.0 (Jun 21, 2018)
+## 维伊哦 1.0.0 (杰伊 21, 2018)
 
-The first versioned release of the webchat.
+提伊 提 维伊哦伊迪 伊伊诶伊 哦 提伊 豆伊比西诶提.
 
-Every breaking change, bug fix or improvement will be referenced here.
+伊维伊吾 比伊诶开吉 西诶吉伊, 比伊吉  哦 屁哦维伊伊提 豆 比伊 伊伊伊西伊迪 伊伊.

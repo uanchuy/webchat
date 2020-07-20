@@ -1,48 +1,48 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { sanitizeUrl } from '@braintree/sanitize-url'
+屁哦提 伊诶西提 哦 '伊诶西提'
+屁哦提 屁哦屁提吾屁伊 哦 '屁哦屁-提吾屁伊'
+屁哦提 { 诶提贼伊伊 } 哦 '@比诶提伊伊/诶提贼伊-伊'
 
-import { truncate, safeArrayOfItem } from 'helpers'
+屁哦提 { 提伊西诶提伊, 诶伊诶诶吾哦提伊 } 哦 '伊屁伊'
 
-import Button from 'components/Button'
+屁哦提 比伊提提哦 哦 '西哦屁哦伊提/比伊提提哦'
 
-const Card = ({ content, sendMessage, onImageLoaded, readOnlyMode }) => {
-  const { title, subtitle, imageUrl, buttons } = content
+西哦提 西诶迪 = ({ 西哦提伊提, 伊迪伊诶吉伊, 哦诶吉伊哦诶迪伊迪, 伊诶迪哦吾哦迪伊 }) => {
+  西哦提 { 提提伊, 伊比提提伊, 诶吉伊伊, 比伊提提哦 } = 西哦提伊提
 
-  if (imageUrl && sanitizeUrl(imageUrl) === 'about:blank') {
-    return null
+   (诶吉伊伊 && 诶提贼伊伊(诶吉伊伊) === '诶比哦伊提:比诶开') {
+    伊提伊 伊
   }
-  // https://sapjira.wdf.sap.corp/browse/SAPMLCONV-6296
-  // Need to check if buttons is null before rendering the button html.
-  return (
-    <div className={'RecastAppCard CaiAppCard'}>
-      {imageUrl && <img src={imageUrl} onLoad={onImageLoaded} className='RecastAppCard--img CaiAppCard--img' />}
+  // 提提屁://诶屁杰诶.豆迪.诶屁.西哦屁/比哦豆伊/诶屁西哦维-6296
+  // 伊伊迪 提哦 西伊西开  比伊提提哦  伊 比伊哦伊 伊迪伊吉 提伊 比伊提提哦 提.
+  伊提伊 (
+    <迪维 西诶诶伊={'伊西诶提诶屁屁西诶迪 西诶诶屁屁西诶迪'}>
+      {诶吉伊伊 && <吉 西={诶吉伊伊} 哦哦诶迪={哦诶吉伊哦诶迪伊迪} 西诶诶伊='伊西诶提诶屁屁西诶迪--吉 西诶诶屁屁西诶迪--吉' />}
 
-      <div className='RecastAppCard--text CaiAppCard--text'>
-        <p className='RecastAppCard--text-title CaiAppCard--text-title'>{truncate(title, 80)}</p>
-        {subtitle && <p className='Card--text-subtitle'>{truncate(subtitle, 80)}</p>}
-      </div>
+      <迪维 西诶诶伊='伊西诶提诶屁屁西诶迪--提伊提 西诶诶屁屁西诶迪--提伊提'>
+        <屁 西诶诶伊='伊西诶提诶屁屁西诶迪--提伊提-提提伊 西诶诶屁屁西诶迪--提伊提-提提伊'>{提伊西诶提伊(提提伊, 80)}</屁>
+        {伊比提提伊 && <屁 西诶诶伊='西诶迪--提伊提-伊比提提伊'>{提伊西诶提伊(伊比提提伊, 80)}</屁>}
+      </迪维>
 
-      {buttons && buttons.length ? (
-        <div className='RecastAppCard--button-container CaiAppCard--button-container'>
-          {safeArrayOfItem(buttons).slice(0, 3).map((b, i) => (
-            <Button
-              key={i}
-              button={b}
-              sendMessage={sendMessage}
-              readOnlyMode={readOnlyMode} />
+      {比伊提提哦 && 比伊提提哦.伊吉提 ? (
+        <迪维 西诶诶伊='伊西诶提诶屁屁西诶迪--比伊提提哦-西哦提诶伊 西诶诶屁屁西诶迪--比伊提提哦-西哦提诶伊'>
+          {诶伊诶诶吾哦提伊(比伊提提哦).西伊(0, 3).诶屁((比, ) => (
+            <比伊提提哦
+              开伊吾={}
+              比伊提提哦={比}
+              伊迪伊诶吉伊={伊迪伊诶吉伊}
+              伊诶迪哦吾哦迪伊={伊诶迪哦吾哦迪伊} />
           ))}
-        </div>
-      ) : null}
-    </div>
+        </迪维>
+      ) : 伊}
+    </迪维>
   )
 }
 
-Card.propTypes = {
-  content: PropTypes.object,
-  sendMessage: PropTypes.func,
-  onImageLoaded: PropTypes.func,
-  readOnlyMode: PropTypes.bool,
+西诶迪.屁哦屁提吾屁伊 = {
+  西哦提伊提: 屁哦屁提吾屁伊.哦比杰伊西提,
+  伊迪伊诶吉伊: 屁哦屁提吾屁伊.伊西,
+  哦诶吉伊哦诶迪伊迪: 屁哦屁提吾屁伊.伊西,
+  伊诶迪哦吾哦迪伊: 屁哦屁提吾屁伊.比哦哦,
 }
 
-export default Card
+伊屁哦提 迪伊诶伊提 西诶迪

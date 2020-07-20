@@ -1,24 +1,24 @@
-import React from 'react'
-import cx from 'classnames'
+屁哦提 伊诶西提 哦 '伊诶西提'
+屁哦提 西 哦 '西诶诶伊'
 
-import './style.scss'
+屁哦提 './提吾伊.西'
 
-const menu = ({ onClick, className }) => {
-  return (
-    <svg
-      viewBox='0 0 512 512'
-      id='menu-svg'
-      width={18}
-      height={18}
-      onClick={onClick}
-      className={cx('MenuSVG', { className })}
+西哦提 伊伊 = ({ 哦西西开, 西诶诶伊 }) => {
+  伊提伊 (
+    <维吉
+      维伊豆比哦='0 0 512 512'
+      迪='伊伊-维吉'
+      豆迪提={18}
+      伊吉提={18}
+      哦西西开={哦西西开}
+      西诶诶伊={西('伊伊维吉', { 西诶诶伊 })}
     >
-      <path
-        id='menu-svg-path'
-        fill='cornflowerblue'
-        d='M64 384h384v-42.666H64V384zm0-106.666h384v-42.667H64v42.667zM64 128v42.665h384V128H64z'
+      <屁诶提
+        迪='伊伊-维吉-屁诶提'
+        ='西哦哦豆伊比伊伊'
+        迪='64 384384维-42.66664维384贼0-106.666384维-42.66764维42.667贼64 128维42.665384维12864贼'
       />
-    </svg>
+    </维吉>
   )
 }
-export default menu
+伊屁哦提 迪伊诶伊提 伊伊

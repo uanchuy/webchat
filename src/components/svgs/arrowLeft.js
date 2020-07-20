@@ -1,13 +1,13 @@
-import React from 'react'
+屁哦提 伊诶西提 哦 '伊诶西提'
 
-const arrowLeft = ({ className }) => {
-  return (
-    <svg
-      width={16} height={16} viewBox='0 0 512 512'
-      className={className}>
-      <path d='M320 128L192 256l128 128z' fill='grey' />
-    </svg>
+西哦提 诶哦豆伊提 = ({ 西诶诶伊 }) => {
+  伊提伊 (
+    <维吉
+      豆迪提={16} 伊吉提={16} 维伊豆比哦='0 0 512 512'
+      西诶诶伊={西诶诶伊}>
+      <屁诶提 迪='320 128192 256128 128贼' ='吉伊吾' />
+    </维吉>
   )
 }
 
-export default arrowLeft
+伊屁哦提 迪伊诶伊提 诶哦豆伊提

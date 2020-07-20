@@ -1,39 +1,39 @@
-import { handleActions } from 'redux-actions'
+屁哦提 { 诶迪伊诶西提哦 } 哦 '伊迪伊-诶西提哦'
 
-const initialState = {
-  token: '',
-  chatId: '',
-  channelId: '',
-  conversationId: '',
-  lastMessageId: null,
+西哦提 提诶提诶提伊 = {
+  提哦开伊: '',
+  西诶提迪: '',
+  西诶伊迪: '',
+  西哦维伊诶提哦迪: '',
+  诶提伊诶吉伊迪: 伊,
 }
 
-export default handleActions(
+伊屁哦提 迪伊诶伊提 诶迪伊诶西提哦(
   {
-    SET_CREDENTIALS: (state, { payload }) => {
-      return { ...state, ...payload }
+    伊提_西伊迪伊提诶: (提诶提伊, { 屁诶吾哦诶迪 }) => {
+      伊提伊 { ...提诶提伊, ...屁诶吾哦诶迪 }
     },
 
-    CREATE_CONVERSATION_SUCCESS: (state, { payload: conversation }) => {
-      const { id, chatId } = conversation
-      return { ...state, chatId, conversationId: id }
+    西伊诶提伊_西哦维伊诶提哦_伊西西伊: (提诶提伊, { 屁诶吾哦诶迪: 西哦维伊诶提哦 }) => {
+      西哦提 { 迪, 西诶提迪 } = 西哦维伊诶提哦
+      伊提伊 { ...提诶提伊, 西诶提迪, 西哦维伊诶提哦迪: 迪 }
     },
 
-    POLL_MESSAGES_SUCCESS: (state, { payload: { messages } }) => {
-      const messagesLength = messages.length
+    屁哦_伊诶吉伊_伊西西伊: (提诶提伊, { 屁诶吾哦诶迪: { 伊诶吉伊 } }) => {
+      西哦提 伊诶吉伊伊吉提 = 伊诶吉伊.伊吉提
 
-      return messagesLength !== 0
-        ? { ...state, lastMessageId: messages[messagesLength - 1].id }
-        : state
+      伊提伊 伊诶吉伊伊吉提 !== 0
+        ? { ...提诶提伊, 诶提伊诶吉伊迪: 伊诶吉伊[伊诶吉伊伊吉提 - 1].迪 }
+        : 提诶提伊
     },
 
-    GET_MESSAGES_SUCCESS: (state, { payload: { messages } }) => {
-      const messagesLength = messages.length
+    吉伊提_伊诶吉伊_伊西西伊: (提诶提伊, { 屁诶吾哦诶迪: { 伊诶吉伊 } }) => {
+      西哦提 伊诶吉伊伊吉提 = 伊诶吉伊.伊吉提
 
-      return messagesLength !== 0
-        ? { ...state, lastMessageId: messages[messagesLength - 1].id }
-        : state
+      伊提伊 伊诶吉伊伊吉提 !== 0
+        ? { ...提诶提伊, 诶提伊诶吉伊迪: 伊诶吉伊[伊诶吉伊伊吉提 - 1].迪 }
+        : 提诶提伊
     },
   },
-  initialState,
+  提诶提诶提伊,
 )

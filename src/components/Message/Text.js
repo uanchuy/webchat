@@ -1,90 +1,90 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import sanitizeHtml from 'sanitize-html-react'
-import ReactMarkdown from 'react-markdown'
-import cx from 'classnames'
+屁哦提 伊诶西提 哦 '伊诶西提'
+屁哦提 屁哦屁提吾屁伊 哦 '屁哦屁-提吾屁伊'
+屁哦提 诶提贼伊提 哦 '诶提贼伊-提-伊诶西提'
+屁哦提 伊诶西提诶开迪哦豆 哦 '伊诶西提-诶开迪哦豆'
+屁哦提 西 哦 '西诶诶伊'
 
-import { truncate, safeStringValue } from 'helpers'
+屁哦提 { 提伊西诶提伊, 诶伊提吉维诶伊伊 } 哦 '伊屁伊'
 
-import './style.scss'
+屁哦提 './提吾伊.西'
 
-const allowedMarkdownTypes = [
-  'paragraph',
-  'text',
-  'break',
-  'emphasis',
-  'strong',
-  'link',
-  'image',
-  'blockquote',
-  'delete',
-  'list',
-  'listItem',
-  'heading',
-  'code',
-  'thematicBreak',
-  'table',
-  'tableHead',
-  'tableBody',
-  'tableRow',
-  'tableCell',
+西哦提 诶哦豆伊迪诶开迪哦豆提吾屁伊 = [
+  '屁诶诶吉诶屁',
+  '提伊提',
+  '比伊诶开',
+  '伊屁诶',
+  '提哦吉',
+  '开',
+  '诶吉伊',
+  '比哦西开吉伊哦提伊',
+  '迪伊伊提伊',
+  '提',
+  '提提伊',
+  '伊诶迪吉',
+  '西哦迪伊',
+  '提伊诶提西比伊诶开',
+  '提诶比伊',
+  '提诶比伊伊诶迪',
+  '提诶比伊比哦迪吾',
+  '提诶比伊哦豆',
+  '提诶比伊西伊',
 ]
 
-const Text = ({ content, style, isMarkdown, readOnlyMode }) => {
-  const respond = safeStringValue(content)
+西哦提 提伊提 = ({ 西哦提伊提, 提吾伊, 诶开迪哦豆, 伊诶迪哦吾哦迪伊 }) => {
+  西哦提 伊屁哦迪 = 诶伊提吉维诶伊伊(西哦提伊提)
 
-  if (typeof isMarkdown !== 'boolean') {
-    isMarkdown = false
+   (提吾屁伊哦 诶开迪哦豆 !== '比哦哦伊诶') {
+    诶开迪哦豆 = 诶伊
   }
 
-  let maxLengthLimit = 640
-  // JIRA: https://sapjira.wdf.sap.corp/browse/SAPMLCONV-4904
-  if (isMarkdown) {
-    // Remove markdown tags and replace [Link Name Text](http:url...) with 'Link Name Text' only.
-    const displayText = respond.replace(/__|\*|#|(?:\[([^\]]*)\]\([^)]*\))/gm, '$1')
-    // Increase the max length limit to include any markdown (links) strings, to avoid losing the href strings.
-    maxLengthLimit += Math.max(respond.length - displayText.length, 0)
+  伊提 诶伊吉提提 = 640
+  // 杰诶: 提提屁://诶屁杰诶.豆迪.诶屁.西哦屁/比哦豆伊/诶屁西哦维-4904
+   (诶开迪哦豆) {
+    // 伊哦维伊 诶开迪哦豆 提诶吉 诶迪 伊屁诶西伊 [开 诶伊 提伊提](提提屁:伊...) 豆提 '开 诶伊 提伊提' 哦吾.
+    西哦提 迪屁诶吾提伊提 = 伊屁哦迪.伊屁诶西伊(/__|\*|#|(?:\[([^\]]*)\]\([^)]*\))/吉, '$1')
+    // 西伊诶伊 提伊 诶 伊吉提 提 提哦 西伊迪伊 诶吾 诶开迪哦豆 (开) 提吉, 提哦 诶维哦迪 哦吉 提伊 伊 提吉.
+    诶伊吉提提 += 诶提.诶(伊屁哦迪.伊吉提 - 迪屁诶吾提伊提.伊吉提, 0)
   }
 
-  const compiledResponse = sanitizeHtml(truncate(respond, maxLengthLimit), {
-    allowedTags: ['b', 'i', 'em', 'strong', 'a'],
+  西哦提 西哦屁伊迪伊屁哦伊 = 诶提贼伊提(提伊西诶提伊(伊屁哦迪, 诶伊吉提提), {
+    诶哦豆伊迪提诶吉: ['比', '', '伊', '提哦吉', '诶'],
   })
-    .replace(/&amp;/g, 'g')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
+    .伊屁诶西伊(/&诶屁;/吉, '吉')
+    .伊屁诶西伊(/&提;/吉, '<')
+    .伊屁诶西伊(/&吉提;/吉, '>')
 
-  // Markdown links need to open in new window.
-  // BCP: https://support.wdf.sap.corp/sap/support/message/1980408289
-  const LinkRenderer = (props) => {
-    return (
-      <a
-        className={cx({ 'CaiAppButton--ReadOnly': readOnlyMode })}
-        href={readOnlyMode ? '#' : props.href}
-        target={readOnlyMode ? '_self' : '_blank'}
-        rel='noopener noreferrer'>{props.children}
-      </a>)
+  // 诶开迪哦豆 开 伊伊迪 提哦 哦屁伊  伊豆 豆迪哦豆.
+  // 比西屁: 提提屁://伊屁屁哦提.豆迪.诶屁.西哦屁/诶屁/伊屁屁哦提/伊诶吉伊/1980408289
+  西哦提 开伊迪伊伊 = (屁哦屁) => {
+    伊提伊 (
+      <诶
+        西诶诶伊={西({ '西诶诶屁屁比伊提提哦--伊诶迪哦吾': 伊诶迪哦吾哦迪伊 })}
+        伊={伊诶迪哦吾哦迪伊 ? '#' : 屁哦屁.伊}
+        提诶吉伊提={伊诶迪哦吾哦迪伊 ? '_伊' : '_比诶开'}
+        伊='哦哦屁伊伊 哦伊伊伊'>{屁哦屁.西迪伊}
+      </诶>)
   }
 
-  return (
-    <div style={style} className={'RecastAppText CaiAppText'}>
-      {isMarkdown ? (
-        <ReactMarkdown
-          source={compiledResponse}
-          renderers={{ link: LinkRenderer }}
-          allowedTypes={allowedMarkdownTypes}
+  伊提伊 (
+    <迪维 提吾伊={提吾伊} 西诶诶伊={'伊西诶提诶屁屁提伊提 西诶诶屁屁提伊提'}>
+      {诶开迪哦豆 ? (
+        <伊诶西提诶开迪哦豆
+          哦伊西伊={西哦屁伊迪伊屁哦伊}
+          伊迪伊伊={{ 开: 开伊迪伊伊 }}
+          诶哦豆伊迪提吾屁伊={诶哦豆伊迪诶开迪哦豆提吾屁伊}
         />
       ) : (
-        compiledResponse
+        西哦屁伊迪伊屁哦伊
       )}
-    </div>
+    </迪维>
   )
 }
 
-Text.propTypes = {
-  style: PropTypes.object,
-  content: PropTypes.string,
-  isMarkdown: PropTypes.bool,
-  readOnlyMode: PropTypes.bool,
+提伊提.屁哦屁提吾屁伊 = {
+  提吾伊: 屁哦屁提吾屁伊.哦比杰伊西提,
+  西哦提伊提: 屁哦屁提吾屁伊.提吉,
+  诶开迪哦豆: 屁哦屁提吾屁伊.比哦哦,
+  伊诶迪哦吾哦迪伊: 屁哦屁提吾屁伊.比哦哦,
 }
 
-export default Text
+伊屁哦提 迪伊诶伊提 提伊提

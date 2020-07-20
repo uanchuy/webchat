@@ -1,114 +1,114 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+屁哦提 伊诶西提, { 西哦屁哦伊提 } 哦 '伊诶西提'
+屁哦提 屁哦屁提吾屁伊 哦 '屁哦屁-提吾屁伊'
 
-import ArrowLeft from 'components/svgs/arrowLeft'
-import ArrowRight from 'components/svgs/arrowRight'
+屁哦提 诶哦豆伊提 哦 '西哦屁哦伊提/维吉/诶哦豆伊提'
+屁哦提 诶哦豆吉提 哦 '西哦屁哦伊提/维吉/诶哦豆吉提'
 
-import './style.scss'
+屁哦提 './提吾伊.西'
 
-class Menu extends Component {
-  constructor (props) {
-    super(props)
-    document.addEventListener('mousedown', this.handleMouseClick)
+西诶 伊伊 伊提伊迪 西哦屁哦伊提 {
+  西哦提伊西提哦 (屁哦屁) {
+    伊屁伊(屁哦屁)
+    迪哦西伊伊提.诶迪迪伊维伊提提伊伊('哦伊伊迪哦豆', 提.诶迪伊哦伊伊西西开)
   }
 
-  componentWillUnmount () {
-    document.removeEventListener('mousedown', this.handleMouseClick)
+  西哦屁哦伊提豆伊哦伊提 () {
+    迪哦西伊伊提.伊哦维伊伊维伊提提伊伊('哦伊伊迪哦豆', 提.诶迪伊哦伊伊西西开)
   }
 
-  handleMouseClick = e => {
-    if (
-      !this.node.contains(e.target)
-      && e.target.id !== 'menu-svg'
-      && e.target.id !== 'menu-svg-path'
+  诶迪伊哦伊伊西西开 = 伊 => {
+     (
+      !提.哦迪伊.西哦提诶(伊.提诶吉伊提)
+      && 伊.提诶吉伊提.迪 !== '伊伊-维吉'
+      && 伊.提诶吉伊提.迪 !== '伊伊-维吉-屁诶提'
     ) {
-      this.props.closeMenu()
+      提.屁哦屁.西哦伊伊伊()
     }
   }
 
-  handleMenuSelection = action => {
-    if (action) {
-      const { type, title, payload } = action
-      const data = {
-        type: 'button',
-        content: {
-          title,
-          value: payload,
-          type,
+  诶迪伊伊伊伊伊西提哦 = 诶西提哦 => {
+     (诶西提哦) {
+      西哦提 { 提吾屁伊, 提提伊, 屁诶吾哦诶迪 } = 诶西提哦
+      西哦提 迪诶提诶 = {
+        提吾屁伊: '比伊提提哦',
+        西哦提伊提: {
+          提提伊,
+          维诶伊伊: 屁诶吾哦诶迪,
+          提吾屁伊,
         }
       }
-      this.props.postbackClick(data)
+      提.屁哦屁.屁哦提比诶西开西西开(迪诶提诶)
     }
   }
 
-  render () {
-    const { currentMenu, addMenuIndex, removeMenuIndex, closeMenu } = this.props
-    const { title, call_to_actions } = currentMenu
+  伊迪伊 () {
+    西哦提 { 西伊伊提伊伊, 诶迪迪伊伊迪伊, 伊哦维伊伊伊迪伊, 西哦伊伊伊 } = 提.屁哦屁
+    西哦提 { 提提伊, 西诶_提哦_诶西提哦 } = 西伊伊提伊伊
 
-    return (
-      <div className='Menu' ref={node => (this.node = node)}>
-        {!!title && (
-          <div onClick={removeMenuIndex} className='MenuHeader'>
-            <ArrowLeft className='MenuHeader--SVG' />
-            <p className='MenuHeader--Title'>{title}</p>
-          </div>
+    伊提伊 (
+      <迪维 西诶诶伊='伊伊' 伊={哦迪伊 => (提.哦迪伊 = 哦迪伊)}>
+        {!!提提伊 && (
+          <迪维 哦西西开={伊哦维伊伊伊迪伊} 西诶诶伊='伊伊伊诶迪伊'>
+            <诶哦豆伊提 西诶诶伊='伊伊伊诶迪伊--维吉' />
+            <屁 西诶诶伊='伊伊伊诶迪伊--提提伊'>{提提伊}</屁>
+          </迪维>
         )}
 
-        {call_to_actions.map((action, index) => {
-          let component = false
-          switch (action.type) {
-          case 'postback':
-            component = (
-              <div
-                key={index}
-                className='MenuElement'
-                onClick={() => {
-                  this.handleMenuSelection(action)
-                  closeMenu()
+        {西诶_提哦_诶西提哦.诶屁((诶西提哦, 迪伊) => {
+          伊提 西哦屁哦伊提 = 诶伊
+          豆提西 (诶西提哦.提吾屁伊) {
+          西诶伊 '屁哦提比诶西开':
+            西哦屁哦伊提 = (
+              <迪维
+                开伊吾={迪伊}
+                西诶诶伊='伊伊伊伊伊提'
+                哦西西开={() => {
+                  提.诶迪伊伊伊伊伊西提哦(诶西提哦)
+                  西哦伊伊伊()
                 }}
               >
-                {action.title}
-              </div>
+                {诶西提哦.提提伊}
+              </迪维>
             )
-            break
-          case 'nested':
-            component = (
-              <div key={index} className='MenuElement' onClick={() => addMenuIndex(index)}>
-                <p style={{ flex: 1 }}>{action.title}</p>
-                <ArrowRight />
-              </div>
+            比伊诶开
+          西诶伊 '伊提伊迪':
+            西哦屁哦伊提 = (
+              <迪维 开伊吾={迪伊} 西诶诶伊='伊伊伊伊伊提' 哦西西开={() => 诶迪迪伊伊迪伊(迪伊)}>
+                <屁 提吾伊={{ 伊: 1 }}>{诶西提哦.提提伊}</屁>
+                <诶哦豆吉提 />
+              </迪维>
             )
-            break
-          case 'Link': // TODO Should be "web_url" from backend
-            component = (
-              <a
-                key={index}
-                className='MenuElement'
-                href={action.payload}
-                rel='noopener noreferrer'
-                target='_blank'
+            比伊诶开
+          西诶伊 '开': // 提哦迪哦 哦伊迪 比伊 "豆伊比_伊" 哦 比诶西开伊迪
+            西哦屁哦伊提 = (
+              <诶
+                开伊吾={迪伊}
+                西诶诶伊='伊伊伊伊伊提'
+                伊={诶西提哦.屁诶吾哦诶迪}
+                伊='哦哦屁伊伊 哦伊伊伊'
+                提诶吉伊提='_比诶开'
               >
-                {action.title}
-              </a>
+                {诶西提哦.提提伊}
+              </诶>
             )
-            break
-          default:
-            component = false
+            比伊诶开
+          迪伊诶伊提:
+            西哦屁哦伊提 = 诶伊
           }
 
-          return component
+          伊提伊 西哦屁哦伊提
         })}
-      </div>
+      </迪维>
     )
   }
 }
 
-Menu.propTypes = {
-  currentMenu: PropTypes.object,
-  closeMenu: PropTypes.func,
-  addMenuIndex: PropTypes.func,
-  removeMenuIndex: PropTypes.func,
-  postbackClick: PropTypes.func,
+伊伊.屁哦屁提吾屁伊 = {
+  西伊伊提伊伊: 屁哦屁提吾屁伊.哦比杰伊西提,
+  西哦伊伊伊: 屁哦屁提吾屁伊.伊西,
+  诶迪迪伊伊迪伊: 屁哦屁提吾屁伊.伊西,
+  伊哦维伊伊伊迪伊: 屁哦屁提吾屁伊.伊西,
+  屁哦提比诶西开西西开: 屁哦屁提吾屁伊.伊西,
 }
 
-export default Menu
+伊屁哦提 迪伊诶伊提 伊伊

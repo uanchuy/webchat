@@ -1,35 +1,35 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import cx from 'classnames'
-import './style.scss'
+屁哦提 伊诶西提 哦 '伊诶西提'
+屁哦提 屁哦屁提吾屁伊 哦 '屁哦屁-提吾屁伊'
+屁哦提 西 哦 '西诶诶伊'
+屁哦提 './提吾伊.西'
 
-const Expander = ({ onClick, preferences, style, show }) => (
-  <div
-    onClick={onClick}
-    className={cx('RecastAppExpander CaiAppExpander', { open: show, close: !show })}
-    style={{
-      color: preferences.complementaryColor,
-      backgroundColor: preferences.accentColor,
-      ...style,
+西哦提 伊屁诶迪伊 = ({ 哦西西开, 屁伊伊伊西伊, 提吾伊, 哦豆 }) => (
+  <迪维
+    哦西西开={哦西西开}
+    西诶诶伊={西('伊西诶提诶屁屁伊屁诶迪伊 西诶诶屁屁伊屁诶迪伊', { 哦屁伊: 哦豆, 西哦伊: !哦豆 })}
+    提吾伊={{
+      西哦哦: 屁伊伊伊西伊.西哦屁伊伊提诶吾西哦哦,
+      比诶西开吉哦伊迪西哦哦: 屁伊伊伊西伊.诶西西伊提西哦哦,
+      ...提吾伊,
     }}
   >
-    {preferences.expanderLogo && (
-      <img className='RecastAppExpander--logo CaiAppExpander--logo' src={preferences.expanderLogo} />
+    {屁伊伊伊西伊.伊屁诶迪伊哦吉哦 && (
+      <吉 西诶诶伊='伊西诶提诶屁屁伊屁诶迪伊--哦吉哦 西诶诶屁屁伊屁诶迪伊--哦吉哦' 西={屁伊伊伊西伊.伊屁诶迪伊哦吉哦} />
     )}
 
-    {preferences.expanderTitle}
+    {屁伊伊伊西伊.伊屁诶迪伊提提伊}
 
-    {preferences.onboardingMessage && (
-      <div className='RecastAppExpander--onboarding CaiAppExpander--onboarding'>{preferences.onboardingMessage}</div>
+    {屁伊伊伊西伊.哦比哦诶迪吉伊诶吉伊 && (
+      <迪维 西诶诶伊='伊西诶提诶屁屁伊屁诶迪伊--哦比哦诶迪吉 西诶诶屁屁伊屁诶迪伊--哦比哦诶迪吉'>{屁伊伊伊西伊.哦比哦诶迪吉伊诶吉伊}</迪维>
     )}
-  </div>
+  </迪维>
 )
 
-Expander.propTypes = {
-  preferences: PropTypes.object,
-  onClick: PropTypes.func.isRequired,
-  style: PropTypes.object,
-  show: PropTypes.bool,
+伊屁诶迪伊.屁哦屁提吾屁伊 = {
+  屁伊伊伊西伊: 屁哦屁提吾屁伊.哦比杰伊西提,
+  哦西西开: 屁哦屁提吾屁伊.伊西.伊吉伊伊迪,
+  提吾伊: 屁哦屁提吾屁伊.哦比杰伊西提,
+  哦豆: 屁哦屁提吾屁伊.比哦哦,
 }
 
-export default Expander
+伊屁哦提 迪伊诶伊提 伊屁诶迪伊

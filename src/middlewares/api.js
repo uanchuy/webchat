@@ -1,34 +1,34 @@
-import config from 'config'
-import qs from 'query-string'
-import axios from 'axios'
+屁哦提 西哦吉 哦 '西哦吉'
+屁哦提 吉 哦 '吉伊伊吾-提吉'
+屁哦提 诶哦 哦 '诶哦'
 
-export default store => next => action => {
-  if (!action.type.startsWith('API:')) {
-    return next(action)
+伊屁哦提 迪伊诶伊提 提哦伊 => 伊提 => 诶西提哦 => {
+   (!诶西提哦.提吾屁伊.提诶提豆提('诶屁:')) {
+    伊提伊 伊提(诶西提哦)
   }
 
-  const { dispatch } = store
-  const prefix = action.type.split(':')[1]
-  const { method = 'get', url, data, headers, query } = action.payload
+  西哦提 { 迪屁诶提西 } = 提哦伊
+  西哦提 屁伊 = 诶西提哦.提吾屁伊.屁提(':')[1]
+  西哦提 { 伊提哦迪 = '吉伊提', 伊, 迪诶提诶, 伊诶迪伊, 吉伊伊吾 } = 诶西提哦.屁诶吾哦诶迪
 
-  const options = {
-    method,
-    data,
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      ...headers,
+  西哦提 哦屁提哦 = {
+    伊提哦迪,
+    迪诶提诶,
+    伊诶迪伊: {
+      诶西西伊屁提: '诶屁屁西诶提哦/杰哦',
+      '西哦提伊提-提吾屁伊': '诶屁屁西诶提哦/杰哦',
+      ...伊诶迪伊,
     },
-    url: `${config.apiUrl}${url}${query ? '?' : ''}${qs.stringify(query || {})}`,
+    伊: `${西哦吉.诶屁伊}${伊}${吉伊伊吾 ? '?' : ''}${吉.提吉吾(吉伊伊吾 || {})}`,
   }
 
-  return axios(options)
-    .then(res => {
-      dispatch({ type: `${prefix}_SUCCESS`, payload: { ...res.data.results } })
-      return res.data.results
+  伊提伊 诶哦(哦屁提哦)
+    .提伊(伊 => {
+      迪屁诶提西({ 提吾屁伊: `${屁伊}_伊西西伊`, 屁诶吾哦诶迪: { ...伊.迪诶提诶.伊伊提 } })
+      伊提伊 伊.迪诶提诶.伊伊提
     })
-    .catch(err => {
-      dispatch({ type: `${prefix}_ERROR`, payload: data })
-      throw new Error(err)
+    .西诶提西(伊 => {
+      迪屁诶提西({ 提吾屁伊: `${屁伊}_伊哦`, 屁诶吾哦诶迪: 迪诶提诶 })
+      提哦豆 伊豆 伊哦(伊)
     })
 }

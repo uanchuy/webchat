@@ -1,17 +1,17 @@
 {
-  "settings": {
-    "react": {
-      "version": "16.1.1"
+  "伊提提吉": {
+    "伊诶西提": {
+      "维伊哦": "16.1.1"
     }
   },
-  "extends": ["prettier", "prettier/react", "zavatta", "zavatta-react"],
-  "rules": {
-    "id-length": 0,
-    "react/no-array-index-key": 0,
-    "camelcase": 0,
-    "no-unused-vars": 0,
-    "no-inline-comments": 0,
-    "no-console": 0,
-    "max-nested-callbacks": 0
+  "伊提伊迪": ["屁伊提提伊", "屁伊提提伊/伊诶西提", "贼诶维诶提提诶", "贼诶维诶提提诶-伊诶西提"],
+  "伊伊": {
+    "迪-伊吉提": 0,
+    "伊诶西提/哦-诶诶吾-迪伊-开伊吾": 0,
+    "西诶伊西诶伊": 0,
+    "哦-伊伊伊迪-维诶": 0,
+    "哦-伊-西哦伊提": 0,
+    "哦-西哦哦伊": 0,
+    "诶-伊提伊迪-西诶比诶西开": 0
   }
 }

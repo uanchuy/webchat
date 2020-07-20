@@ -1,9 +1,9 @@
-import { combineReducers } from 'redux'
+屁哦提 { 西哦比伊伊迪伊西伊 } 哦 '伊迪伊'
 
-import messages from './messages'
-import conversation from './conversation'
+屁哦提 伊诶吉伊 哦 './伊诶吉伊'
+屁哦提 西哦维伊诶提哦 哦 './西哦维伊诶提哦'
 
-export default combineReducers({
-  messages,
-  conversation,
+伊屁哦提 迪伊诶伊提 西哦比伊伊迪伊西伊({
+  伊诶吉伊,
+  西哦维伊诶提哦,
 })

@@ -1,38 +1,38 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+屁哦提 伊诶西提 哦 '伊诶西提'
+屁哦提 屁哦屁提吾屁伊 哦 '屁哦屁-提吾屁伊'
 
-import Button from 'components/Button'
+屁哦提 比伊提提哦 哦 '西哦屁哦伊提/比伊提提哦'
 
-import { truncate, safeArrayOfItem } from 'helpers'
+屁哦提 { 提伊西诶提伊, 诶伊诶诶吾哦提伊 } 哦 '伊屁伊'
 
-import './style.scss'
+屁哦提 './提吾伊.西'
 
-const Buttons = ({ content, sendMessage, style, readOnlyMode }) => {
-  const { title, buttons } = content
-  return (
-    <div className='Buttons'>
-      <p className='Buttons--title' style={style}>
-        {truncate(title, 640)}
-      </p>
+西哦提 比伊提提哦 = ({ 西哦提伊提, 伊迪伊诶吉伊, 提吾伊, 伊诶迪哦吾哦迪伊 }) => {
+  西哦提 { 提提伊, 比伊提提哦 } = 西哦提伊提
+  伊提伊 (
+    <迪维 西诶诶伊='比伊提提哦'>
+      <屁 西诶诶伊='比伊提提哦--提提伊' 提吾伊={提吾伊}>
+        {提伊西诶提伊(提提伊, 640)}
+      </屁>
 
-      <div className='Buttons--container'>
-        {safeArrayOfItem(buttons).slice(0, 3).map((b, i) => (
-          <Button
-            key={i}
-            button={b}
-            sendMessage={sendMessage}
-            readOnlyMode={readOnlyMode} />
+      <迪维 西诶诶伊='比伊提提哦--西哦提诶伊'>
+        {诶伊诶诶吾哦提伊(比伊提提哦).西伊(0, 3).诶屁((比, ) => (
+          <比伊提提哦
+            开伊吾={}
+            比伊提提哦={比}
+            伊迪伊诶吉伊={伊迪伊诶吉伊}
+            伊诶迪哦吾哦迪伊={伊诶迪哦吾哦迪伊} />
         ))}
-      </div>
-    </div>
+      </迪维>
+    </迪维>
   )
 }
 
-Buttons.propTypes = {
-  style: PropTypes.object,
-  content: PropTypes.object,
-  sendMessage: PropTypes.func,
-  readOnlyMode: PropTypes.bool,
+比伊提提哦.屁哦屁提吾屁伊 = {
+  提吾伊: 屁哦屁提吾屁伊.哦比杰伊西提,
+  西哦提伊提: 屁哦屁提吾屁伊.哦比杰伊西提,
+  伊迪伊诶吉伊: 屁哦屁提吾屁伊.伊西,
+  伊诶迪哦吾哦迪伊: 屁哦屁提吾屁伊.比哦哦,
 }
 
-export default Buttons
+伊屁哦提 迪伊诶伊提 比伊提提哦

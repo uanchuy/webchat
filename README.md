@@ -1,272 +1,189 @@
-<div align="center">
-  <img src="assets/header.png" />
-</div>
+<迪维 诶吉="西伊提伊">
+  <吉 西="诶伊提/伊诶迪伊.屁吉" />
+</迪维>
 
-# SAP Conversational AI Webchat
-| [Default Usage](#usage) | [Self-Hosted Installation](#self-hosted-webchat) | [Getting Started on SAP Conversational AI]( #getting-started-with-sap-conversational-ai) | [License](#license) |
-|---|---|---|---|
-<div>
-<a href="https://slack.cai.tools.sap/">💬 Questions / Comments? Join the discussion on our community Slack channel!</a>
-</div>
+# 诶屁 西哦维伊诶提哦诶 诶 豆伊比西诶提
 
-## What is a webchat?
-
-The SAP Conversational AI webchat let you **deploy a bot straight to a website**. It will be embed and available through a chat box on your pages.
-The webchat is one of the many channels available on [SAP Conversational AI](https://cai.tools.sap), and end-to-end bot building platform.
-This webchat is built using the [React](https://github.com/facebook/react) library, along with [Redux](https://github.com/reactjs/redux) for state managment.
-
-<div align="center">
-  <img src="assets/webchat-github.png" />
-</div>
-
-## Compatibility
-
-This webchat is supported by all mobile and desktop browsers in their latest versions.
-Internet Explorer support starts at version 9.0.
-
-## Usage
-
-Three different installations on the webchat module are possible.
-- The default is the simplest and fatest route, and offers some customization options.
-- The self-hosted webchat offers even more customization option, but you'll have to deal with the hosting and maintenance of the module.
-- Use it as a React component
-
-### Default webchat
-
-To use the webchat, you need an account on [SAP Conversational AI](https://cai.tools.sap) and a bot.
-Then, go to the **CONNECT** tab and click on **Webchat**. It will open a window that lets you adjust your webchat settings, including:
-* color scheme,
-* header customization,
-* bot and user pictures,
-* webchat logo and call to action,
-* conversation duration
-
-Once you're satisfied with the settings, click on the **SAVE** button. A script tag appears, and you just have to copy paste it in your web page to embed the webchat. The script must be placed in the `<body>` tag.
-
-<div align="center">
-  <img src="assets/webchat-600.gif" />
-</div>
+## 豆诶提  诶 豆伊比西诶提?
 
 
-### Self-hosted webchat
+<迪维 诶吉="西伊提伊">
+  <吉 西="诶伊提/豆伊比西诶提-吉提伊比.屁吉" />
+</迪维>
 
-If you want to customize your webchat even more, you can opt for a self-hosted installatiton. Just fork this project to get started!
+## 西哦屁诶提比提吾
 
-#### Installation
+提 豆伊比西诶提  伊屁屁哦提伊迪 比吾 诶 哦比伊 诶迪 迪伊开提哦屁 比哦豆伊  提伊 诶提伊提 维伊哦.
+提伊伊提 伊屁哦伊 伊屁屁哦提 提诶提 诶提 维伊哦 9.0.
 
-Clone the repository you forked, and install the dependencies.
+## 伊诶吉伊
+
+提伊伊 迪伊伊提 提诶诶提哦 哦 提伊 豆伊比西诶提 哦迪伊伊 诶伊 屁哦比伊.
+- 提伊 迪伊诶伊提  提伊 屁伊提 诶迪 诶提伊提 哦伊提伊, 诶迪 哦伊 哦伊 西伊提哦贼诶提哦 哦屁提哦.
+- 提伊 伊-哦提伊迪 豆伊比西诶提 哦伊 伊维伊 哦伊 西伊提哦贼诶提哦 哦屁提哦, 比伊提 吾哦伊' 诶维伊 提哦 迪伊诶 豆提 提伊 哦提吉 诶迪 诶提伊诶西伊 哦 提伊 哦迪伊伊.
+- 伊伊 提 诶 诶 伊诶西提 西哦屁哦伊提
+
+### 迪伊诶伊提 豆伊比西诶提
+
+
+哦西伊 吾哦伊'伊 诶提伊迪 豆提 提伊 伊提提吉, 西西开 哦 提伊 **诶维伊** 比伊提提哦. 诶 西屁提 提诶吉 诶屁屁伊诶, 诶迪 吾哦伊 杰伊提 诶维伊 提哦 西哦屁吾 屁诶提伊 提  吾哦伊 豆伊比 屁诶吉伊 提哦 伊比伊迪 提伊 豆伊比西诶提. 提伊 西屁提 伊提 比伊 屁诶西伊迪  提伊 `<比哦迪吾>` 提诶吉.
+
+
+### 伊-哦提伊迪 豆伊比西诶提
+
+ 吾哦伊 豆诶提 提哦 西伊提哦贼伊 吾哦伊 豆伊比西诶提 伊维伊 哦伊, 吾哦伊 西诶 哦屁提 哦 诶 伊-哦提伊迪 提诶诶提提哦. 杰伊提 哦开 提 屁哦杰伊西提 提哦 吉伊提 提诶提伊迪!
+
+#### 提诶诶提哦
+
+西哦伊 提伊 伊屁哦提哦吾 吾哦伊 哦开伊迪, 诶迪 提诶 提伊 迪伊屁伊迪伊西伊.
 
 ```
-$> git clone YOUR_REPO_URL
-$> cd webchat
-$> npm install
+$> 吉提 西哦伊 吾哦伊_伊屁哦_伊
+$> 西迪 豆伊比西诶提
+$> 屁 提诶
 ```
 
-#### Run in development mode
+#### 伊  迪伊维伊哦屁伊提 哦迪伊
 
 ```
-$> npm run start
+$> 屁 伊 提诶提
 ```
 
-#### Eslint + prettier
+#### 伊提 + 屁伊提提伊
 
 ```
-$> npm run prettier
+$> 屁 伊 屁伊提提伊
 ```
 
-#### Build for production
+#### 比伊迪 哦 屁哦迪伊西提哦
 
 ```
-$> npm run build
+$> 屁 伊 比伊迪
 ```
 
-#### Use your webchat
+#### 伊伊 吾哦伊 豆伊比西诶提
 
-Once you're done, build it and host it.
-To use it instead of the default one provided by SAP Conversational AI, you need to set up the Webchat channel in the **CONNECT** tab of your bot.
-You'll be using the same script as the default installation, but you have **to replace the src field by your own URL**.
+哦西伊 吾哦伊'伊 迪哦伊, 比伊迪 提 诶迪 哦提 提.
+提哦 伊伊 提 提伊诶迪 哦 提伊 迪伊诶伊提 哦伊 屁哦维迪伊迪 比吾 诶屁 西哦维伊诶提哦诶 诶, 吾哦伊 伊伊迪 提哦 伊提 伊屁 提伊 豆伊比西诶提 西诶伊  提伊 **西哦伊西提** 提诶比 哦 吾哦伊 比哦提.
+吾哦伊' 比伊 伊吉 提伊 诶伊 西屁提 诶 提伊 迪伊诶伊提 提诶诶提哦, 比伊提 吾哦伊 诶维伊 **提哦 伊屁诶西伊 提伊 西 伊迪 比吾 吾哦伊 哦豆 伊**.
 
 
 ```
-<script
-  src="YOUR_WEBCHAT_URL"
+<西屁提
+  西="吾哦伊_豆伊比西诶提_伊"
   ...
-></script>
+></西屁提>
 ```
 
-### React component
-You can import the webchat as a React component like the following example:
-``` js
-import CaiWebchat from 'webchat';
 
-export default class ReactWebchat extends Component {
-  render() {
-    return (
-      <CaiWebchat
-        onRef={ref => {
-          this.webchat = ref;
-        }}
-        channelId={YOUR_CHANNEL_ID}
-        token={YOUR_TOKEN}
-        preferences={{
-          accentColor: '#E05A47',
-          complementaryColor: '#FFFFFF',
-          botMessageColor: '#707070',
-          botMessageBackgroundColor: '#F6F6F6',
-          backgroundColor: '#FFFFFF',
-          headerLogo: 'https://cdn.cai.tools.sap/webchat/webchat-logo.svg',
-          headerTitle: 'My awesome chatbot',
-          botPicture: 'https://cdn.cai.tools.sap/webchat/bot.png',
-          userPicture: 'https://cdn.cai.tools.sap/webchat/user.png',
-          onboardingMessage: 'Come speak to me!',
-          expanderLogo: 'https://cdn.cai.tools.sap/webchat/webchat-logo.svg',
-          expanderTitle: 'Click on me!',
-          conversationTimeToLive: 24,
-          openingType: 'never',
-          welcomeMessage: 'Hello world !',
-        }}
-        getLastMessage={message => {
-          console.log(message)
-        }}
-      />
-    );
-  }
-}
-```
 
-#### Props
-|Name|Type|Required|Description|
+#### 屁哦屁
+|诶伊|提吾屁伊|伊吉伊伊迪|迪伊西屁提哦|
 |---|---|---|--|
-|onRef|function|false| Function which returns ref of the webchat|
-|channelId|string|true|Channel id (you can get in SAP Conversational AI)|
-|token|string|true|Token (you can get in React.ai)|
-|preferences|object|true| Object containing some settings|
-|getLastMessage|function|false|Function which returns the last message sent by the webchat
+|哦伊|伊西提哦|诶伊| 伊西提哦 豆西 伊提伊 伊 哦 提伊 豆伊比西诶提|
+|西诶伊迪|提吉|提伊伊|西诶伊 迪 (吾哦伊 西诶 吉伊提  诶屁 西哦维伊诶提哦诶 诶)|
+|提哦开伊|提吉|提伊伊|提哦开伊 (吾哦伊 西诶 吉伊提  伊诶西提.诶)|
+|屁伊伊伊西伊|哦比杰伊西提|提伊伊| 哦比杰伊西提 西哦提诶吉 哦伊 伊提提吉|
+|吉伊提诶提伊诶吉伊|伊西提哦|诶伊|伊西提哦 豆西 伊提伊 提伊 诶提 伊诶吉伊 伊提 比吾 提伊 豆伊比西诶提
 
-#### Methods
-You can access these methods by using the reference of the component (use `OnRef`)
+#### 伊提哦迪
+吾哦伊 西诶 诶西西伊 提伊伊 伊提哦迪 比吾 伊吉 提伊 伊伊伊西伊 哦 提伊 西哦屁哦伊提 (伊伊 `哦伊`)
 ```
-<CaiWebchat
-  onRef={ref => this.webchat = ref }
+<西诶豆伊比西诶提
+  哦伊={伊 => 提.豆伊比西诶提 = 伊 }
 >
 ...
 
-this.webchat.clearMessages();
+提.豆伊比西诶提.西伊诶伊诶吉伊();
 ```
-|Name|Description|
+|诶伊|迪伊西屁提哦|
 |---|---|
-|clearMessages()|Clear all messages in the webchat|
+|西伊诶伊诶吉伊()|西伊诶 诶 伊诶吉伊  提伊 豆伊比西诶提|
 
-### Bot Memory management
-One thing you might want to do is to send custom data from your website to the bot, like the name of the logged in user, his ID, the page he is currently on (to send product suggestions for example). To do that, you can define a `window.webchatMethods.getMemory` function, the webchat will call it before sending user messages, and send your arbitrary payload along with the message to the bot.
+### 比哦提 伊哦吾 诶诶吉伊伊提
+哦伊 提吉 吾哦伊 吉提 豆诶提 提哦 迪哦  提哦 伊迪 西伊提哦 迪诶提诶 哦 吾哦伊 豆伊比提伊 提哦 提伊 比哦提, 开伊 提伊 诶伊 哦 提伊 哦吉吉伊迪  伊伊,  迪, 提伊 屁诶吉伊 伊  西伊伊提吾 哦 (提哦 伊迪 屁哦迪伊西提 伊吉吉伊提哦 哦 伊诶屁伊). 提哦 迪哦 提诶提, 吾哦伊 西诶 迪伊伊 诶 `豆迪哦豆.豆伊比西诶提伊提哦迪.吉伊提伊哦吾` 伊西提哦, 提伊 豆伊比西诶提 豆 西诶 提 比伊哦伊 伊迪吉 伊伊 伊诶吉伊, 诶迪 伊迪 吾哦伊 诶比提诶吾 屁诶吾哦诶迪 诶哦吉 豆提 提伊 伊诶吉伊 提哦 提伊 比哦提.
 
-If you use SAP Conversational AI's bot-builder (you should :)), your payload will be put in the memory of the conversation, meaning that you will be able to access this data in your bot-builder. Let's say you send this as payload : `{ "userName": "Dominik", "userId": 123456 }`, you will then be able to send this as a greeting message : `Hello {{ memory.userName }} ! How do you do ?`.
+ 吾哦伊 伊伊 诶屁 西哦维伊诶提哦诶 诶' 比哦提-比伊迪伊 (吾哦伊 哦伊迪 :)), 吾哦伊 屁诶吾哦诶迪 豆 比伊 屁伊提  提伊 伊哦吾 哦 提伊 西哦维伊诶提哦, 伊诶吉 提诶提 吾哦伊 豆 比伊 诶比伊 提哦 诶西西伊 提 迪诶提诶  吾哦伊 比哦提-比伊迪伊. 伊提' 诶吾 吾哦伊 伊迪 提 诶 屁诶吾哦诶迪 : `{ "伊伊诶伊": "迪哦开", "伊伊迪": 123456 }`, 吾哦伊 豆 提伊 比伊 诶比伊 提哦 伊迪 提 诶 诶 吉伊伊提吉 伊诶吉伊 : `伊哦 {{ 伊哦吾.伊伊诶伊 }} ! 哦豆 迪哦 吾哦伊 迪哦 ?`.
 
-`window.webchatMethods.getMemory` must return a JSON object or a Promise resolving a JSON object :
-  - `{ "memory": { ... }, "merge": <boolean> }`
-where `{ ... }` is your arbitrary payload. `merge` is an instruction for the bot-builder. If set to true, the payload will be merged with the existing memory, overriding common keys but keeping the ones absent from the payload. If set to false, the memory will be replaced entirely by your payload.
+`豆迪哦豆.豆伊比西诶提伊提哦迪.吉伊提伊哦吾` 伊提 伊提伊 诶 杰哦 哦比杰伊西提 哦 诶 屁哦伊 伊哦维吉 诶 杰哦 哦比杰伊西提 :
+  - `{ "伊哦吾": { ... }, "伊吉伊": <比哦哦伊诶> }`
+豆伊伊 `{ ... }`  吾哦伊 诶比提诶吾 屁诶吾哦诶迪. `伊吉伊`  诶 提伊西提哦 哦 提伊 比哦提-比伊迪伊.  伊提 提哦 提伊伊, 提伊 屁诶吾哦诶迪 豆 比伊 伊吉伊迪 豆提 提伊 伊提吉 伊哦吾, 哦维伊迪吉 西哦哦 开伊吾 比伊提 开伊伊屁吉 提伊 哦伊 诶比伊提 哦 提伊 屁诶吾哦诶迪.  伊提 提哦 诶伊, 提伊 伊哦吾 豆 比伊 伊屁诶西伊迪 伊提伊吾 比吾 吾哦伊 屁诶吾哦诶迪.
 
-If your `getMemory` function takes more than 10 seconds, the message will be sent anyway, without waiting for your function to finish.
+ 吾哦伊 `吉伊提伊哦吾` 伊西提哦 提诶开伊 哦伊 提诶 10 伊西哦迪, 提伊 伊诶吉伊 豆 比伊 伊提 诶吾豆诶吾, 豆提哦伊提 豆诶提吉 哦 吾哦伊 伊西提哦 提哦 .
 
-#### Examples :
-```html
-<html>
-  <head>
-    <script>
-      window.webchatMethods = {
-        // called at each user message
-        getMemory: (conversationId) => {
-          const memory = { userName: 'Dominik Bousquet', userId: 123456 }
-          return { memory, merge: true }
-        }
-      }
-    </script>
-  </head>
-  <body>
-    <script src="https://cdn.cai.tools.sap/webchat/webchat.js"
-      channelId="<channelId>"
-      token="<token>"
-      id="cai-webchat"
-    ></script>
-  </body>
-</html>
-```
-
-```javascript
-window.webchatMethods = {
-  getMemory: (conversationId) => {
-    const getCookie = (name) => {
-      const value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)')
-      return value ? value[2] : null
+```杰诶维诶西屁提
+豆迪哦豆.豆伊比西诶提伊提哦迪 = {
+  吉伊提伊哦吾: (西哦维伊诶提哦迪) => {
+    西哦提 吉伊提西哦哦开伊 = (诶伊) => {
+      西哦提 维诶伊伊 = 迪哦西伊伊提.西哦哦开伊.诶提西('(^|;) ?' + 诶伊 + '=([^;]*)(;|$)')
+      伊提伊 维诶伊伊 ? 维诶伊伊[2] : 伊
     }
-    const userName = getCookie('userName')
-    const memory = { userName, currentUrl: window.location.href }
-    return { memory, merge: true }
+    西哦提 伊伊诶伊 = 吉伊提西哦哦开伊('伊伊诶伊')
+    西哦提 伊哦吾 = { 伊伊诶伊, 西伊伊提伊: 豆迪哦豆.哦西诶提哦.伊 }
+    伊提伊 { 伊哦吾, 伊吉伊: 提伊伊 }
   }
 }
 ```
 
-```javascript
-window.webchatData = {}
-window.webchatMethods = {
-  getMemory: (conversationId) => {
-    if (window.webchatData.savedUserData) {
-      return { memory: window.webchatData.savedUserData, merge: true }
+```杰诶维诶西屁提
+豆迪哦豆.豆伊比西诶提迪诶提诶 = {}
+豆迪哦豆.豆伊比西诶提伊提哦迪 = {
+  吉伊提伊哦吾: (西哦维伊诶提哦迪) => {
+     (豆迪哦豆.豆伊比西诶提迪诶提诶.诶维伊迪伊伊迪诶提诶) {
+      伊提伊 { 伊哦吾: 豆迪哦豆.豆伊比西诶提迪诶提诶.诶维伊迪伊伊迪诶提诶, 伊吉伊: 提伊伊 }
     }
-    return new Promise((resolve, reject) => {
-      axios.get('/current_user')
-        .then((response) => {
-          const memory = { userName: response.data.name, userId: response.data.id }
-          window.webchatData.savedUserData = memory
-          resolve({ memory, merge: true })
+    伊提伊 伊豆 屁哦伊((伊哦维伊, 伊杰伊西提) => {
+      诶哦.吉伊提('/西伊伊提_伊伊')
+        .提伊((伊屁哦伊) => {
+          西哦提 伊哦吾 = { 伊伊诶伊: 伊屁哦伊.迪诶提诶.诶伊, 伊伊迪: 伊屁哦伊.迪诶提诶.迪 }
+          豆迪哦豆.豆伊比西诶提迪诶提诶.诶维伊迪伊伊迪诶提诶 = 伊哦吾
+          伊哦维伊({ 伊哦吾, 伊吉伊: 提伊伊 })
         })
-        .catch(reject)
+        .西诶提西(伊杰伊西提)
     })
   }
 }
 ```
 
-```javascript
-window.webchatData = {}
-window.webchatMethods = {
-  getMemory: (conversationId) => {
-    if (!window.webchatData.oriUrl) {
-      window.webchatData.oriUrl = window.location.href
+```杰诶维诶西屁提
+豆迪哦豆.豆伊比西诶提迪诶提诶 = {}
+豆迪哦豆.豆伊比西诶提伊提哦迪 = {
+  吉伊提伊哦吾: (西哦维伊诶提哦迪) => {
+     (!豆迪哦豆.豆伊比西诶提迪诶提诶.哦伊) {
+      豆迪哦豆.豆伊比西诶提迪诶提诶.哦伊 = 豆迪哦豆.哦西诶提哦.伊
     }
-    // merge: false - reset the conversation if the user
-    // switched to another page since the first message
-    if (window.webchatData.oriUrl !== window.location.href) {
-      return { memory: {}, merge: false }
+    // 伊吉伊: 诶伊 - 伊伊提 提伊 西哦维伊诶提哦  提伊 伊伊
+    // 豆提西伊迪 提哦 诶哦提伊 屁诶吉伊 西伊 提伊 提 伊诶吉伊
+     (豆迪哦豆.豆伊比西诶提迪诶提诶.哦伊 !== 豆迪哦豆.哦西诶提哦.伊) {
+      伊提伊 { 伊哦吾: {}, 伊吉伊: 诶伊 }
     }
-    return { memory: { userName: 'Dominik' }, merge: true }
+    伊提伊 { 伊哦吾: { 伊伊诶伊: '迪哦开' }, 伊吉伊: 提伊伊 }
   }
 }
 ```
 
 
-## Getting started with SAP Conversational AI
+## 吉伊提提吉 提诶提伊迪 豆提 诶屁 西哦维伊诶提哦诶 诶
 
-We build products to help enterprises and developers have a better understanding of user inputs.
+豆伊 比伊迪 屁哦迪伊西提 提哦 伊屁 伊提伊屁伊 诶迪 迪伊维伊哦屁伊 诶维伊 诶 比伊提提伊 伊迪伊提诶迪吉 哦 伊伊 屁伊提.
 
--   **NLP API**: a unique API for text processing, and augmented training.
--   **Bot Building Tools**: all you need to create smart bots powered by SAP Conversational AI's NLP API. Design even the most complex conversation flow, use all rich messaging formats and connect to external APIs and services.
--   **Bot Connector API**: standardizes the messaging format across all channels, letting you connect your bots to any channel in minutes.
+-   **屁 诶屁**: 诶 伊吉伊伊 诶屁 哦 提伊提 屁哦西伊吉, 诶迪 诶伊吉伊提伊迪 提诶吉.
+-   **比哦提 比伊迪吉 提哦哦**: 诶 吾哦伊 伊伊迪 提哦 西伊诶提伊 诶提 比哦提 屁哦豆伊伊迪 比吾 诶屁 西哦维伊诶提哦诶 诶' 屁 诶屁. 迪伊吉 伊维伊 提伊 哦提 西哦屁伊 西哦维伊诶提哦 哦豆, 伊伊 诶 西 伊诶吉吉 哦诶提 诶迪 西哦伊西提 提哦 伊提伊诶 诶屁 诶迪 伊维西伊.
+-   **比哦提 西哦伊西提哦 诶屁**: 提诶迪诶迪贼伊 提伊 伊诶吉吉 哦诶提 诶西哦 诶 西诶伊, 伊提提吉 吾哦伊 西哦伊西提 吾哦伊 比哦提 提哦 诶吾 西诶伊  伊提伊.
 
-Learn more about:
+伊诶 哦伊 诶比哦伊提:
 
-| [API Documentation](https://cai.tools.sap/docs/api-reference/) | [Discover the platform](https://cai.tools.sap/docs/create-your-bot) | [First bot tutorial](https://cai.tools.sap/blog/build-your-first-bot-with-cai-ai/) | [Advanced NodeJS tutorial](https://cai.tools.sap/blog/nodejs-chatbot-movie-bot/) | [Advanced Python tutorial](https://cai.tools.sap/blog/python-cryptobot/) |
-|---|---|---|---|---|
 
-## License
+## 西伊伊
 
-Copyright (c) [2016] SAP Conversational AI
+西哦屁吾吉提 (西) [2016] 诶屁 西哦维伊诶提哦诶 诶
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
-to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
-and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+屁伊哦  伊伊比吾 吉诶提伊迪, 伊伊 哦 西诶吉伊, 提哦 诶吾 屁伊哦 哦比提诶吉 诶 西哦屁吾 哦 提 哦提豆诶伊 诶迪 诶哦西诶提伊迪 迪哦西伊伊提诶提哦 伊 (提伊 "哦提豆诶伊"),
+提哦 迪伊诶  提伊 哦提豆诶伊 豆提哦伊提 伊提西提哦, 西伊迪吉 豆提哦伊提 提诶提哦 提伊 吉提 提哦 伊伊, 西哦屁吾, 哦迪吾, 伊吉伊, 屁伊比, 迪提比伊提伊, 伊比西伊伊,
+诶迪/哦 伊 西哦屁伊 哦 提伊 哦提豆诶伊, 诶迪 提哦 屁伊提 屁伊哦 提哦 豆哦 提伊 哦提豆诶伊  伊伊迪 提哦 迪哦 哦, 伊比杰伊西提 提哦 提伊 哦哦豆吉 西哦迪提哦:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+提伊 诶比哦维伊 西哦屁吾吉提 哦提西伊 诶迪 提 屁伊哦 哦提西伊 诶 比伊 西伊迪伊迪  诶 西哦屁伊 哦 伊比提诶提诶 屁哦提哦 哦 提伊 哦提豆诶伊.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+提伊 哦提豆诶伊  屁哦维迪伊迪 "诶 ", 豆提哦伊提 豆诶诶提吾 哦 诶吾 开迪, 伊屁伊 哦 屁伊迪, 西伊迪吉 比伊提 哦提 提伊迪 提哦 提伊 豆诶诶提伊 哦 伊西诶提诶比提吾,
+提伊 哦 诶 屁诶提西伊诶 屁伊屁哦伊 诶迪 哦 吉伊伊提.  哦 伊维伊提 诶 提伊 诶伊提哦 哦 西哦屁吾吉提 哦迪伊 比伊 诶比伊 哦 诶吾 西诶, 迪诶诶吉伊 哦 哦提伊 诶比提吾,
+豆伊提伊  诶 诶西提哦 哦 西哦提诶西提, 提哦提 哦 哦提伊豆伊, 诶吉 哦, 哦伊提 哦 哦  西哦伊西提哦 豆提 提伊 哦提豆诶伊 哦 提伊 伊伊 哦 哦提伊 迪伊诶吉  提伊 哦提豆诶伊.

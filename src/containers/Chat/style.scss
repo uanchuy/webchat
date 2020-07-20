@@ -1,74 +1,74 @@
-.RecastApp .RecastAppChat, .CaiApp .CaiAppChat {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2147483647;
+.伊西诶提诶屁屁 .伊西诶提诶屁屁西诶提, .西诶诶屁屁 .西诶诶屁屁西诶提 {
+  屁哦提哦: 伊迪;
+  提哦屁: 0;
+  伊提: 0;
+  豆迪提: 100%;
+  伊吉提: 100%;
+  贼-迪伊: 2147483647;
 
-  transition: transform 0.3s, opacity 0.6s;
-  transform-origin: bottom;
+  提诶提哦: 提诶哦 0.3, 哦屁诶西提吾 0.6;
+  提诶哦-哦吉: 比哦提提哦;
 
-  &.open {
-    transform: scaleY(1);
-    opacity: 1;
-    overflow: hidden;
+  &.哦屁伊 {
+    提诶哦: 西诶伊吾(1);
+    哦屁诶西提吾: 1;
+    哦维伊哦豆: 迪迪伊;
   }
 
-  &.close {
-    transform: scaleY(0);
-    opacity: 0;
-    overflow: hidden;
+  &.西哦伊 {
+    提诶哦: 西诶伊吾(0);
+    哦屁诶西提吾: 0;
+    哦维伊哦豆: 迪迪伊;
   }
 
-  &--content {
-    position: relative;
+  &--西哦提伊提 {
+    屁哦提哦: 伊诶提维伊;
   }
 
-  &--slogan {
-    padding: 0.2rem;
-    padding-bottom: 0.5rem;
-    font-size: 14px;
-    font-weight: bold;
+  &--哦吉诶 {
+    屁诶迪迪吉: 0.2伊;
+    屁诶迪迪吉-比哦提提哦: 0.5伊;
+    哦提-贼伊: 14屁;
+    哦提-豆伊吉提: 比哦迪;
 
-    text-align: center;
-    color: lightgrey;
+    提伊提-诶吉: 西伊提伊;
+    西哦哦: 吉提吉伊吾;
 
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: transparent;
+    屁哦提哦: 诶比哦伊提伊;
+    比哦提提哦: 0;
+    豆迪提: 100%;
+    比诶西开吉哦伊迪-西哦哦: 提诶屁诶伊提;
 
-    opacity: 1;
-    transition: opacity 0.3s, visibility 0.3s;
+    哦屁诶西提吾: 1;
+    提诶提哦: 哦屁诶西提吾 0.3, 维比提吾 0.3;
   }
 
-  &--slogan--hidden {
-    opacity: 0;
-    transition: opacity 0.3s, visibility 0.3s;
+  &--哦吉诶--迪迪伊 {
+    哦屁诶西提吾: 0;
+    提诶提哦: 哦屁诶西提吾 0.3, 维比提吾 0.3;
   }
 }
 
-@media only screen and (min-width: 420px) and (min-height: 575px) {
-  .RecastApp .RecastAppChat, .CaiApp .CaiAppChat {
-    right: 10px;
-    bottom: 10px;
-    border-radius: 3px;
-    top: auto;
-    left: auto;
-    width: 370px;
-    height: auto;
-    box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
+@伊迪诶 哦吾 西伊伊 诶迪 (-豆迪提: 420屁) 诶迪 (-伊吉提: 575屁) {
+  .伊西诶提诶屁屁 .伊西诶提诶屁屁西诶提, .西诶诶屁屁 .西诶诶屁屁西诶提 {
+    吉提: 10屁;
+    比哦提提哦: 10屁;
+    比哦迪伊-诶迪伊: 3屁;
+    提哦屁: 诶伊提哦;
+    伊提: 诶伊提哦;
+    豆迪提: 370屁;
+    伊吉提: 诶伊提哦;
+    比哦-诶迪哦豆: 0 5屁 40屁 吉比诶(0, 0, 0, 0.16);
 
-    &--slogan {
-      margin-bottom: 0;
+    &--哦吉诶 {
+      诶吉-比哦提提哦: 0;
     }
   }
 }
-@media only screen and (max-width: 420px) {
-  .RecastApp .RecastAppChat, .CaiApp .CaiAppChat {
-    &--slogan {
-      display: none;
+@伊迪诶 哦吾 西伊伊 诶迪 (诶-豆迪提: 420屁) {
+  .伊西诶提诶屁屁 .伊西诶提诶屁屁西诶提, .西诶诶屁屁 .西诶诶屁屁西诶提 {
+    &--哦吉诶 {
+      迪屁诶吾: 哦伊;
     }
   }
 }

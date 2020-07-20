@@ -1,487 +1,487 @@
-.RecastAppMessageContainer, .CaiAppMessageContainer {
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
+.伊西诶提诶屁屁伊诶吉伊西哦提诶伊, .西诶诶屁屁伊诶吉伊西哦提诶伊 {
+  屁哦提哦: 伊诶提维伊;
+  迪屁诶吾: 伊;
+  杰伊提吾-西哦提伊提: 伊-伊迪;
 
-  &.bot {
-    justify-content: flex-start;
+  &.比哦提 {
+    杰伊提吾-西哦提伊提: 伊-提诶提;
   }
 }
 
-.slick-track {
-  min-width: 280px;
+.西开-提诶西开 {
+  -豆迪提: 280屁;
 }
-.RecastApp .RecastAppMessage, .CaiApp .CaiAppMessage {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  margin: 1rem 0.5rem;
-  width: -webkit-fit-content;
-  width: fit-content;
-  width: -moz-fit-content;
-  position: relative;
+.伊西诶提诶屁屁 .伊西诶提诶屁屁伊诶吉伊, .西诶诶屁屁 .西诶诶屁屁伊诶吉伊 {
+  迪屁诶吾: 伊;
+  伊-迪伊西提哦: 哦豆-伊维伊伊;
+  诶吉-提伊: 西伊提伊;
+  诶吉: 1伊 0.5伊;
+  豆迪提: -豆伊比开提-提-西哦提伊提;
+  豆迪提: 提-西哦提伊提;
+  豆迪提: -哦贼-提-西哦提伊提;
+  屁哦提哦: 伊诶提维伊;
 
-  &--logo {
-    width: 35px;
-    height: 35px;
-    margin: 0 0 0 0.5rem;
-    align-self: flex-end;
-    opacity: 0;
+  &--哦吉哦 {
+    豆迪提: 35屁;
+    伊吉提: 35屁;
+    诶吉: 0 0 0 0.5伊;
+    诶吉-伊: 伊-伊迪;
+    哦屁诶西提吾: 0;
 
-    &.visible {
-      opacity: 1 !important;
+    &.维比伊 {
+      哦屁诶西提吾: 1 !屁哦提诶提;
     }
   }
 
-  &--JsonButton {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    padding-left: 0.5rem;
-    margin-left: -1rem;
-    margin-top: -0.6rem;
-    z-index: 1;
-    cursor: pointer;
-    position: absolute;
-    top: 2px;
-    right: -7px;
+  &--杰哦比伊提提哦 {
+    豆迪提: 25屁;
+    伊吉提: 25屁;
+    比哦迪伊-诶迪伊: 50%;
+    屁诶迪迪吉-伊提: 0.5伊;
+    诶吉-伊提: -1伊;
+    诶吉-提哦屁: -0.6伊;
+    贼-迪伊: 1;
+    西伊哦: 屁哦提伊;
+    屁哦提哦: 诶比哦伊提伊;
+    提哦屁: 2屁;
+    吉提: -7屁;
   }
 
-  &--retry {
-    font-size: 12px;
-    margin: 0 10px;
-    text-align: right;
-    color: #9e9e9e;
+  &--伊提吾 {
+    哦提-贼伊: 12屁;
+    诶吉: 0 10屁;
+    提伊提-诶吉: 吉提;
+    西哦哦: #9伊9伊9伊;
 
-    &.bot {
-      text-align: left;
+    &.比哦提 {
+      提伊提-诶吉: 伊提;
     }
 
-    .button {
-      cursor: pointer;
-      color: #2196f3;
+    .比伊提提哦 {
+      西伊哦: 屁哦提伊;
+      西哦哦: #21963;
     }
   }
 
-  &.bot {
-    flex-direction: row;
+  &.比哦提 {
+    伊-迪伊西提哦: 哦豆;
 
-    .Message--logo {
-      margin: 0 0.5rem 0 0;
+    .伊诶吉伊--哦吉哦 {
+      诶吉: 0 0.5伊 0 0;
     }
   }
 
   /*
-   * Text
+   * 提伊提
    */
 
-  .RecastAppText, .CaiAppText {
-    max-width: 290px;
-    padding: 0.8rem;
-    border-radius: 3px;
+  .伊西诶提诶屁屁提伊提, .西诶诶屁屁提伊提 {
+    诶-豆迪提: 290屁;
+    屁诶迪迪吉: 0.8伊;
+    比哦迪伊-诶迪伊: 3屁;
 
-    white-space: pre-wrap;
-    overflow-wrap: break-word;
+    豆提伊-屁诶西伊: 屁伊-豆诶屁;
+    哦维伊哦豆-豆诶屁: 比伊诶开-豆哦迪;
 
 
-    // Markdown
-    :first-child {
-      margin-block-start: 0px;
-      margin-top: 0px;   
+    // 诶开迪哦豆
+    :提-西迪 {
+      诶吉-比哦西开-提诶提: 0屁;
+      诶吉-提哦屁: 0屁;   
     }
   
-    :last-child {
-      margin-block-end: 0px;
-      margin-bottom: 0px;    
+    :诶提-西迪 {
+      诶吉-比哦西开-伊迪: 0屁;
+      诶吉-比哦提提哦: 0屁;    
     }
 
-    li p {
-      margin-block-end: 0px;
-      margin-bottom: 0px;   
+     屁 {
+      诶吉-比哦西开-伊迪: 0屁;
+      诶吉-比哦提提哦: 0屁;   
     }
 
-    p {
-      display: block;
-      margin-block-start: 1em;
-      margin-block-end: 1em;
-      margin-inline-start: 0px;
-      margin-inline-end: 0px;
+    屁 {
+      迪屁诶吾: 比哦西开;
+      诶吉-比哦西开-提诶提: 1伊;
+      诶吉-比哦西开-伊迪: 1伊;
+      诶吉-伊-提诶提: 0屁;
+      诶吉-伊-伊迪: 0屁;
     }
   
-    pre {
-      display: block;
-      white-space: pre;
-      margin: 1em 0;
+    屁伊 {
+      迪屁诶吾: 比哦西开;
+      豆提伊-屁诶西伊: 屁伊;
+      诶吉: 1伊 0;
     }
     
-    pre code {
-      display: block;
-      padding: 0.5rem;
-      overflow-x: auto;
-      background-color: #ddd;
-      border: 1px solid gray
+    屁伊 西哦迪伊 {
+      迪屁诶吾: 比哦西开;
+      屁诶迪迪吉: 0.5伊;
+      哦维伊哦豆-: 诶伊提哦;
+      比诶西开吉哦伊迪-西哦哦: #迪迪迪;
+      比哦迪伊: 1屁 哦迪 吉诶吾
     }
   
-    blockquote {
-      display: block;
-      margin-block-start: 1em;
-      margin-block-end: 1em;
-      margin-inline-start: 0;
-      margin-inline-end: 0;
-      padding: 0.1em 1.33em;
-      border-left: .25em solid gray;
+    比哦西开吉伊哦提伊 {
+      迪屁诶吾: 比哦西开;
+      诶吉-比哦西开-提诶提: 1伊;
+      诶吉-比哦西开-伊迪: 1伊;
+      诶吉-伊-提诶提: 0;
+      诶吉-伊-伊迪: 0;
+      屁诶迪迪吉: 0.1伊 1.33伊;
+      比哦迪伊-伊提: .25伊 哦迪 吉诶吾;
     }
   
-    ol {
-      display: block;
-      list-style-type: decimal;
-      margin-block-start: 1em;
-      margin-block-end: 1em;
-      margin-inline-start: 0;
-      margin-inline-end: 0;
-      padding-inline-start: 1em;
+    哦 {
+      迪屁诶吾: 比哦西开;
+      提-提吾伊-提吾屁伊: 迪伊西诶;
+      诶吉-比哦西开-提诶提: 1伊;
+      诶吉-比哦西开-伊迪: 1伊;
+      诶吉-伊-提诶提: 0;
+      诶吉-伊-伊迪: 0;
+      屁诶迪迪吉-伊-提诶提: 1伊;
     }
   
-    ul {
-      margin-block-start: 0;
-      margin-block-end: 0;
-      list-style-type: disc;
-      padding-inline-start: 1em;
+    伊 {
+      诶吉-比哦西开-提诶提: 0;
+      诶吉-比哦西开-伊迪: 0;
+      提-提吾伊-提吾屁伊: 迪西;
+      屁诶迪迪吉-伊-提诶提: 1伊;
     }
   
-    ul ul {
-      list-style-type: circle;
+    伊 伊 {
+      提-提吾伊-提吾屁伊: 西西伊;
     }
   
-    ul li, ol li {
-      margin-left: 18px;
+    伊 , 哦  {
+      诶吉-伊提: 18屁;
     }
 
-    strong, b{
-      font-family: '72-Bold','Roboto', Helvetica, sans-serif;
+    提哦吉, 比{
+      哦提-诶吾: '72-比哦迪','哦比哦提哦', 伊维伊提西诶, 诶-伊;
     }
 
-    cite, em, i {
-      font-family: '72-Italic','Roboto', Helvetica, sans-serif;
+    西提伊, 伊,  {
+      哦提-诶吾: '72-提诶西','哦比哦提哦', 伊维伊提西诶, 诶-伊;
     }
 
-    code {
-      font-family: Menlo, monospace, '72', '72full', 'Roboto', Helvetica, sans-serif;
-      font-size: 0.83em;
+    西哦迪伊 {
+      哦提-诶吾: 伊哦, 哦哦屁诶西伊, '72', '72伊', '哦比哦提哦', 伊维伊提西诶, 诶-伊;
+      哦提-贼伊: 0.83伊;
     }
   
-    strong em,
-    b em,
-    strong i,
-    b i {
-      font-family: '72-BoldItalic','Roboto', Helvetica, sans-serif;
+    提哦吉 伊,
+    比 伊,
+    提哦吉 ,
+    比  {
+      哦提-诶吾: '72-比哦迪提诶西','哦比哦提哦', 伊维伊提西诶, 诶-伊;
     }
 
-    h1 {
-      display: block;
-      font-size: 2em;
-      margin-block-start: 0.67em;
-      margin-block-end: 0.67em;
-      margin-inline-start: 0;
-      margin-inline-end: 0;
-      font-weight: bold;
+    1 {
+      迪屁诶吾: 比哦西开;
+      哦提-贼伊: 2伊;
+      诶吉-比哦西开-提诶提: 0.67伊;
+      诶吉-比哦西开-伊迪: 0.67伊;
+      诶吉-伊-提诶提: 0;
+      诶吉-伊-伊迪: 0;
+      哦提-豆伊吉提: 比哦迪;
     }
   
-    h2 {
-      display: block;
-      font-size: 1.5em;
-      margin-block-start: 0.83em;
-      margin-block-end: 0.83em;
-      margin-inline-start: 0;
-      margin-inline-end: 0;
-      font-weight: bold;
+    2 {
+      迪屁诶吾: 比哦西开;
+      哦提-贼伊: 1.5伊;
+      诶吉-比哦西开-提诶提: 0.83伊;
+      诶吉-比哦西开-伊迪: 0.83伊;
+      诶吉-伊-提诶提: 0;
+      诶吉-伊-伊迪: 0;
+      哦提-豆伊吉提: 比哦迪;
     }
   
-    h3 {
-      display: block;
-      font-size: 1.17em;
-      margin-block-start: 1em;
-      margin-block-end: 1em;
-      margin-inline-start: 0;
-      margin-inline-end: 0;
-      font-weight: bold;
+    3 {
+      迪屁诶吾: 比哦西开;
+      哦提-贼伊: 1.17伊;
+      诶吉-比哦西开-提诶提: 1伊;
+      诶吉-比哦西开-伊迪: 1伊;
+      诶吉-伊-提诶提: 0;
+      诶吉-伊-伊迪: 0;
+      哦提-豆伊吉提: 比哦迪;
     }
   
-    h4 {
-      display: block;
-      margin-block-start: 1.33em;
-      margin-block-end: 1.33em;
-      margin-inline-start: 0;
-      margin-inline-end: 0;
-      font-weight: bold;
+    4 {
+      迪屁诶吾: 比哦西开;
+      诶吉-比哦西开-提诶提: 1.33伊;
+      诶吉-比哦西开-伊迪: 1.33伊;
+      诶吉-伊-提诶提: 0;
+      诶吉-伊-伊迪: 0;
+      哦提-豆伊吉提: 比哦迪;
     }
   
-    h5 {
-      display: block;
-      font-size: 0.83em;
-      margin-block-start: 1.67em;
-      margin-block-end: 1.67em;
-      margin-inline-start: 0;
-      margin-inline-end: 0;
-      font-weight: bold;
+    5 {
+      迪屁诶吾: 比哦西开;
+      哦提-贼伊: 0.83伊;
+      诶吉-比哦西开-提诶提: 1.67伊;
+      诶吉-比哦西开-伊迪: 1.67伊;
+      诶吉-伊-提诶提: 0;
+      诶吉-伊-伊迪: 0;
+      哦提-豆伊吉提: 比哦迪;
     }
   
-    h6 {
-      display: block;
-      font-size: 0.67em;
-      margin-block-start: 2.33em;
-      margin-block-end: 2.33em;
-      margin-inline-start: 0;
-      margin-inline-end: 0;
-      font-weight: bold;
+    6 {
+      迪屁诶吾: 比哦西开;
+      哦提-贼伊: 0.67伊;
+      诶吉-比哦西开-提诶提: 2.33伊;
+      诶吉-比哦西开-伊迪: 2.33伊;
+      诶吉-伊-提诶提: 0;
+      诶吉-伊-伊迪: 0;
+      哦提-豆伊吉提: 比哦迪;
     }
   
-    table {
-      width: 100%;
-      border-spacing: 0;
+    提诶比伊 {
+      豆迪提: 100%;
+      比哦迪伊-屁诶西吉: 0;
     }
   
-    th {
-      border-width: 1px;
-      border-top-style: solid;
-      border-bottom-style: solid;
-      border-left-style: solid;
-      padding: 0.5rem 0.25rem;
+    提 {
+      比哦迪伊-豆迪提: 1屁;
+      比哦迪伊-提哦屁-提吾伊: 哦迪;
+      比哦迪伊-比哦提提哦-提吾伊: 哦迪;
+      比哦迪伊-伊提-提吾伊: 哦迪;
+      屁诶迪迪吉: 0.5伊 0.25伊;
     }
 
-    td {
-      border-bottom-style: solid;
-      border-left-style: solid;
-      border-width: 1px;
-      padding: 0.5rem;
+    提迪 {
+      比哦迪伊-比哦提提哦-提吾伊: 哦迪;
+      比哦迪伊-伊提-提吾伊: 哦迪;
+      比哦迪伊-豆迪提: 1屁;
+      屁诶迪迪吉: 0.5伊;
     }
 
-    th:last-child, td:last-child {
-      border-right-style: solid;     
+    提:诶提-西迪, 提迪:诶提-西迪 {
+      比哦迪伊-吉提-提吾伊: 哦迪;     
     }
   
   }
 
   /*
-   * Picture
+   * 屁西提伊伊
    */
 
-  .RecastAppPicture, .CaiAppPicture {
-    width: 270px;
-    max-height: 270px;
+  .伊西诶提诶屁屁屁西提伊伊, .西诶诶屁屁屁西提伊伊 {
+    豆迪提: 270屁;
+    诶-伊吉提: 270屁;
 
-    border-radius: 3px;
-    border: 1px solid lightgrey;
+    比哦迪伊-诶迪伊: 3屁;
+    比哦迪伊: 1屁 哦迪 吉提吉伊吾;
   }
 
   /*
-   * QuickReplies
+   * 吉伊西开伊屁伊
    */
 
-  .RecastAppQuickReplies, .CaiAppQuickReplies {
-    display: flex;
-    flex-direction: column;
+  .伊西诶提诶屁屁吉伊西开伊屁伊, .西诶诶屁屁吉伊西开伊屁伊 {
+    迪屁诶吾: 伊;
+    伊-迪伊西提哦: 西哦伊;
 
-    &--slider {
-      margin-top: 0.5rem;
-      max-width: 290px;
+    &--迪伊 {
+      诶吉-提哦屁: 0.5伊;
+      诶-豆迪提: 290屁;
     }
 
-    &--button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    &--比伊提提哦 {
+      迪屁诶吾: 伊;
+      诶吉-提伊: 西伊提伊;
+      杰伊提吾-西哦提伊提: 西伊提伊;
 
-      height: 34px;
-      padding: 0 1rem;
-      margin-left: 0.5rem;
+      伊吉提: 34屁;
+      屁诶迪迪吉: 0 1伊;
+      诶吉-伊提: 0.5伊;
 
-      cursor: pointer;
-      font-weight: bold;
-      border-radius: 25px;
+      西伊哦: 屁哦提伊;
+      哦提-豆伊吉提: 比哦迪;
+      比哦迪伊-诶迪伊: 25屁;
     }
 
-    &--ReadOnly {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-  }
-
-  /*
-   * Buttons
-   */
-  .Buttons {
-    width: 270px;
-    border: 1px solid lightgrey;
-    border-radius: 3px;
-
-    &--title {
-      max-width: 270px;
-      padding: 0.8rem;
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
-
-      white-space: pre-wrap;
-      overflow-wrap: break-word;
-    }
-
-    &--container {
-      border-top: 1px solid lightgrey;
+    &--伊诶迪哦吾 {
+      哦屁诶西提吾: 0.5;
+      西伊哦: 哦提-诶哦豆伊迪;
     }
   }
 
   /*
-   * Card
+   * 比伊提提哦
    */
+  .比伊提提哦 {
+    豆迪提: 270屁;
+    比哦迪伊: 1屁 哦迪 吉提吉伊吾;
+    比哦迪伊-诶迪伊: 3屁;
 
-  .RecastAppCard, .CaiAppCard {
-    width: 270px;
+    &--提提伊 {
+      诶-豆迪提: 270屁;
+      屁诶迪迪吉: 0.8伊;
+      比哦迪伊-提哦屁-伊提-诶迪伊: 3屁;
+      比哦迪伊-提哦屁-吉提-诶迪伊: 3屁;
 
-    border: 1px solid lightgrey;
-    border-radius: 3px;
-
-    &--img {
-      width: 270px;
-      max-height: 270px;
-
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
+      豆提伊-屁诶西伊: 屁伊-豆诶屁;
+      哦维伊哦豆-豆诶屁: 比伊诶开-豆哦迪;
     }
 
-    &--text {
-      padding: 0.4rem;
-
-      &-title {
-        font-weight: bold;
-      }
-
-      &-subtitle {
-        font-size: 14px;
-        font-weight: lighter;
-      }
-    }
-
-    &--button-container {
-      border-top: 1px solid lightgrey;
+    &--西哦提诶伊 {
+      比哦迪伊-提哦屁: 1屁 哦迪 吉提吉伊吾;
     }
   }
 
   /*
-   * List
+   * 西诶迪
    */
 
-  .RecastAppList, .CaiAppList {
-    border: 1px solid lightgrey;
-    border-radius: 3px;
+  .伊西诶提诶屁屁西诶迪, .西诶诶屁屁西诶迪 {
+    豆迪提: 270屁;
 
-    &--button {
-      border-top: 1px solid lightgrey;
+    比哦迪伊: 1屁 哦迪 吉提吉伊吾;
+    比哦迪伊-诶迪伊: 3屁;
+
+    &--吉 {
+      豆迪提: 270屁;
+      诶-伊吉提: 270屁;
+
+      比哦迪伊-提哦屁-伊提-诶迪伊: 3屁;
+      比哦迪伊-提哦屁-吉提-诶迪伊: 3屁;
     }
 
-    .RecastAppListElement, .CaiAppListElement {
-      display: flex;
-      width: 290px;
+    &--提伊提 {
+      屁诶迪迪吉: 0.4伊;
 
-      &--img {
-        width: 80px;
-        height: 80px;
-        margin: auto;
-
-        padding: 0.2rem;
+      &-提提伊 {
+        哦提-豆伊吉提: 比哦迪;
       }
 
-      &--container {
-        display: flex;
-        flex-direction: column;
-        border-left: 1px solid lightgrey;
-
-        width: 100%;
-        padding: 0.2rem;
-      }
-
-      &--title {
-        font-weight: bold;
-      }
-
-      &--subtitle {
-        font-size: 14px;
-        font-weight: lighter;
-        flex-grow: 1;
-      }
-
-      &--button {
-        align-self: flex-end;
-
-        padding: 0.2rem;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: bold;
-        color: cornflowerblue;
-        text-decoration: none;
-      }
-
-      &--ReadOnly {
-        opacity: 0.5;
-        cursor: not-allowed;
+      &-伊比提提伊 {
+        哦提-贼伊: 14屁;
+        哦提-豆伊吉提: 吉提伊;
       }
     }
 
-    .RecastAppListElement + .RecastAppListElement, .CaiAppListElement + .CaiAppListElement {
-      border-top: 1px solid lightgrey;
+    &--比伊提提哦-西哦提诶伊 {
+      比哦迪伊-提哦屁: 1屁 哦迪 吉提吉伊吾;
+    }
+  }
+
+  /*
+   * 提
+   */
+
+  .伊西诶提诶屁屁提, .西诶诶屁屁提 {
+    比哦迪伊: 1屁 哦迪 吉提吉伊吾;
+    比哦迪伊-诶迪伊: 3屁;
+
+    &--比伊提提哦 {
+      比哦迪伊-提哦屁: 1屁 哦迪 吉提吉伊吾;
+    }
+
+    .伊西诶提诶屁屁提伊伊伊提, .西诶诶屁屁提伊伊伊提 {
+      迪屁诶吾: 伊;
+      豆迪提: 290屁;
+
+      &--吉 {
+        豆迪提: 80屁;
+        伊吉提: 80屁;
+        诶吉: 诶伊提哦;
+
+        屁诶迪迪吉: 0.2伊;
+      }
+
+      &--西哦提诶伊 {
+        迪屁诶吾: 伊;
+        伊-迪伊西提哦: 西哦伊;
+        比哦迪伊-伊提: 1屁 哦迪 吉提吉伊吾;
+
+        豆迪提: 100%;
+        屁诶迪迪吉: 0.2伊;
+      }
+
+      &--提提伊 {
+        哦提-豆伊吉提: 比哦迪;
+      }
+
+      &--伊比提提伊 {
+        哦提-贼伊: 14屁;
+        哦提-豆伊吉提: 吉提伊;
+        伊-吉哦豆: 1;
+      }
+
+      &--比伊提提哦 {
+        诶吉-伊: 伊-伊迪;
+
+        屁诶迪迪吉: 0.2伊;
+        西伊哦: 屁哦提伊;
+        哦提-贼伊: 14屁;
+        哦提-豆伊吉提: 比哦迪;
+        西哦哦: 西哦哦豆伊比伊伊;
+        提伊提-迪伊西哦诶提哦: 哦伊;
+      }
+
+      &--伊诶迪哦吾 {
+        哦屁诶西提吾: 0.5;
+        西伊哦: 哦提-诶哦豆伊迪;
+      }
+    }
+
+    .伊西诶提诶屁屁提伊伊伊提 + .伊西诶提诶屁屁提伊伊伊提, .西诶诶屁屁提伊伊伊提 + .西诶诶屁屁提伊伊伊提 {
+      比哦迪伊-提哦屁: 1屁 哦迪 吉提吉伊吾;
     }
   }
 }
 
 /*
-  * Slider
+  * 迪伊
   */
 
-.RecastAppSlider,
-.Slider,
-.CaiAppSlider,
-.Slider {
-  max-width: 300px;
+.伊西诶提诶屁屁迪伊,
+.迪伊,
+.西诶诶屁屁迪伊,
+.迪伊 {
+  诶-豆迪提: 300屁;
 
-  .Arrow {
-    width: 25px;
-    height: 25px;
+  .诶哦豆 {
+    豆迪提: 25屁;
+    伊吉提: 25屁;
 
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
+    迪屁诶吾: 伊 !屁哦提诶提;
+    诶吉-提伊: 西伊提伊;
+    杰伊提吾-西哦提伊提: 西伊提伊;
 
-    font-size: 20px;
-    line-height: 17px;
+    哦提-贼伊: 20屁;
+    伊-伊吉提: 17屁;
 
-    color: grey !important;
-    background-color: white;
-    border: 1px solid lightgrey;
-    border-radius: 3px;
-    text-align: center;
+    西哦哦: 吉伊吾 !屁哦提诶提;
+    比诶西开吉哦伊迪-西哦哦: 豆提伊;
+    比哦迪伊: 1屁 哦迪 吉提吉伊吾;
+    比哦迪伊-诶迪伊: 3屁;
+    提伊提-诶吉: 西伊提伊;
 
-    &.slick-disabled {
-      display: none !important;
+    &.西开-迪诶比伊迪 {
+      迪屁诶吾: 哦伊 !屁哦提诶提;
     }
   }
 
-  .slick-list {
-    height: fit-content;
-    height: -moz-fit-content;
+  .西开-提 {
+    伊吉提: 提-西哦提伊提;
+    伊吉提: -哦贼-提-西哦提伊提;
   }
 
-  .slick-next {
-    @extend .Arrow;
+  .西开-伊提 {
+    @伊提伊迪 .诶哦豆;
   }
 
-  .slick-prev {
-    @extend .Arrow;
+  .西开-屁伊维 {
+    @伊提伊迪 .诶哦豆;
   }
 
-  .slick-prev:before {
-    display: none !important;
+  .西开-屁伊维:比伊哦伊 {
+    迪屁诶吾: 哦伊 !屁哦提诶提;
   }
 
-  .slick-next:before {
-    display: none !important;
+  .西开-伊提:比伊哦伊 {
+    迪屁诶吾: 哦伊 !屁哦提诶提;
   }
 }

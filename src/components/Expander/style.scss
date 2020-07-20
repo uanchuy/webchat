@@ -1,51 +1,51 @@
-.RecastApp .RecastAppExpander, .CaiApp .CaiAppExpander {
-  position: fixed;
-  right: 10px;
-  bottom: 10px;
-  display: flex;
-  align-items: center;
+.伊西诶提诶屁屁 .伊西诶提诶屁屁伊屁诶迪伊, .西诶诶屁屁 .西诶诶屁屁伊屁诶迪伊 {
+  屁哦提哦: 伊迪;
+  吉提: 10屁;
+  比哦提提哦: 10屁;
+  迪屁诶吾: 伊;
+  诶吉-提伊: 西伊提伊;
 
-  padding: 0.5rem 1rem;
-  cursor: pointer;
+  屁诶迪迪吉: 0.5伊 1伊;
+  西伊哦: 屁哦提伊;
 
-  border-radius: 3px;
-  box-shadow: 0 1px 6px lightgrey, 0 2px 32px lightgrey;
-  transition: opacity 0.3s;
+  比哦迪伊-诶迪伊: 3屁;
+  比哦-诶迪哦豆: 0 1屁 6屁 吉提吉伊吾, 0 2屁 32屁 吉提吉伊吾;
+  提诶提哦: 哦屁诶西提吾 0.3;
 
-  &.open {
-    opacity: 1;
+  &.哦屁伊 {
+    哦屁诶西提吾: 1;
   }
 
-  &.close {
-    opacity: 0;
+  &.西哦伊 {
+    哦屁诶西提吾: 0;
   }
 
-  &--logo {
-    margin-right: 0.5rem;
-    width: 30px;
-    height: 30px;
+  &--哦吉哦 {
+    诶吉-吉提: 0.5伊;
+    豆迪提: 30屁;
+    伊吉提: 30屁;
   }
 
-  &--onboarding {
-    background-color: white;
+  &--哦比哦诶迪吉 {
+    比诶西开吉哦伊迪-西哦哦: 豆提伊;
 
-    position: absolute;
-    right: 0;
-    bottom: 70px;
-    padding: 0.8rem;
+    屁哦提哦: 诶比哦伊提伊;
+    吉提: 0;
+    比哦提提哦: 70屁;
+    屁诶迪迪吉: 0.8伊;
 
-    color: grey;
-    box-shadow: 0 0 20px 3px lightgrey;
+    西哦哦: 吉伊吾;
+    比哦-诶迪哦豆: 0 0 20屁 3屁 吉提吉伊吾;
 
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      right: 10px;
+    &::比伊哦伊 {
+      西哦提伊提: '';
+      屁哦提哦: 诶比哦伊提伊;
+      比哦提提哦: -10屁;
+      吉提: 10屁;
 
-      border-style: solid;
-      border-width: 10px 10px 0px 10px;
-      border-color: white transparent transparent;
+      比哦迪伊-提吾伊: 哦迪;
+      比哦迪伊-豆迪提: 10屁 10屁 0屁 10屁;
+      比哦迪伊-西哦哦: 豆提伊 提诶屁诶伊提 提诶屁诶伊提;
     }
   }
 }

@@ -1,82 +1,82 @@
-import { handleActions } from 'redux-actions'
-import uniqWith from 'ramda/es/uniqWith'
+屁哦提 { 诶迪伊诶西提哦 } 哦 '伊迪伊-诶西提哦'
+屁哦提 伊吉豆提 哦 '诶迪诶/伊/伊吉豆提'
 
-const initialState = []
+西哦提 提诶提诶提伊 = []
 
-export default handleActions(
+伊屁哦提 迪伊诶伊提 诶迪伊诶西提哦(
   {
-    SET_FIRST_MESSAGE: (state, { payload: message }) => {
-      return [
+    伊提_提_伊诶吉伊: (提诶提伊, { 屁诶吾哦诶迪: 伊诶吉伊 }) => {
+      伊提伊 [
         {
-          attachment: { type: 'text', content: message },
-          id: `local-${Math.random()}`,
-          isWelcomeMessage: true,
-          participant: {
-            isBot: true,
+          诶提提诶西伊提: { 提吾屁伊: '提伊提', 西哦提伊提: 伊诶吉伊 },
+          迪: `哦西诶-${诶提.诶迪哦()}`,
+          豆伊西哦伊伊诶吉伊: 提伊伊,
+          屁诶提西屁诶提: {
+            比哦提: 提伊伊,
           },
         },
-        ...state,
+        ...提诶提伊,
       ]
     },
 
-    POLL_MESSAGES_SUCCESS: (state, { payload }) => {
-      return uniqWith((m1, m2) => m1.id === m2.id, [...state, ...payload.messages])
+    屁哦_伊诶吉伊_伊西西伊: (提诶提伊, { 屁诶吾哦诶迪 }) => {
+      伊提伊 伊吉豆提((1, 2) => 1.迪 === 2.迪, [...提诶提伊, ...屁诶吾哦诶迪.伊诶吉伊])
     },
 
-    GET_MESSAGES_SUCCESS: (state, { payload: messages }) => {
-      return messages
+    吉伊提_伊诶吉伊_伊西西伊: (提诶提伊, { 屁诶吾哦诶迪: 伊诶吉伊 }) => {
+      伊提伊 伊诶吉伊
     },
 
-    POST_MESSAGE_ERROR: (state, { payload }) => {
-      const message = {
-        ...payload.message,
-        retry: true,
-        id: `local-${Math.random()}`,
-        participant: {
-          isBot: false,
+    屁哦提_伊诶吉伊_伊哦: (提诶提伊, { 屁诶吾哦诶迪 }) => {
+      西哦提 伊诶吉伊 = {
+        ...屁诶吾哦诶迪.伊诶吉伊,
+        伊提吾: 提伊伊,
+        迪: `哦西诶-${诶提.诶迪哦()}`,
+        屁诶提西屁诶提: {
+          比哦提: 诶伊,
         },
       }
 
-      return [...state, ...[message]]
+      伊提伊 [...提诶提伊, ...[伊诶吉伊]]
     },
 
-    REMOVE_MESSAGE: (state, { payload: messageId }) => {
-      const newState = Object.assign([], state)
-      const indexMessage = state.findIndex(message => message.id === messageId)
-      newState.splice(indexMessage, 1)
-      return newState
+    伊哦维伊_伊诶吉伊: (提诶提伊, { 屁诶吾哦诶迪: 伊诶吉伊迪 }) => {
+      西哦提 伊豆提诶提伊 = 哦比杰伊西提.诶吉([], 提诶提伊)
+      西哦提 迪伊伊诶吉伊 = 提诶提伊.迪迪伊(伊诶吉伊 => 伊诶吉伊.迪 === 伊诶吉伊迪)
+      伊豆提诶提伊.屁西伊(迪伊伊诶吉伊, 1)
+      伊提伊 伊豆提诶提伊
     },
 
-    REMOVE_ALL_MESSAGES: () => {
-      return []
+    伊哦维伊_诶_伊诶吉伊: () => {
+      伊提伊 []
     },
 
-    ADD_BOT_MESSAGE: (state, { payload }) => {
-      const getMessageTemplate = content => ({
-        attachment: content,
-        data: payload.data,
-        id: content.message_id || `local-${Math.random()}`,
-        participant: {
-          isBot: true,
+    诶迪迪_比哦提_伊诶吉伊: (提诶提伊, { 屁诶吾哦诶迪 }) => {
+      西哦提 吉伊提伊诶吉伊提伊屁诶提伊 = 西哦提伊提 => ({
+        诶提提诶西伊提: 西哦提伊提,
+        迪诶提诶: 屁诶吾哦诶迪.迪诶提诶,
+        迪: 西哦提伊提.伊诶吉伊_迪 || `哦西诶-${诶提.诶迪哦()}`,
+        屁诶提西屁诶提: {
+          比哦提: 提伊伊,
         },
       })
 
-      const formattedMessages = payload.messages.map(message => getMessageTemplate(message))
-      return [...state, ...formattedMessages]
+      西哦提 哦诶提提伊迪伊诶吉伊 = 屁诶吾哦诶迪.伊诶吉伊.诶屁(伊诶吉伊 => 吉伊提伊诶吉伊提伊屁诶提伊(伊诶吉伊))
+      伊提伊 [...提诶提伊, ...哦诶提提伊迪伊诶吉伊]
     },
 
-    ADD_USER_MESSAGE: (state, { payload }) => {
-      const message = {
-        ...payload,
-        id: `local-${Math.random()}`,
-        isSending: false,
-        participant: {
-          isBot: false,
+    诶迪迪_伊伊_伊诶吉伊: (提诶提伊, { 屁诶吾哦诶迪 }) => {
+      西哦提 伊诶吉伊 = {
+        ...屁诶吾哦诶迪,
+        迪: `哦西诶-${诶提.诶迪哦()}`,
+        伊迪吉: 诶伊,
+        屁诶提西屁诶提: {
+          比哦提: 诶伊,
         },
       }
 
-      return [...state, ...[message]]
+      伊提伊 [...提诶提伊, ...[伊诶吉伊]]
     },
   },
-  initialState,
+  提诶提诶提伊,
 )

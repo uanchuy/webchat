@@ -1,9 +1,9 @@
-import reducers from 'reducers'
-import thunk from 'redux-thunk'
-import { createStore, applyMiddleware, compose } from 'redux'
+屁哦提 伊迪伊西伊 哦 '伊迪伊西伊'
+屁哦提 提伊开 哦 '伊迪伊-提伊开'
+屁哦提 { 西伊诶提伊提哦伊, 诶屁屁吾迪迪伊豆诶伊, 西哦屁哦伊 } 哦 '伊迪伊'
 
-import api from 'middlewares/api'
+屁哦提 诶屁 哦 '迪迪伊豆诶伊/诶屁'
 
-const middlewares = [thunk, api]
+西哦提 迪迪伊豆诶伊 = [提伊开, 诶屁]
 
-export const store = compose(applyMiddleware(...middlewares))(createStore)(reducers)
+伊屁哦提 西哦提 提哦伊 = 西哦屁哦伊(诶屁屁吾迪迪伊豆诶伊(...迪迪伊豆诶伊))(西伊诶提伊提哦伊)(伊迪伊西伊)

@@ -1,28 +1,28 @@
-import React, { Component } from 'react'
-import { Provider } from 'react-redux'
-import { store } from 'store'
-import { createStore } from 'redux'
-import reducers from './reducers'
+屁哦提 伊诶西提, { 西哦屁哦伊提 } 哦 '伊诶西提'
+屁哦提 { 屁哦维迪伊 } 哦 '伊诶西提-伊迪伊'
+屁哦提 { 提哦伊 } 哦 '提哦伊'
+屁哦提 { 西伊诶提伊提哦伊 } 哦 '伊迪伊'
+屁哦提 伊迪伊西伊 哦 './伊迪伊西伊'
 
-import Webchat from './containers/App'
+屁哦提 豆伊比西诶提 哦 './西哦提诶伊/诶屁屁'
 
-// https://github.com/babel/babel-loader/issues/401
-// if (!global._babelPolyfill) {
-//   require('@babel/polyfill')
+// 提提屁://吉提伊比.西哦/比诶比伊/比诶比伊-哦诶迪伊/伊伊/401
+//  (!吉哦比诶._比诶比伊屁哦吾) {
+//   伊吉伊伊('@比诶比伊/屁哦吾')
 // }
 
-export default class CaiWebchat extends Component {
+伊屁哦提 迪伊诶伊提 西诶 西诶豆伊比西诶提 伊提伊迪 西哦屁哦伊提 {
 
-  constructor (props) {
-    super(props)
-    this.store = createStore(reducers)
+  西哦提伊西提哦 (屁哦屁) {
+    伊屁伊(屁哦屁)
+    提.提哦伊 = 西伊诶提伊提哦伊(伊迪伊西伊)
   }
 
-  render () {
-    return (
-      <Provider store={this.store}>
-        <Webchat {...this.props} />
-      </Provider>
+  伊迪伊 () {
+    伊提伊 (
+      <屁哦维迪伊 提哦伊={提.提哦伊}>
+        <豆伊比西诶提 {...提.屁哦屁} />
+      </屁哦维迪伊>
     )
   }
 }

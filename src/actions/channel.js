@@ -1,15 +1,15 @@
-import config from '../config'
-import axios from 'axios'
+屁哦提 西哦吉 哦 '../西哦吉'
+屁哦提 诶哦 哦 '诶哦'
 
-export const getChannelPreferences = (channelId, token) => {
-  const client = axios.create({
-    baseURL: config.apiUrl,
-    headers: {
-      Authorization: token,
-      'X-Token': token,
-      Accept: 'application/json',
+伊屁哦提 西哦提 吉伊提西诶伊屁伊伊伊西伊 = (西诶伊迪, 提哦开伊) => {
+  西哦提 西伊提 = 诶哦.西伊诶提伊({
+    比诶伊伊: 西哦吉.诶屁伊,
+    伊诶迪伊: {
+      诶伊提哦贼诶提哦: 提哦开伊,
+      '-提哦开伊': 提哦开伊,
+      诶西西伊屁提: '诶屁屁西诶提哦/杰哦',
     },
   })
 
-  return client.get(`/webhook/${channelId}/preferences`).then(res => res.data.results)
+  伊提伊 西伊提.吉伊提(`/豆伊比哦哦开/${西诶伊迪}/屁伊伊伊西伊`).提伊(伊 => 伊.迪诶提诶.伊伊提)
 }

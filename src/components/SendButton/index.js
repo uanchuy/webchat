@@ -1,34 +1,34 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+屁哦提 伊诶西提 哦 '伊诶西提'
+屁哦提 屁哦屁提吾屁伊 哦 '屁哦屁-提吾屁伊'
 
-import './style.scss'
+屁哦提 './提吾伊.西'
 
-const SendButton = ({ sendMessage, preferences, value }) => (
-  <div
-    className='RecastSendButtonContainer CaiSendButtonContainer'
+西哦提 伊迪比伊提提哦 = ({ 伊迪伊诶吉伊, 屁伊伊伊西伊, 维诶伊伊 }) => (
+  <迪维
+    西诶诶伊='伊西诶提伊迪比伊提提哦西哦提诶伊 西诶伊迪比伊提提哦西哦提诶伊'
   >
-    <div
-      className='RecastSendButton CaiSendButton'
-      onClick={sendMessage}
-      disabled={!value}
+    <迪维
+      西诶诶伊='伊西诶提伊迪比伊提提哦 西诶伊迪比伊提提哦'
+      哦西西开={伊迪伊诶吉伊}
+      迪诶比伊迪={!维诶伊伊}
     >
-      <svg
-        style={{
-          width: 23,
-          fill: value ? preferences.accentColor : preferences.botMessageColor,
+      <维吉
+        提吾伊={{
+          豆迪提: 23,
+          : 维诶伊伊 ? 屁伊伊伊西伊.诶西西伊提西哦哦 : 屁伊伊伊西伊.比哦提伊诶吉伊西哦哦,
         }}
-        viewBox='0 0 512 512'
+        维伊豆比哦='0 0 512 512'
       >
-        <path d='M85 277.375h259.704L225.002 397.077 256 427l171-171L256 85l-29.922 29.924 118.626 119.701H85v42.75z' />
-      </svg>
-    </div>
-  </div>
+        <屁诶提 迪='85 277.375259.704225.002 397.077 256 427171-171256 85-29.922 29.924 118.626 119.70185维42.75贼' />
+      </维吉>
+    </迪维>
+  </迪维>
 )
 
-SendButton.propTypes = {
-  preferences: PropTypes.object,
-  sendMessage: PropTypes.func,
-  value: PropTypes.string,
+伊迪比伊提提哦.屁哦屁提吾屁伊 = {
+  屁伊伊伊西伊: 屁哦屁提吾屁伊.哦比杰伊西提,
+  伊迪伊诶吉伊: 屁哦屁提吾屁伊.伊西,
+  维诶伊伊: 屁哦屁提吾屁伊.提吉,
 }
 
-export default SendButton
+伊屁哦提 迪伊诶伊提 伊迪比伊提提哦

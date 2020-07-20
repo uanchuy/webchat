@@ -1,114 +1,114 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import Slider from 'react-slick'
-import sum from 'ramda/es/sum'
-import map from 'ramda/es/map'
-import values from 'ramda/es/values'
-import cx from 'classnames'
+屁哦提 伊诶西提, { 西哦屁哦伊提 } 哦 '伊诶西提'
+屁哦提 屁哦屁提吾屁伊 哦 '屁哦屁-提吾屁伊'
+屁哦提 迪伊 哦 '伊诶西提-西开'
+屁哦提 伊 哦 '诶迪诶/伊/伊'
+屁哦提 诶屁 哦 '诶迪诶/伊/诶屁'
+屁哦提 维诶伊伊 哦 '诶迪诶/伊/维诶伊伊'
+屁哦提 西 哦 '西诶诶伊'
 
-import { truncate, safeArrayOfItem } from 'helpers'
+屁哦提 { 提伊西诶提伊, 诶伊诶诶吾哦提伊 } 哦 '伊屁伊'
 
-import Text from './Text'
-import { PrevArrow, NextArrow } from 'components/arrows'
+屁哦提 提伊提 哦 './提伊提'
+屁哦提 { 屁伊维诶哦豆, 伊提诶哦豆 } 哦 '西哦屁哦伊提/诶哦豆'
 
-class QuickReplies extends Component {
-  state = {
-    displayQuickReplies: this.props.isLastMessage,
-    showArrow: true,
+西诶 吉伊西开伊屁伊 伊提伊迪 西哦屁哦伊提 {
+  提诶提伊 = {
+    迪屁诶吾吉伊西开伊屁伊: 提.屁哦屁.诶提伊诶吉伊,
+    哦豆诶哦豆: 提伊伊,
   }
 
-  static getDerivedStateFromProps (props, state) {
-    return { displayQuickReplies: props.isLastMessage }
+  提诶提西 吉伊提迪伊维伊迪提诶提伊哦屁哦屁 (屁哦屁, 提诶提伊) {
+    伊提伊 { 迪屁诶吾吉伊西开伊屁伊: 屁哦屁.诶提伊诶吉伊 }
   }
 
-  componentDidMount () {
-    const widthQuickReplies = sum(
-      values(
-        map(button => {
-          const dimensions = button.getBoundingClientRect()
-          return dimensions.width
-        }, this.buttons),
+  西哦屁哦伊提迪迪哦伊提 () {
+    西哦提 豆迪提吉伊西开伊屁伊 = 伊(
+      维诶伊伊(
+        诶屁(比伊提提哦 => {
+          西哦提 迪伊哦 = 比伊提提哦.吉伊提比哦伊迪吉西伊提伊西提()
+          伊提伊 迪伊哦.豆迪提
+        }, 提.比伊提提哦),
       ),
     )
 
-    if (widthQuickReplies <= 270) {
-      this.setState({ showArrow: false }) // eslint-disable-line react/no-did-mount-set-state
+     (豆迪提吉伊西开伊屁伊 <= 270) {
+      提.伊提提诶提伊({ 哦豆诶哦豆: 诶伊 }) // 伊提-迪诶比伊-伊 伊诶西提/哦-迪迪-哦伊提-伊提-提诶提伊
     }
   }
 
-   buttons = {}
+   比伊提提哦 = {}
 
-   _messageHasAlreadyBeenSent = false
-  doSendMessage = message => {
-    // BCP https://support.wdf.sap.corp/sap/support/message/2070183780
-    // Handle double click on slow systems
-    // Once the _messageHasAlreadyBeenSent is true,
-    // then one button click has already been send.
-    if (!this._messageHasAlreadyBeenSent) {
-      this._messageHasAlreadyBeenSent = true
-      this.setState({ displayQuickReplies: false }, () => {
-        this.props.sendMessage(message)
+   _伊诶吉伊诶诶伊诶迪吾比伊伊伊提 = 诶伊
+  迪哦伊迪伊诶吉伊 = 伊诶吉伊 => {
+    // 比西屁 提提屁://伊屁屁哦提.豆迪.诶屁.西哦屁/诶屁/伊屁屁哦提/伊诶吉伊/2070183780
+    // 诶迪伊 迪哦伊比伊 西西开 哦 哦豆 吾提伊
+    // 哦西伊 提伊 _伊诶吉伊诶诶伊诶迪吾比伊伊伊提  提伊伊,
+    // 提伊 哦伊 比伊提提哦 西西开 诶 诶伊诶迪吾 比伊伊 伊迪.
+     (!提._伊诶吉伊诶诶伊诶迪吾比伊伊伊提) {
+      提._伊诶吉伊诶诶伊诶迪吾比伊伊伊提 = 提伊伊
+      提.伊提提诶提伊({ 迪屁诶吾吉伊西开伊屁伊: 诶伊 }, () => {
+        提.屁哦屁.伊迪伊诶吉伊(伊诶吉伊)
       })
     }
   }
 
-  render () {
-    const { content, style, isMarkdown, readOnlyMode } = this.props
-    const { displayQuickReplies, showArrow } = this.state
-    const { title, buttons } = content
+  伊迪伊 () {
+    西哦提 { 西哦提伊提, 提吾伊, 诶开迪哦豆, 伊诶迪哦吾哦迪伊 } = 提.屁哦屁
+    西哦提 { 迪屁诶吾吉伊西开伊屁伊, 哦豆诶哦豆 } = 提.提诶提伊
+    西哦提 { 提提伊, 比伊提提哦 } = 西哦提伊提
 
-    return (
-      <div
-        className='RecastAppQuickReplies CaiAppQuickReplies'
-        ref={ref => {
-          this.container = ref
+    伊提伊 (
+      <迪维
+        西诶诶伊='伊西诶提诶屁屁吉伊西开伊屁伊 西诶诶屁屁吉伊西开伊屁伊'
+        伊={伊 => {
+          提.西哦提诶伊 = 伊
         }}
       >
-        <Text content={title} isMarkdown={isMarkdown} style={style} />
+        <提伊提 西哦提伊提={提提伊} 诶开迪哦豆={诶开迪哦豆} 提吾伊={提吾伊} />
 
-        {displayQuickReplies
-          && buttons
-          && !!buttons.length && (
-          <Slider
-            arrows={showArrow}
-            variableWidth
-            speed={200}
-            infinite={false}
-            draggable={false}
-            prevArrow={<PrevArrow />}
-            nextArrow={<NextArrow />}
-            className='RecastAppSlider RecastAppQuickReplies--slider CaiAppSlider CaiAppQuickReplies--slider'
+        {迪屁诶吾吉伊西开伊屁伊
+          && 比伊提提哦
+          && !!比伊提提哦.伊吉提 && (
+          <迪伊
+            诶哦豆={哦豆诶哦豆}
+            维诶诶比伊豆迪提
+            屁伊伊迪={200}
+            提伊={诶伊}
+            迪诶吉吉诶比伊={诶伊}
+            屁伊维诶哦豆={<屁伊维诶哦豆 />}
+            伊提诶哦豆={<伊提诶哦豆 />}
+            西诶诶伊='伊西诶提诶屁屁迪伊 伊西诶提诶屁屁吉伊西开伊屁伊--迪伊 西诶诶屁屁迪伊 西诶诶屁屁吉伊西开伊屁伊--迪伊'
           >
-            {safeArrayOfItem(buttons).map((b, i) => (
-              <div key={i}>
-                <div
-                  ref={ref => {
-                    this.buttons[i] = ref
+            {诶伊诶诶吾哦提伊(比伊提提哦).诶屁((比, ) => (
+              <迪维 开伊吾={}>
+                <迪维
+                  伊={伊 => {
+                    提.比伊提提哦[] = 伊
                   }}
-                  title={b.title.length > 20 ? b.title : null}
-                  className={cx('RecastAppQuickReplies--button CaiAppQuickReplies--button', { 'CaiAppQuickReplies--ReadOnly': readOnlyMode })}
-                  onClick={() => this.doSendMessage({ type: 'quickReply', content: b })}
-                  style={{
-                    border: `1px solid ${style.accentColor}`,
-                    color: style.accentColor,
+                  提提伊={比.提提伊.伊吉提 > 20 ? 比.提提伊 : 伊}
+                  西诶诶伊={西('伊西诶提诶屁屁吉伊西开伊屁伊--比伊提提哦 西诶诶屁屁吉伊西开伊屁伊--比伊提提哦', { '西诶诶屁屁吉伊西开伊屁伊--伊诶迪哦吾': 伊诶迪哦吾哦迪伊 })}
+                  哦西西开={() => 提.迪哦伊迪伊诶吉伊({ 提吾屁伊: '吉伊西开伊屁吾', 西哦提伊提: 比 })}
+                  提吾伊={{
+                    比哦迪伊: `1屁 哦迪 ${提吾伊.诶西西伊提西哦哦}`,
+                    西哦哦: 提吾伊.诶西西伊提西哦哦,
                   }}
                 >
-                  {truncate(b.title, 20)}
-                </div>
-              </div>
+                  {提伊西诶提伊(比.提提伊, 20)}
+                </迪维>
+              </迪维>
             ))}
-          </Slider>
+          </迪伊>
         )}
-      </div>
+      </迪维>
     )
   }
 }
 
-QuickReplies.propTypes = {
-  style: PropTypes.object,
-  content: PropTypes.object,
-  sendMessage: PropTypes.func,
-  readOnlyMode: PropTypes.bool,
+吉伊西开伊屁伊.屁哦屁提吾屁伊 = {
+  提吾伊: 屁哦屁提吾屁伊.哦比杰伊西提,
+  西哦提伊提: 屁哦屁提吾屁伊.哦比杰伊西提,
+  伊迪伊诶吉伊: 屁哦屁提吾屁伊.伊西,
+  伊诶迪哦吾哦迪伊: 屁哦屁提吾屁伊.比哦哦,
 }
 
-export default QuickReplies
+伊屁哦提 迪伊诶伊提 吉伊西开伊屁伊

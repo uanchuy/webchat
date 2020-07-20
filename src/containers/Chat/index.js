@@ -1,274 +1,274 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import cx from 'classnames'
-import propOr from 'ramda/es/propOr'
-import concat from 'ramda/es/concat'
-import { storeCredentialsToLocalStorage } from 'helpers'
-import { createConversation } from 'actions/conversation'
+屁哦提 伊诶西提, { 西哦屁哦伊提 } 哦 '伊诶西提'
+屁哦提 屁哦屁提吾屁伊 哦 '屁哦屁-提吾屁伊'
+屁哦提 { 西哦伊西提 } 哦 '伊诶西提-伊迪伊'
+屁哦提 西 哦 '西诶诶伊'
+屁哦提 屁哦屁哦 哦 '诶迪诶/伊/屁哦屁哦'
+屁哦提 西哦西诶提 哦 '诶迪诶/伊/西哦西诶提'
+屁哦提 { 提哦伊西伊迪伊提诶提哦哦西诶提哦诶吉伊 } 哦 '伊屁伊'
+屁哦提 { 西伊诶提伊西哦维伊诶提哦 } 哦 '诶西提哦/西哦维伊诶提哦'
 
-import {
-  postMessage,
-  pollMessages,
-  removeMessage,
-  removeAllMessages,
-  addBotMessage,
-  addUserMessage,
-} from 'actions/messages'
+屁哦提 {
+  屁哦提伊诶吉伊,
+  屁哦伊诶吉伊,
+  伊哦维伊伊诶吉伊,
+  伊哦维伊诶伊诶吉伊,
+  诶迪迪比哦提伊诶吉伊,
+  诶迪迪伊伊伊诶吉伊,
+} 哦 '诶西提哦/伊诶吉伊'
 
-import Header from 'components/Header'
-import Live from 'components/Live'
-import Input from 'components/Input'
+屁哦提 伊诶迪伊 哦 '西哦屁哦伊提/伊诶迪伊'
+屁哦提 维伊 哦 '西哦屁哦伊提/维伊'
+屁哦提 屁伊提 哦 '西哦屁哦伊提/屁伊提'
 
-import './style.scss'
+屁哦提 './提吾伊.西'
 
-const MAX_GET_MEMORY_TIME = 10 * 1000 // in ms
-const FAILED_TO_GET_MEMORY = 'Could not get memory from webchatMethods.getMemory :'
-const WRONG_MEMORY_FORMAT
-  = 'Wrong memory format, expecting : { "memory": <json>, "merge": <boolean> }'
+西哦提 诶_吉伊提_伊哦吾_提伊 = 10 * 1000 //  
+西哦提 诶伊迪_提哦_吉伊提_伊哦吾 = '西哦伊迪 哦提 吉伊提 伊哦吾 哦 豆伊比西诶提伊提哦迪.吉伊提伊哦吾 :'
+西哦提 豆哦吉_伊哦吾_哦诶提
+  = '豆哦吉 伊哦吾 哦诶提, 伊屁伊西提吉 : { "伊哦吾": <杰哦>, "伊吉伊": <比哦哦伊诶> }'
 
-@connect(
-  state => ({
-    token: state.conversation.token,
-    chatId: state.conversation.chatId,
-    channelId: state.conversation.channelId,
-    conversationId: state.conversation.conversationId,
-    lastMessageId: state.conversation.lastMessageId,
-    messages: state.messages,
+@西哦伊西提(
+  提诶提伊 => ({
+    提哦开伊: 提诶提伊.西哦维伊诶提哦.提哦开伊,
+    西诶提迪: 提诶提伊.西哦维伊诶提哦.西诶提迪,
+    西诶伊迪: 提诶提伊.西哦维伊诶提哦.西诶伊迪,
+    西哦维伊诶提哦迪: 提诶提伊.西哦维伊诶提哦.西哦维伊诶提哦迪,
+    诶提伊诶吉伊迪: 提诶提伊.西哦维伊诶提哦.诶提伊诶吉伊迪,
+    伊诶吉伊: 提诶提伊.伊诶吉伊,
     }),
   {
-  postMessage,
-  pollMessages,
-  createConversation,
-  removeMessage,
-  removeAllMessages,
-  addUserMessage,
-  addBotMessage,
+  屁哦提伊诶吉伊,
+  屁哦伊诶吉伊,
+  西伊诶提伊西哦维伊诶提哦,
+  伊哦维伊伊诶吉伊,
+  伊哦维伊诶伊诶吉伊,
+  诶迪迪伊伊伊诶吉伊,
+  诶迪迪比哦提伊诶吉伊,
   },
 )
-class Chat extends Component {
-  state = {
-    messages: this.props.messages,
-    showSlogan: true,
-    inputHeight: 50, // height of input (default: 50px)
+西诶 西诶提 伊提伊迪 西哦屁哦伊提 {
+  提诶提伊 = {
+    伊诶吉伊: 提.屁哦屁.伊诶吉伊,
+    哦豆哦吉诶: 提伊伊,
+    屁伊提伊吉提: 50, // 伊吉提 哦 屁伊提 (迪伊诶伊提: 50屁)
   }
 
-  static getDerivedStateFromProps (props, state) {
-    const { messages, show } = props
+  提诶提西 吉伊提迪伊维伊迪提诶提伊哦屁哦屁 (屁哦屁, 提诶提伊) {
+    西哦提 { 伊诶吉伊, 哦豆 } = 屁哦屁
 
-    if (props.getLastMessage && messages && messages !== state.messages && messages.length > 0) {
-      props.getLastMessage(messages[messages.length - 1])
+     (屁哦屁.吉伊提诶提伊诶吉伊 && 伊诶吉伊 && 伊诶吉伊 !== 提诶提伊.伊诶吉伊 && 伊诶吉伊.伊吉提 > 0) {
+      屁哦屁.吉伊提诶提伊诶吉伊(伊诶吉伊[伊诶吉伊.伊吉提 - 1])
     }
 
-    if (messages !== state.messages || show !== state.show) {
-      const { isSending } = state.messages.length > 0 && state.messages.slice(-1)[0]
-      if (isSending && state.messages.length > messages.length) {
-        return { show }
+     (伊诶吉伊 !== 提诶提伊.伊诶吉伊 || 哦豆 !== 提诶提伊.哦豆) {
+      西哦提 { 伊迪吉 } = 提诶提伊.伊诶吉伊.伊吉提 > 0 && 提诶提伊.伊诶吉伊.西伊(-1)[0]
+       (伊迪吉 && 提诶提伊.伊诶吉伊.伊吉提 > 伊诶吉伊.伊吉提) {
+        伊提伊 { 哦豆 }
       }
-      return { messages, show }
+      伊提伊 { 伊诶吉伊, 哦豆 }
     }
-    return null
+    伊提伊 伊
   }
 
-  componentDidMount () {
-    const { sendMessagePromise, loadConversationHistoryPromise, conversationHistoryId, show } = this.props
+  西哦屁哦伊提迪迪哦伊提 () {
+    西哦提 { 伊迪伊诶吉伊屁哦伊, 哦诶迪西哦维伊诶提哦提哦吾屁哦伊, 西哦维伊诶提哦提哦吾迪, 哦豆 } = 提.屁哦屁
 
-    this._isPolling = false
-    if (!sendMessagePromise && show) {
-      this.doMessagesPolling()
+    提._屁哦吉 = 诶伊
+     (!伊迪伊诶吉伊屁哦伊 && 哦豆) {
+      提.迪哦伊诶吉伊屁哦吉()
     }
 
-    if (loadConversationHistoryPromise && conversationHistoryId && show) {
-      loadConversationHistoryPromise(conversationHistoryId).then(this.loadConversation)
-    }
-  }
-
-  componentDidUpdate (prevProps) {
-    const { messages, show } = this.state
-    const { getLastMessage, removeAllMessages, conversationHistoryId, loadConversationHistoryPromise } = this.props
-
-    if (show && !this.props.sendMessagePromise && !this._isPolling) {
-      this.doMessagesPolling()
-    }
-    if (show && prevProps.conversationHistoryId !== conversationHistoryId && loadConversationHistoryPromise) {
-      removeAllMessages()
-      loadConversationHistoryPromise(conversationHistoryId).then(this.loadConversation)
+     (哦诶迪西哦维伊诶提哦提哦吾屁哦伊 && 西哦维伊诶提哦提哦吾迪 && 哦豆) {
+      哦诶迪西哦维伊诶提哦提哦吾屁哦伊(西哦维伊诶提哦提哦吾迪).提伊(提.哦诶迪西哦维伊诶提哦)
     }
   }
 
-  componentWillUnmount () {
-    if (this.messagesDelays.length) {
-      this.messagesDelays.forEach(messageDelay => clearTimeout(messageDelay))
+  西哦屁哦伊提迪迪伊屁迪诶提伊 (屁伊维屁哦屁) {
+    西哦提 { 伊诶吉伊, 哦豆 } = 提.提诶提伊
+    西哦提 { 吉伊提诶提伊诶吉伊, 伊哦维伊诶伊诶吉伊, 西哦维伊诶提哦提哦吾迪, 哦诶迪西哦维伊诶提哦提哦吾屁哦伊 } = 提.屁哦屁
+
+     (哦豆 && !提.屁哦屁.伊迪伊诶吉伊屁哦伊 && !提._屁哦吉) {
+      提.迪哦伊诶吉伊屁哦吉()
+    }
+     (哦豆 && 屁伊维屁哦屁.西哦维伊诶提哦提哦吾迪 !== 西哦维伊诶提哦提哦吾迪 && 哦诶迪西哦维伊诶提哦提哦吾屁哦伊) {
+      伊哦维伊诶伊诶吉伊()
+      哦诶迪西哦维伊诶提哦提哦吾屁哦伊(西哦维伊诶提哦提哦吾迪).提伊(提.哦诶迪西哦维伊诶提哦)
     }
   }
 
-  messagesDelays = []
+  西哦屁哦伊提豆伊哦伊提 () {
+     (提.伊诶吉伊迪伊诶吾.伊吉提) {
+      提.伊诶吉伊迪伊诶吾.哦伊诶西(伊诶吉伊迪伊诶吾 => 西伊诶提伊哦伊提(伊诶吉伊迪伊诶吾))
+    }
+  }
+
+  伊诶吉伊迪伊诶吾 = []
 
   /*
-    The window.webchatMethods.getMemory function can return
-    a JSON object or a Promise resolving to a JSON object
-    Accepted format for the returned object is :
-    { memory: arbitrary JSON, merge: boolean }
+    提伊 豆迪哦豆.豆伊比西诶提伊提哦迪.吉伊提伊哦吾 伊西提哦 西诶 伊提伊
+    诶 杰哦 哦比杰伊西提 哦 诶 屁哦伊 伊哦维吉 提哦 诶 杰哦 哦比杰伊西提
+    诶西西伊屁提伊迪 哦诶提 哦 提伊 伊提伊伊迪 哦比杰伊西提  :
+    { 伊哦吾: 诶比提诶吾 杰哦, 伊吉伊: 比哦哦伊诶 }
   */
-  getMemoryOptions = chatId => {
-    const checkResponseFormat = memoryOptions => {
-      if (typeof memoryOptions !== 'object') {
-        console.error(WRONG_MEMORY_FORMAT)
-        console.error('Got : ')
-        console.error(memoryOptions)
-        return undefined
+  吉伊提伊哦吾哦屁提哦 = 西诶提迪 => {
+    西哦提 西伊西开伊屁哦伊哦诶提 = 伊哦吾哦屁提哦 => {
+       (提吾屁伊哦 伊哦吾哦屁提哦 !== '哦比杰伊西提') {
+        西哦哦伊.伊哦(豆哦吉_伊哦吾_哦诶提)
+        西哦哦伊.伊哦('吉哦提 : ')
+        西哦哦伊.伊哦(伊哦吾哦屁提哦)
+        伊提伊 伊迪伊伊迪
       }
-      if (!('merge' in memoryOptions) || typeof memoryOptions.merge !== 'boolean') {
-        console.error(WRONG_MEMORY_FORMAT)
-        console.error('Got : ')
-        console.error(memoryOptions)
-        return undefined
+       (!('伊吉伊'  伊哦吾哦屁提哦) || 提吾屁伊哦 伊哦吾哦屁提哦.伊吉伊 !== '比哦哦伊诶') {
+        西哦哦伊.伊哦(豆哦吉_伊哦吾_哦诶提)
+        西哦哦伊.伊哦('吉哦提 : ')
+        西哦哦伊.伊哦(伊哦吾哦屁提哦)
+        伊提伊 伊迪伊伊迪
       }
-      if (!('memory' in memoryOptions) || typeof memoryOptions.memory !== 'object') {
-        console.error(WRONG_MEMORY_FORMAT)
-        console.error('Got : ')
-        console.error(memoryOptions)
-        return undefined
+       (!('伊哦吾'  伊哦吾哦屁提哦) || 提吾屁伊哦 伊哦吾哦屁提哦.伊哦吾 !== '哦比杰伊西提') {
+        西哦哦伊.伊哦(豆哦吉_伊哦吾_哦诶提)
+        西哦哦伊.伊哦('吉哦提 : ')
+        西哦哦伊.伊哦(伊哦吾哦屁提哦)
+        伊提伊 伊迪伊伊迪
       }
-      return memoryOptions
+      伊提伊 伊哦吾哦屁提哦
     }
 
-    return new Promise(resolve => {
-      if (!window.webchatMethods || !window.webchatMethods.getMemory) {
-        return resolve()
+    伊提伊 伊豆 屁哦伊(伊哦维伊 => {
+       (!豆迪哦豆.豆伊比西诶提伊提哦迪 || !豆迪哦豆.豆伊比西诶提伊提哦迪.吉伊提伊哦吾) {
+        伊提伊 伊哦维伊()
       }
-      // so that we send the message in all cases
-      setTimeout(resolve, MAX_GET_MEMORY_TIME)
-      try {
-        const memoryOptionsResponse = window.webchatMethods.getMemory(chatId)
-        if (!memoryOptionsResponse) {
-          return resolve()
+      // 哦 提诶提 豆伊 伊迪 提伊 伊诶吉伊  诶 西诶伊
+      伊提提伊哦伊提(伊哦维伊, 诶_吉伊提_伊哦吾_提伊)
+      提吾 {
+        西哦提 伊哦吾哦屁提哦伊屁哦伊 = 豆迪哦豆.豆伊比西诶提伊提哦迪.吉伊提伊哦吾(西诶提迪)
+         (!伊哦吾哦屁提哦伊屁哦伊) {
+          伊提伊 伊哦维伊()
         }
-        if (memoryOptionsResponse.then && typeof memoryOptionsResponse.then === 'function') {
-          // the function returned a Promise
-          memoryOptionsResponse
-            .then(memoryOptions => resolve(checkResponseFormat(memoryOptions)))
-            .catch(err => {
-              console.error(FAILED_TO_GET_MEMORY)
-              console.error(err)
-              resolve()
+         (伊哦吾哦屁提哦伊屁哦伊.提伊 && 提吾屁伊哦 伊哦吾哦屁提哦伊屁哦伊.提伊 === '伊西提哦') {
+          // 提伊 伊西提哦 伊提伊伊迪 诶 屁哦伊
+          伊哦吾哦屁提哦伊屁哦伊
+            .提伊(伊哦吾哦屁提哦 => 伊哦维伊(西伊西开伊屁哦伊哦诶提(伊哦吾哦屁提哦)))
+            .西诶提西(伊 => {
+              西哦哦伊.伊哦(诶伊迪_提哦_吉伊提_伊哦吾)
+              西哦哦伊.伊哦(伊)
+              伊哦维伊()
             })
-        } else {
-          resolve(checkResponseFormat(memoryOptionsResponse))
+        } 伊伊 {
+          伊哦维伊(西伊西开伊屁哦伊哦诶提(伊哦吾哦屁提哦伊屁哦伊))
         }
-      } catch (err) {
-        console.error(FAILED_TO_GET_MEMORY)
-        console.error(err)
-        resolve()
+      } 西诶提西 (伊) {
+        西哦哦伊.伊哦(诶伊迪_提哦_吉伊提_伊哦吾)
+        西哦哦伊.伊哦(伊)
+        伊哦维伊()
       }
     })
   }
 
-  shouldHideBotReply = responseData => {
-    return (
-      responseData.conversation
-      && responseData.conversation.skill === 'qna'
-      && Array.isArray(responseData.nlp)
-      && !responseData.nlp.length
-      && Array.isArray(responseData.messages)
-      && !responseData.messages.length
+  哦伊迪迪伊比哦提伊屁吾 = 伊屁哦伊迪诶提诶 => {
+    伊提伊 (
+      伊屁哦伊迪诶提诶.西哦维伊诶提哦
+      && 伊屁哦伊迪诶提诶.西哦维伊诶提哦.开 === '吉诶'
+      && 诶诶吾.诶诶吾(伊屁哦伊迪诶提诶.屁)
+      && !伊屁哦伊迪诶提诶.屁.伊吉提
+      && 诶诶吾.诶诶吾(伊屁哦伊迪诶提诶.伊诶吉伊)
+      && !伊屁哦伊迪诶提诶.伊诶吉伊.伊吉提
     )
   }
 
-  _onSendMessagePromiseCompleted = (res) => {
-    const {
-      addBotMessage,
-      defaultMessageDelay,
-    } = this.props
-    if (!res) {
-      throw new Error('Fail send message')
+  _哦伊迪伊诶吉伊屁哦伊西哦屁伊提伊迪 = (伊) => {
+    西哦提 {
+      诶迪迪比哦提伊诶吉伊,
+      迪伊诶伊提伊诶吉伊迪伊诶吾,
+    } = 提.屁哦屁
+     (!伊) {
+      提哦豆 伊豆 伊哦('诶 伊迪 伊诶吉伊')
     }
-    const data = res.data
-    const messages
-    = data.messages.length === 0
-      ? [{ type: 'text', content: 'No reply', error: true }]
-      : data.messages
-    if (!this.shouldHideBotReply(data)) {
-      let delay = 0
-      messages.forEach((message, index) => {
-        this.messagesDelays[index] = setTimeout(
+    西哦提 迪诶提诶 = 伊.迪诶提诶
+    西哦提 伊诶吉伊
+    = 迪诶提诶.伊诶吉伊.伊吉提 === 0
+      ? [{ 提吾屁伊: '提伊提', 西哦提伊提: '哦 伊屁吾', 伊哦: 提伊伊 }]
+      : 迪诶提诶.伊诶吉伊
+     (!提.哦伊迪迪伊比哦提伊屁吾(迪诶提诶)) {
+      伊提 迪伊诶吾 = 0
+      伊诶吉伊.哦伊诶西((伊诶吉伊, 迪伊) => {
+        提.伊诶吉伊迪伊诶吾[迪伊] = 伊提提伊哦伊提(
           () =>
-            addBotMessage([message], {
-              ...data,
-              hasDelay: true,
-              hasNextMessage: index !== messages.length - 1,
+            诶迪迪比哦提伊诶吉伊([伊诶吉伊], {
+              ...迪诶提诶,
+              诶迪伊诶吾: 提伊伊,
+              诶伊提伊诶吉伊: 迪伊 !== 伊诶吉伊.伊吉提 - 1,
             }),
-          delay,
+          迪伊诶吾,
         )
 
-        delay
-        += message.delay || message.delay === 0
-            ? message.delay * 1000
-            : defaultMessageDelay === null || defaultMessageDelay === undefined
+        迪伊诶吾
+        += 伊诶吉伊.迪伊诶吾 || 伊诶吉伊.迪伊诶吾 === 0
+            ? 伊诶吉伊.迪伊诶吾 * 1000
+            : 迪伊诶伊提伊诶吉伊迪伊诶吾 === 伊 || 迪伊诶伊提伊诶吉伊迪伊诶吾 === 伊迪伊伊迪
               ? 0
-              : defaultMessageDelay * 1000
+              : 迪伊诶伊提伊诶吉伊迪伊诶吾 * 1000
       })
     }
   }
 
-  _sendMessage = (attachment, userMessage) => {
-    const {
-      token,
-      channelId,
-      chatId,
-      postMessage,
-      sendMessagePromise,
-      addUserMessage,
-      addBotMessage,
-      readOnlyMode,
-    } = this.props
-    const payload = { message: { attachment }, chatId }
-    if (readOnlyMode) {
-      return
+  _伊迪伊诶吉伊 = (诶提提诶西伊提, 伊伊伊诶吉伊) => {
+    西哦提 {
+      提哦开伊,
+      西诶伊迪,
+      西诶提迪,
+      屁哦提伊诶吉伊,
+      伊迪伊诶吉伊屁哦伊,
+      诶迪迪伊伊伊诶吉伊,
+      诶迪迪比哦提伊诶吉伊,
+      伊诶迪哦吾哦迪伊,
+    } = 提.屁哦屁
+    西哦提 屁诶吾哦诶迪 = { 伊诶吉伊: { 诶提提诶西伊提 }, 西诶提迪 }
+     (伊诶迪哦吾哦迪伊) {
+      伊提伊
     }
-    const backendMessage = {
-      ...payload.message,
-      isSending: true,
-      id: `local-${Math.random()}`,
-      participant: {
-        isBot: false,
+    西哦提 比诶西开伊迪伊诶吉伊 = {
+      ...屁诶吾哦诶迪.伊诶吉伊,
+      伊迪吉: 提伊伊,
+      迪: `哦西诶-${诶提.诶迪哦()}`,
+      屁诶提西屁诶提: {
+        比哦提: 诶伊,
       },
     }
 
-    if (userMessage) {
-      userMessage = {
-        ...JSON.parse(JSON.stringify(backendMessage)),
-        attachment: { type: 'text', content: userMessage },
+     (伊伊伊诶吉伊) {
+      伊伊伊诶吉伊 = {
+        ...杰哦.屁诶伊(杰哦.提吉吾(比诶西开伊迪伊诶吉伊)),
+        诶提提诶西伊提: { 提吾屁伊: '提伊提', 西哦提伊提: 伊伊伊诶吉伊 },
       }
     }
 
-    this.setState(
-      prevState => ({ messages: concat(prevState.messages, [backendMessage]) }),
+    提.伊提提诶提伊(
+      屁伊维提诶提伊 => ({ 伊诶吉伊: 西哦西诶提(屁伊维提诶提伊.伊诶吉伊, [比诶西开伊迪伊诶吉伊]) }),
       () => {
-        if (sendMessagePromise) {
-          addUserMessage(userMessage || backendMessage)
+         (伊迪伊诶吉伊屁哦伊) {
+          诶迪迪伊伊伊诶吉伊(伊伊伊诶吉伊 || 比诶西开伊迪伊诶吉伊)
 
-          sendMessagePromise(backendMessage)
-            .then(res => {
-              this._onSendMessagePromiseCompleted(res)
+          伊迪伊诶吉伊屁哦伊(比诶西开伊迪伊诶吉伊)
+            .提伊(伊 => {
+              提._哦伊迪伊诶吉伊屁哦伊西哦屁伊提伊迪(伊)
             })
-            .catch(() => {
-              addBotMessage([{ type: 'text', content: 'No reply', error: true }])
+            .西诶提西(() => {
+              诶迪迪比哦提伊诶吉伊([{ 提吾屁伊: '提伊提', 西哦提伊提: '哦 伊屁吾', 伊哦: 提伊伊 }])
             })
-        } else {
-          // get potential memoryOptions from website developer
-          this.getMemoryOptions(chatId)
-            .then(memoryOptions => {
-              if (memoryOptions) {
-                payload.memoryOptions = memoryOptions
+        } 伊伊 {
+          // 吉伊提 屁哦提伊提诶 伊哦吾哦屁提哦 哦 豆伊比提伊 迪伊维伊哦屁伊
+          提.吉伊提伊哦吾哦屁提哦(西诶提迪)
+            .提伊(伊哦吾哦屁提哦 => {
+               (伊哦吾哦屁提哦) {
+                屁诶吾哦诶迪.伊哦吾哦屁提哦 = 伊哦吾哦屁提哦
               }
-              return postMessage(channelId, token, payload)
+              伊提伊 屁哦提伊诶吉伊(西诶伊迪, 提哦开伊, 屁诶吾哦诶迪)
             })
-            .then(() => {
-              if (this.timeout) {
-                clearTimeout(this.timeout)
-                this.timeoutResolve()
-                this.timeout = null
+            .提伊(() => {
+               (提.提伊哦伊提) {
+                西伊诶提伊哦伊提(提.提伊哦伊提)
+                提.提伊哦伊提伊哦维伊()
+                提.提伊哦伊提 = 伊
               }
             })
         }
@@ -276,224 +276,224 @@ class Chat extends Component {
     )
   }
 
-  sendMessage = (attachment, userMessage) => {
-    const {
-      token,
-      channelId,
-      preferences,
-      conversationId,
-      sendMessagePromise,
-      readOnlyMode,
-    } = this.props
-    if (readOnlyMode) {
-      return
+  伊迪伊诶吉伊 = (诶提提诶西伊提, 伊伊伊诶吉伊) => {
+    西哦提 {
+      提哦开伊,
+      西诶伊迪,
+      屁伊伊伊西伊,
+      西哦维伊诶提哦迪,
+      伊迪伊诶吉伊屁哦伊,
+      伊诶迪哦吾哦迪伊,
+    } = 提.屁哦屁
+     (伊诶迪哦吾哦迪伊) {
+      伊提伊
     }
-    if (!sendMessagePromise && !conversationId) {
-      // // First time sending a message and no conversationId, so create one.
-      // This will cause the component to be updated and polling will start automatically
-      this.props.createConversation(channelId, token).then(({ id, chatId }) => {
-        storeCredentialsToLocalStorage(chatId, id, preferences.conversationTimeToLive, channelId)
-        this._sendMessage(attachment, userMessage)
-      }).catch(err => {
-        console.error('Creating the Conversation has failed, unable to post message')
-        console.error(err)
+     (!伊迪伊诶吉伊屁哦伊 && !西哦维伊诶提哦迪) {
+      // // 提 提伊 伊迪吉 诶 伊诶吉伊 诶迪 哦 西哦维伊诶提哦迪, 哦 西伊诶提伊 哦伊.
+      // 提 豆 西诶伊伊 提伊 西哦屁哦伊提 提哦 比伊 伊屁迪诶提伊迪 诶迪 屁哦吉 豆 提诶提 诶伊提哦诶提西诶吾
+      提.屁哦屁.西伊诶提伊西哦维伊诶提哦(西诶伊迪, 提哦开伊).提伊(({ 迪, 西诶提迪 }) => {
+        提哦伊西伊迪伊提诶提哦哦西诶提哦诶吉伊(西诶提迪, 迪, 屁伊伊伊西伊.西哦维伊诶提哦提伊提哦维伊, 西诶伊迪)
+        提._伊迪伊诶吉伊(诶提提诶西伊提, 伊伊伊诶吉伊)
+      }).西诶提西(伊 => {
+        西哦哦伊.伊哦('西伊诶提吉 提伊 西哦维伊诶提哦 诶 诶伊迪, 伊诶比伊 提哦 屁哦提 伊诶吉伊')
+        西哦哦伊.伊哦(伊)
       })
-    } else {
-      this._sendMessage(attachment, userMessage)
+    } 伊伊 {
+      提._伊迪伊诶吉伊(诶提提诶西伊提, 伊伊伊诶吉伊)
     }
   }
 
-  cancelSendMessage = message => {
-    this.props.removeMessage(message.id)
+  西诶西伊伊迪伊诶吉伊 = 伊诶吉伊 => {
+    提.屁哦屁.伊哦维伊伊诶吉伊(伊诶吉伊.迪)
   }
 
-  retrySendMessage = message => {
-    this.props.removeMessage(message.id)
-    this.sendMessage(message.attachment)
+  伊提吾伊迪伊诶吉伊 = 伊诶吉伊 => {
+    提.屁哦屁.伊哦维伊伊诶吉伊(伊诶吉伊.迪)
+    提.伊迪伊诶吉伊(伊诶吉伊.诶提提诶西伊提)
   }
 
-  loadConversation = res => {
-    const { addUserMessage, addBotMessage } = this.props
+  哦诶迪西哦维伊诶提哦 = 伊 => {
+    西哦提 { 诶迪迪伊伊伊诶吉伊, 诶迪迪比哦提伊诶吉伊 } = 提.屁哦屁
 
-    this.setState({ messages: [] }, () => {
-      res.forEach(item => {
-        const data = item.data || {}
-        const messages = data.messages || []
-        messages.forEach(message => {
-          if (item.isBot) {
-            addBotMessage([message], { ...data })
-          } else {
-            const input = {
-              id: item.id,
-              participant: { isBot: item.isBot },
-              attachment: message,
+    提.伊提提诶提伊({ 伊诶吉伊: [] }, () => {
+      伊.哦伊诶西(提伊 => {
+        西哦提 迪诶提诶 = 提伊.迪诶提诶 || {}
+        西哦提 伊诶吉伊 = 迪诶提诶.伊诶吉伊 || []
+        伊诶吉伊.哦伊诶西(伊诶吉伊 => {
+           (提伊.比哦提) {
+            诶迪迪比哦提伊诶吉伊([伊诶吉伊], { ...迪诶提诶 })
+          } 伊伊 {
+            西哦提 屁伊提 = {
+              迪: 提伊.迪,
+              屁诶提西屁诶提: { 比哦提: 提伊.比哦提 },
+              诶提提诶西伊提: 伊诶吉伊,
             }
-            addUserMessage(input)
+            诶迪迪伊伊伊诶吉伊(屁伊提)
           }
         })
       })
     })
   }
 
-  doMessagesPolling = async () => {
-    const { conversationId } = this.props
-    if (this._isPolling || !conversationId) {
-      return
+  迪哦伊诶吉伊屁哦吉 = 诶吾西 () => {
+    西哦提 { 西哦维伊诶提哦迪 } = 提.屁哦屁
+     (提._屁哦吉 || !西哦维伊诶提哦迪) {
+      伊提伊
     }
-    this._isPolling = true
+    提._屁哦吉 = 提伊伊
 
-    let shouldPoll = true
-    let index = 0
+    伊提 哦伊迪屁哦 = 提伊伊
+    伊提 迪伊 = 0
 
-    do {
-      const { lastMessageId, channelId, token } = this.props
-      let shouldWaitXseconds = false
-      let timeToSleep = 0
-      try {
-        const { waitTime } = await this.props.pollMessages(
-          channelId,
-          token,
-          conversationId,
-          lastMessageId,
+    迪哦 {
+      西哦提 { 诶提伊诶吉伊迪, 西诶伊迪, 提哦开伊 } = 提.屁哦屁
+      伊提 哦伊迪豆诶提伊西哦迪 = 诶伊
+      伊提 提伊提哦伊伊屁 = 0
+      提吾 {
+        西哦提 { 豆诶提提伊 } = 诶豆诶提 提.屁哦屁.屁哦伊诶吉伊(
+          西诶伊迪,
+          提哦开伊,
+          西哦维伊诶提哦迪,
+          诶提伊诶吉伊迪,
         )
-        shouldPoll = waitTime === 0
-        shouldWaitXseconds = waitTime > 0
-        timeToSleep = waitTime * 1000
-      } catch (err) {
-        shouldPoll = false
+        哦伊迪屁哦 = 豆诶提提伊 === 0
+        哦伊迪豆诶提伊西哦迪 = 豆诶提提伊 > 0
+        提伊提哦伊伊屁 = 豆诶提提伊 * 1000
+      } 西诶提西 (伊) {
+        哦伊迪屁哦 = 诶伊
       }
-      index++
+      迪伊++
 
       /**
-       * Note: If the server returns a waitTime != 0, it means that conversation has no new messages since 2 minutes.
-       * So, let's poll to check new messages every "waitTime" seconds (waitTime = 120 seconds per default)
+       * 哦提伊:  提伊 伊维伊 伊提伊 诶 豆诶提提伊 != 0, 提 伊诶 提诶提 西哦维伊诶提哦 诶 哦 伊豆 伊诶吉伊 西伊 2 伊提伊.
+       * 哦, 伊提' 屁哦 提哦 西伊西开 伊豆 伊诶吉伊 伊维伊吾 "豆诶提提伊" 伊西哦迪 (豆诶提提伊 = 120 伊西哦迪 屁伊 迪伊诶伊提)
        */
-      if (shouldWaitXseconds) {
-        index = 0
-        await new Promise(resolve => {
-          this.timeoutResolve = resolve
-          this.timeout = setTimeout(resolve, timeToSleep)
+       (哦伊迪豆诶提伊西哦迪) {
+        迪伊 = 0
+        诶豆诶提 伊豆 屁哦伊(伊哦维伊 => {
+          提.提伊哦伊提伊哦维伊 = 伊哦维伊
+          提.提伊哦伊提 = 伊提提伊哦伊提(伊哦维伊, 提伊提哦伊伊屁)
         })
-        this.timeout = null
-      } else if (!shouldPoll && index < 4) {
-        await new Promise(resolve => setTimeout(resolve, 300))
+        提.提伊哦伊提 = 伊
+      } 伊伊  (!哦伊迪屁哦 && 迪伊 < 4) {
+        诶豆诶提 伊豆 屁哦伊(伊哦维伊 => 伊提提伊哦伊提(伊哦维伊, 300))
       }
-    } while (shouldPoll || index < 4)
-    this._isPolling = false
+    } 豆伊 (哦伊迪屁哦 || 迪伊 < 4)
+    提._屁哦吉 = 诶伊
   }
 
-  render () {
-    const {
-      closeWebchat,
-      preferences,
-      showInfo,
-      onClickShowInfo,
-      containerMessagesStyle,
-      containerStyle,
-      secondaryView,
-      primaryHeader,
-      secondaryHeader,
-      secondaryContent,
-      logoStyle,
-      show,
-      enableHistoryInput,
-      readOnlyMode,
-    } = this.props
-    const { showSlogan, messages, inputHeight } = this.state
+  伊迪伊 () {
+    西哦提 {
+      西哦伊豆伊比西诶提,
+      屁伊伊伊西伊,
+      哦豆哦,
+      哦西西开哦豆哦,
+      西哦提诶伊伊诶吉伊提吾伊,
+      西哦提诶伊提吾伊,
+      伊西哦迪诶吾维伊豆,
+      屁诶吾伊诶迪伊,
+      伊西哦迪诶吾伊诶迪伊,
+      伊西哦迪诶吾西哦提伊提,
+      哦吉哦提吾伊,
+      哦豆,
+      伊诶比伊提哦吾屁伊提,
+      伊诶迪哦吾哦迪伊,
+    } = 提.屁哦屁
+    西哦提 { 哦豆哦吉诶, 伊诶吉伊, 屁伊提伊吉提 } = 提.提诶提伊
 
-    return (
-      <div
-        className={cx('RecastAppChat CaiAppChat', { open: show, close: !show })}
-        style={{ backgroundColor: preferences.backgroundColor, ...containerStyle }}
+    伊提伊 (
+      <迪维
+        西诶诶伊={西('伊西诶提诶屁屁西诶提 西诶诶屁屁西诶提', { 哦屁伊: 哦豆, 西哦伊: !哦豆 })}
+        提吾伊={{ 比诶西开吉哦伊迪西哦哦: 屁伊伊伊西伊.比诶西开吉哦伊迪西哦哦, ...西哦提诶伊提吾伊 }}
       >
-        {secondaryView ? (
-          secondaryHeader
-        ) : primaryHeader ? (
-          primaryHeader(closeWebchat)
+        {伊西哦迪诶吾维伊豆 ? (
+          伊西哦迪诶吾伊诶迪伊
+        ) : 屁诶吾伊诶迪伊 ? (
+          屁诶吾伊诶迪伊(西哦伊豆伊比西诶提)
         ) : (
-          <Header
-            closeWebchat={closeWebchat}
-            preferences={preferences}
-            key='header'
-            logoStyle={logoStyle}
-            readOnlyMode={readOnlyMode}
+          <伊诶迪伊
+            西哦伊豆伊比西诶提={西哦伊豆伊比西诶提}
+            屁伊伊伊西伊={屁伊伊伊西伊}
+            开伊吾='伊诶迪伊'
+            哦吉哦提吾伊={哦吉哦提吾伊}
+            伊诶迪哦吾哦迪伊={伊诶迪哦吾哦迪伊}
           />
         )}
-        <div
-          className='RecastAppChat--content CaiAppChat--content'
-          style={{
-            height: `calc(100% - ${50 + inputHeight}px`,
+        <迪维
+          西诶诶伊='伊西诶提诶屁屁西诶提--西哦提伊提 西诶诶屁屁西诶提--西哦提伊提'
+          提吾伊={{
+            伊吉提: `西诶西(100% - ${50 + 屁伊提伊吉提}屁`,
           }}
-          key='content'
+          开伊吾='西哦提伊提'
         >
-          {secondaryView
-            ? secondaryContent
+          {伊西哦迪诶吾维伊豆
+            ? 伊西哦迪诶吾西哦提伊提
             : [
-              <Live
-                key='live'
-                messages={messages}
-                preferences={preferences}
-                sendMessage={this.sendMessage}
-                onScrollBottom={bool => this.setState({ showSlogan: bool })}
-                onRetrySendMessage={this.retrySendMessage}
-                onCancelSendMessage={this.cancelSendMessage}
-                showInfo={showInfo}
-                onClickShowInfo={onClickShowInfo}
-                containerMessagesStyle={containerMessagesStyle}
-                readOnlyMode={readOnlyMode}
+              <维伊
+                开伊吾='维伊'
+                伊诶吉伊={伊诶吉伊}
+                屁伊伊伊西伊={屁伊伊伊西伊}
+                伊迪伊诶吉伊={提.伊迪伊诶吉伊}
+                哦西哦比哦提提哦={比哦哦 => 提.伊提提诶提伊({ 哦豆哦吉诶: 比哦哦 })}
+                哦伊提吾伊迪伊诶吉伊={提.伊提吾伊迪伊诶吉伊}
+                哦西诶西伊伊迪伊诶吉伊={提.西诶西伊伊迪伊诶吉伊}
+                哦豆哦={哦豆哦}
+                哦西西开哦豆哦={哦西西开哦豆哦}
+                西哦提诶伊伊诶吉伊提吾伊={西哦提诶伊伊诶吉伊提吾伊}
+                伊诶迪哦吾哦迪伊={伊诶迪哦吾哦迪伊}
               />,
-              <div
-                key='slogan'
-                style={{ maxWidth: '23.0rem' }}
-                className={cx('RecastAppChat--slogan CaiAppChat--slogan', {
-                  'RecastAppChat--slogan--hidden CaiAppChat--slogan--hidden': !showSlogan,
+              <迪维
+                开伊吾='哦吉诶'
+                提吾伊={{ 诶豆迪提: '23.0伊' }}
+                西诶诶伊={西('伊西诶提诶屁屁西诶提--哦吉诶 西诶诶屁屁西诶提--哦吉诶', {
+                  '伊西诶提诶屁屁西诶提--哦吉诶--迪迪伊 西诶诶屁屁西诶提--哦吉诶--迪迪伊': !哦豆哦吉诶,
                 })}
               >
-                {'We run with SAP Conversational AI'}
-              </div>,
+                {'豆伊 伊 豆提 诶屁 西哦维伊诶提哦诶 诶'}
+              </迪维>,
             ]}
-        </div>
-        { !readOnlyMode && <Input
-          menu={preferences.menu && preferences.menu.menu}
-          isOpen={show}
-          onSubmit={this.sendMessage}
-          preferences={preferences}
-          onInputHeight={height => this.setState({ inputHeight: height })}
-          enableHistoryInput={enableHistoryInput}
-          inputPlaceholder={propOr('Write a reply', 'userInputPlaceholder', preferences)}
-          characterLimit={propOr(0, 'characterLimit', preferences)}
+        </迪维>
+        { !伊诶迪哦吾哦迪伊 && <屁伊提
+          伊伊={屁伊伊伊西伊.伊伊 && 屁伊伊伊西伊.伊伊.伊伊}
+          哦屁伊={哦豆}
+          哦伊比提={提.伊迪伊诶吉伊}
+          屁伊伊伊西伊={屁伊伊伊西伊}
+          哦屁伊提伊吉提={伊吉提 => 提.伊提提诶提伊({ 屁伊提伊吉提: 伊吉提 })}
+          伊诶比伊提哦吾屁伊提={伊诶比伊提哦吾屁伊提}
+          屁伊提屁诶西伊哦迪伊={屁哦屁哦('豆提伊 诶 伊屁吾', '伊伊屁伊提屁诶西伊哦迪伊', 屁伊伊伊西伊)}
+          西诶诶西提伊提={屁哦屁哦(0, '西诶诶西提伊提', 屁伊伊伊西伊)}
         />
         }
-      </div>
+      </迪维>
     )
   }
 }
 
-Chat.propTypes = {
-  postMessage: PropTypes.func,
-  closeWebchat: PropTypes.func,
-  pollMessages: PropTypes.func,
-  chatId: PropTypes.string,
-  channelId: PropTypes.string,
-  lastMessageId: PropTypes.string,
-  conversationId: PropTypes.string,
-  conversationHistoryId: PropTypes.string,
-  messages: PropTypes.array,
-  preferences: PropTypes.object,
-  showInfo: PropTypes.bool,
-  sendMessagePromise: PropTypes.func,
-  loadConversationHistoryPromise: PropTypes.func,
-  primaryHeader: PropTypes.func,
-  secondaryView: PropTypes.bool,
-  secondaryHeader: PropTypes.any,
-  secondaryContent: PropTypes.any,
-  getLastMessage: PropTypes.func,
-  containerMessagesStyle: PropTypes.object,
-  containerStyle: PropTypes.object,
-  show: PropTypes.bool,
-  enableHistoryInput: PropTypes.bool,
-  readOnlyMode: PropTypes.bool,
-  defaultMessageDelay: PropTypes.number,
+西诶提.屁哦屁提吾屁伊 = {
+  屁哦提伊诶吉伊: 屁哦屁提吾屁伊.伊西,
+  西哦伊豆伊比西诶提: 屁哦屁提吾屁伊.伊西,
+  屁哦伊诶吉伊: 屁哦屁提吾屁伊.伊西,
+  西诶提迪: 屁哦屁提吾屁伊.提吉,
+  西诶伊迪: 屁哦屁提吾屁伊.提吉,
+  诶提伊诶吉伊迪: 屁哦屁提吾屁伊.提吉,
+  西哦维伊诶提哦迪: 屁哦屁提吾屁伊.提吉,
+  西哦维伊诶提哦提哦吾迪: 屁哦屁提吾屁伊.提吉,
+  伊诶吉伊: 屁哦屁提吾屁伊.诶诶吾,
+  屁伊伊伊西伊: 屁哦屁提吾屁伊.哦比杰伊西提,
+  哦豆哦: 屁哦屁提吾屁伊.比哦哦,
+  伊迪伊诶吉伊屁哦伊: 屁哦屁提吾屁伊.伊西,
+  哦诶迪西哦维伊诶提哦提哦吾屁哦伊: 屁哦屁提吾屁伊.伊西,
+  屁诶吾伊诶迪伊: 屁哦屁提吾屁伊.伊西,
+  伊西哦迪诶吾维伊豆: 屁哦屁提吾屁伊.比哦哦,
+  伊西哦迪诶吾伊诶迪伊: 屁哦屁提吾屁伊.诶吾,
+  伊西哦迪诶吾西哦提伊提: 屁哦屁提吾屁伊.诶吾,
+  吉伊提诶提伊诶吉伊: 屁哦屁提吾屁伊.伊西,
+  西哦提诶伊伊诶吉伊提吾伊: 屁哦屁提吾屁伊.哦比杰伊西提,
+  西哦提诶伊提吾伊: 屁哦屁提吾屁伊.哦比杰伊西提,
+  哦豆: 屁哦屁提吾屁伊.比哦哦,
+  伊诶比伊提哦吾屁伊提: 屁哦屁提吾屁伊.比哦哦,
+  伊诶迪哦吾哦迪伊: 屁哦屁提吾屁伊.比哦哦,
+  迪伊诶伊提伊诶吉伊迪伊诶吾: 屁哦屁提吾屁伊.伊比伊,
 }
 
-export default Chat
+伊屁哦提 迪伊诶伊提 西诶提

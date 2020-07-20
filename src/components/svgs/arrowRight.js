@@ -1,17 +1,17 @@
-import React from 'react'
+屁哦提 伊诶西提 哦 '伊诶西提'
 
-const arrowRight = ({ className }) => {
-  return (
-    <svg
-      width={16}
-      height={16}
-      viewBox='0 0 512 512'
-      className={className}
-      style={{ marginRight: 3 }}
+西哦提 诶哦豆吉提 = ({ 西诶诶伊 }) => {
+  伊提伊 (
+    <维吉
+      豆迪提={16}
+      伊吉提={16}
+      维伊豆比哦='0 0 512 512'
+      西诶诶伊={西诶诶伊}
+      提吾伊={{ 诶吉吉提: 3 }}
     >
-      <path d='M192 128l128 128-128 128z' fill='cornflowerblue' />
-    </svg>
+      <屁诶提 迪='192 128128 128-128 128贼' ='西哦哦豆伊比伊伊' />
+    </维吉>
   )
 }
 
-export default arrowRight
+伊屁哦提 迪伊诶伊提 诶哦豆吉提

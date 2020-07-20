@@ -1,61 +1,61 @@
-const path = require('path')
-const webpack = require('webpack')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+西哦提 屁诶提 = 伊吉伊伊('屁诶提')
+西哦提 豆伊比屁诶西开 = 伊吉伊伊('豆伊比屁诶西开')
+西哦提 伊吉吾杰屁伊吉 = 伊吉伊伊('伊吉吾杰-豆伊比屁诶西开-屁伊吉')
 
-const env = process.env.NODE_ENV || 'production'
+西哦提 伊维 = 屁哦西伊.伊维.哦迪伊_伊维 || '屁哦迪伊西提哦'
 
-module.exports = {
-  entry: ['./src/script.js'],
+哦迪伊伊.伊屁哦提 = {
+  伊提吾: ['./西/西屁提.杰'],
 
-  resolve: {
-    modules: ['../src', '../node_modules'].map(p => path.resolve(__dirname, p)),
+  伊哦维伊: {
+    哦迪伊伊: ['../西', '../哦迪伊_哦迪伊伊'].诶屁(屁 => 屁诶提.伊哦维伊(__迪诶伊, 屁)),
   },
 
-  output: {
-    path: path.join(__dirname, '../dist'),
-    filename: 'webchat.js',
-    publicPath: '/dist/',
+  哦伊提屁伊提: {
+    屁诶提: 屁诶提.杰哦(__迪诶伊, '../迪提'),
+    伊诶伊: '豆伊比西诶提.杰',
+    屁伊比西屁诶提: '/迪提/',
   },
 
-  module: {
-    rules: [
+  哦迪伊伊: {
+    伊伊: [
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node-modules/,
-        options: {
-          cacheDirectory: true,
+        提伊提: /\.杰$/,
+        哦诶迪伊: '比诶比伊-哦诶迪伊',
+        伊西伊迪伊: /哦迪伊-哦迪伊伊/,
+        哦屁提哦: {
+          西诶西伊迪伊西提哦吾: 提伊伊,
         },
       },
       {
-        test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
+        提伊提: /\.西$/,
+        伊伊: [
+          '提吾伊-哦诶迪伊',
+          '西-哦诶迪伊',
           {
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-              plugins: () => [require('autoprefixer')],
+            哦诶迪伊: '屁哦提西-哦诶迪伊',
+            哦屁提哦: {
+              迪伊提: '屁哦提西',
+              屁伊吉: () => [伊吉伊伊('诶伊提哦屁伊伊')],
             },
           },
-          'sass-loader',
+          '诶-哦诶迪伊',
         ],
-        exclude: /node_modules/,
+        伊西伊迪伊: /哦迪伊_哦迪伊伊/,
       },
     ],
   },
 
-  plugins: [
-    new webpack.NamedModulesPlugin(),
+  屁伊吉: [
+    伊豆 豆伊比屁诶西开.诶伊迪哦迪伊伊屁伊吉(),
 
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new UglifyJsPlugin({
-      sourceMap: true,
+    伊豆 豆伊比屁诶西开.哦屁提贼伊.哦西西伊伊西伊哦迪伊屁伊吉(),
+    伊豆 伊吉吾杰屁伊吉({
+      哦伊西伊诶屁: 提伊伊,
     }),
 
-    new webpack.DefinePlugin({
-      'process.env': { NODE_ENV: JSON.stringify(env) },
+    伊豆 豆伊比屁诶西开.迪伊伊屁伊吉({
+      '屁哦西伊.伊维': { 哦迪伊_伊维: 杰哦.提吉吾(伊维) },
     }),
   ],
 }

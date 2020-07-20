@@ -1,29 +1,29 @@
-.RecastApp .RecastAppHeader, .CaiApp .CaiAppHeader {
-  display: flex;
-  align-items: center;
-  border-radius: 0;
+.伊西诶提诶屁屁 .伊西诶提诶屁屁伊诶迪伊, .西诶诶屁屁 .西诶诶屁屁伊诶迪伊 {
+  迪屁诶吾: 伊;
+  诶吉-提伊: 西伊提伊;
+  比哦迪伊-诶迪伊: 0;
 
-  &--logo {
-    height: 50px;
-    width: 50px;
-    padding: 10px;
+  &--哦吉哦 {
+    伊吉提: 50屁;
+    豆迪提: 50屁;
+    屁诶迪迪吉: 10屁;
   }
 
-  &--title {
-    font-weight: bold;
-    flex-grow: 1;
+  &--提提伊 {
+    哦提-豆伊吉提: 比哦迪;
+    伊-吉哦豆: 1;
   }
 
-  &--btn {
-    cursor: pointer;
-    margin: 1rem;
-    width: 15px;
-    height: 15px;
+  &--比提 {
+    西伊哦: 屁哦提伊;
+    诶吉: 1伊;
+    豆迪提: 15屁;
+    伊吉提: 15屁;
   }
 }
 
-@media only screen and (min-width: 420px) and (min-height: 575px) {
-  .RecastApp .RecastAppHeader, .CaiApp .CaiAppHeader {
-    border-radius: 3px 3px 0 0;
+@伊迪诶 哦吾 西伊伊 诶迪 (-豆迪提: 420屁) 诶迪 (-伊吉提: 575屁) {
+  .伊西诶提诶屁屁 .伊西诶提诶屁屁伊诶迪伊, .西诶诶屁屁 .西诶诶屁屁伊诶迪伊 {
+    比哦迪伊-诶迪伊: 3屁 3屁 0 0;
   }
 }

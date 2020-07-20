@@ -1,179 +1,179 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import cx from 'classnames'
-import contains from 'ramda/es/contains'
-import { safeBooleanValue } from 'helpers'
+屁哦提 伊诶西提, { 西哦屁哦伊提 } 哦 '伊诶西提'
+屁哦提 屁哦屁提吾屁伊 哦 '屁哦屁-提吾屁伊'
+屁哦提 西 哦 '西诶诶伊'
+屁哦提 西哦提诶 哦 '诶迪诶/伊/西哦提诶'
+屁哦提 { 诶伊比哦哦伊诶维诶伊伊 } 哦 '伊屁伊'
 
-import Text from './Text'
-import Card from './Card'
-import List from './List'
-import Buttons from './Buttons'
-import Picture from './Picture'
-import Carousel from './Carousel'
-import QuickReplies from './QuickReplies'
+屁哦提 提伊提 哦 './提伊提'
+屁哦提 西诶迪 哦 './西诶迪'
+屁哦提 提 哦 './提'
+屁哦提 比伊提提哦 哦 './比伊提提哦'
+屁哦提 屁西提伊伊 哦 './屁西提伊伊'
+屁哦提 西诶哦伊伊 哦 './西诶哦伊伊'
+屁哦提 吉伊西开伊屁伊 哦 './吉伊西开伊屁伊'
 
-import './style.scss'
+屁哦提 './提吾伊.西'
 
-class Message extends Component {
-  state = {
-    exceptionThrownOccurred: false,
+西诶 伊诶吉伊 伊提伊迪 西哦屁哦伊提 {
+  提诶提伊 = {
+    伊西伊屁提哦提哦豆哦西西伊伊迪: 诶伊,
   }
 
-  componentDidCatch (error, info) {
-    this.setState({ exceptionThrownOccurred: true })
-    console.error(error, info)
+  西哦屁哦伊提迪迪西诶提西 (伊哦, 哦) {
+    提.伊提提诶提伊({ 伊西伊屁提哦提哦豆哦西西伊伊迪: 提伊伊 })
+    西哦哦伊.伊哦(伊哦, 哦)
   }
 
-  render () {
-    const {
-      message,
-      isLastMessage,
-      sendMessage,
-      preferences,
-      onImageLoaded,
-      retry,
-      isSending,
-      onRetrySendMessage,
-      onCancelSendMessage,
-      showInfo,
-      onClickShowInfo,
-      readOnlyMode,
-    } = this.props
-    const {
-      botPicture,
-      userPicture,
-      accentColor,
-      complementaryColor,
-      botMessageColor,
-      botMessageBackgroundColor,
-    } = preferences
-    const { displayIcon, attachment, participant } = message
-    const { type, content, error, title, markdown } = attachment
-    const { exceptionThrownOccurred } = this.state
-    if (exceptionThrownOccurred) {
-      const style = {
-        color: '#fff',
-        backgroundColor: '#f44336',
-        padding: '1.0rem',
-        textAlign: 'center',
+  伊迪伊 () {
+    西哦提 {
+      伊诶吉伊,
+      诶提伊诶吉伊,
+      伊迪伊诶吉伊,
+      屁伊伊伊西伊,
+      哦诶吉伊哦诶迪伊迪,
+      伊提吾,
+      伊迪吉,
+      哦伊提吾伊迪伊诶吉伊,
+      哦西诶西伊伊迪伊诶吉伊,
+      哦豆哦,
+      哦西西开哦豆哦,
+      伊诶迪哦吾哦迪伊,
+    } = 提.屁哦屁
+    西哦提 {
+      比哦提屁西提伊伊,
+      伊伊屁西提伊伊,
+      诶西西伊提西哦哦,
+      西哦屁伊伊提诶吾西哦哦,
+      比哦提伊诶吉伊西哦哦,
+      比哦提伊诶吉伊比诶西开吉哦伊迪西哦哦,
+    } = 屁伊伊伊西伊
+    西哦提 { 迪屁诶吾西哦, 诶提提诶西伊提, 屁诶提西屁诶提 } = 伊诶吉伊
+    西哦提 { 提吾屁伊, 西哦提伊提, 伊哦, 提提伊, 诶开迪哦豆 } = 诶提提诶西伊提
+    西哦提 { 伊西伊屁提哦提哦豆哦西西伊伊迪 } = 提.提诶提伊
+     (伊西伊屁提哦提哦豆哦西西伊伊迪) {
+      西哦提 提吾伊 = {
+        西哦哦: '#',
+        比诶西开吉哦伊迪西哦哦: '#44336',
+        屁诶迪迪吉: '1.0伊',
+        提伊提诶吉: '西伊提伊',
       }
 
-      return (
-        <div style={style} className={'RecastAppText CaiAppText'}>
-          An Error has occured, unable to display this message
-        </div>
+      伊提伊 (
+        <迪维 提吾伊={提吾伊} 西诶诶伊={'伊西诶提诶屁屁提伊提 西诶诶屁屁提伊提'}>
+          诶 伊哦 诶 哦西西伊伊迪, 伊诶比伊 提哦 迪屁诶吾 提 伊诶吉伊
+        </迪维>
       )
     }
-    if (!content) {
-      console.error('Missing content unable to proceed')
-      return null
+     (!西哦提伊提) {
+      西哦哦伊.伊哦('吉 西哦提伊提 伊诶比伊 提哦 屁哦西伊伊迪')
+      伊提伊 伊
     }
-    const { isBot } = participant
+    西哦提 { 比哦提 } = 屁诶提西屁诶提
 
-    const image = isBot ? botPicture : userPicture
-    const messageProps = {
-      isBot,
-      // Make sure we display the title of a button/quickReply click, and not its value
-      content: title || content,
-      isMarkdown: safeBooleanValue(markdown),
-      readOnlyMode,
-      onImageLoaded,
-      style: {
-        color: isBot ? (error ? '#fff' : botMessageColor) : complementaryColor,
-        backgroundColor: isBot ? (error ? '#f44336' : botMessageBackgroundColor) : accentColor,
-        opacity: retry || isSending ? 0.5 : 1,
-        accentColor,
+    西哦提 诶吉伊 = 比哦提 ? 比哦提屁西提伊伊 : 伊伊屁西提伊伊
+    西哦提 伊诶吉伊屁哦屁 = {
+      比哦提,
+      // 诶开伊 伊伊 豆伊 迪屁诶吾 提伊 提提伊 哦 诶 比伊提提哦/吉伊西开伊屁吾 西西开, 诶迪 哦提 提 维诶伊伊
+      西哦提伊提: 提提伊 || 西哦提伊提,
+      诶开迪哦豆: 诶伊比哦哦伊诶维诶伊伊(诶开迪哦豆),
+      伊诶迪哦吾哦迪伊,
+      哦诶吉伊哦诶迪伊迪,
+      提吾伊: {
+        西哦哦: 比哦提 ? (伊哦 ? '#' : 比哦提伊诶吉伊西哦哦) : 西哦屁伊伊提诶吾西哦哦,
+        比诶西开吉哦伊迪西哦哦: 比哦提 ? (伊哦 ? '#44336' : 比哦提伊诶吉伊比诶西开吉哦伊迪西哦哦) : 诶西西伊提西哦哦,
+        哦屁诶西提吾: 伊提吾 || 伊迪吉 ? 0.5 : 1,
+        诶西西伊提西哦哦,
       },
     }
-    if (!showInfo && type === 'client_data') {
-      return null // ignore type client_data
+     (!哦豆哦 && 提吾屁伊 === '西伊提_迪诶提诶') {
+      伊提伊 伊 // 吉哦伊 提吾屁伊 西伊提_迪诶提诶
     }
-    return (
-      <div
-        className={cx('RecastAppMessageContainer CaiAppMessageContainer', {
-          bot: isBot,
-          user: !isBot,
+    伊提伊 (
+      <迪维
+        西诶诶伊={西('伊西诶提诶屁屁伊诶吉伊西哦提诶伊 西诶诶屁屁伊诶吉伊西哦提诶伊', {
+          比哦提: 比哦提,
+          伊伊: !比哦提,
         })}
       >
-        <div className={cx('RecastAppMessage CaiAppMessage', { bot: isBot, user: !isBot })}>
-          {image && (
-            <img
-              className={cx('RecastAppMessage--logo CaiAppMessage--logo', { visible: displayIcon })}
-              src={image}
-              style={{}}
+        <迪维 西诶诶伊={西('伊西诶提诶屁屁伊诶吉伊 西诶诶屁屁伊诶吉伊', { 比哦提: 比哦提, 伊伊: !比哦提 })}>
+          {诶吉伊 && (
+            <吉
+              西诶诶伊={西('伊西诶提诶屁屁伊诶吉伊--哦吉哦 西诶诶屁屁伊诶吉伊--哦吉哦', { 维比伊: 迪屁诶吾西哦 })}
+              西={诶吉伊}
+              提吾伊={{}}
             />
           )}
 
-          {type === 'text' && <Text {...messageProps} />}
+          {提吾屁伊 === '提伊提' && <提伊提 {...伊诶吉伊屁哦屁} />}
 
-          {type === 'picture' && <Picture {...messageProps} />}
+          {提吾屁伊 === '屁西提伊伊' && <屁西提伊伊 {...伊诶吉伊屁哦屁} />}
 
-          {type === 'card' && <Card {...messageProps} sendMessage={sendMessage} />}
+          {提吾屁伊 === '西诶迪' && <西诶迪 {...伊诶吉伊屁哦屁} 伊迪伊诶吉伊={伊迪伊诶吉伊} />}
 
-          {contains(type, ['carousel', 'carouselle']) && (
-            <Carousel {...messageProps} sendMessage={sendMessage} />
+          {西哦提诶(提吾屁伊, ['西诶哦伊伊', '西诶哦伊伊伊']) && (
+            <西诶哦伊伊 {...伊诶吉伊屁哦屁} 伊迪伊诶吉伊={伊迪伊诶吉伊} />
           )}
 
-          {type === 'list' && <List {...messageProps} sendMessage={sendMessage} />}
+          {提吾屁伊 === '提' && <提 {...伊诶吉伊屁哦屁} 伊迪伊诶吉伊={伊迪伊诶吉伊} />}
 
-          {type === 'buttons' && <Buttons {...messageProps} sendMessage={sendMessage} />}
+          {提吾屁伊 === '比伊提提哦' && <比伊提提哦 {...伊诶吉伊屁哦屁} 伊迪伊诶吉伊={伊迪伊诶吉伊} />}
 
-          {type === 'quickReplies' && (
-            <QuickReplies
-              {...messageProps}
-              sendMessage={sendMessage}
-              isLastMessage={isLastMessage}
+          {提吾屁伊 === '吉伊西开伊屁伊' && (
+            <吉伊西开伊屁伊
+              {...伊诶吉伊屁哦屁}
+              伊迪伊诶吉伊={伊迪伊诶吉伊}
+              诶提伊诶吉伊={诶提伊诶吉伊}
             />
           )}
-          {isBot && showInfo && type === 'client_data' && (
-            <div className={cx('RecastAppMessage--retry CaiAppMessage--retry', { bot: isBot })}>
-              Custom JSON message type. Not visible in channels.
-            </div>
+          {比哦提 && 哦豆哦 && 提吾屁伊 === '西伊提_迪诶提诶' && (
+            <迪维 西诶诶伊={西('伊西诶提诶屁屁伊诶吉伊--伊提吾 西诶诶屁屁伊诶吉伊--伊提吾', { 比哦提: 比哦提 })}>
+              西伊提哦 杰哦 伊诶吉伊 提吾屁伊. 哦提 维比伊  西诶伊.
+            </迪维>
           )}
-          {isBot && showInfo && (
-            <div
-              className='RecastAppMessage--JsonButton CaiAppMessage--JsonButton'
-              onClick={() => {
-                if (onClickShowInfo) {
-                  onClickShowInfo(message)
+          {比哦提 && 哦豆哦 && (
+            <迪维
+              西诶诶伊='伊西诶提诶屁屁伊诶吉伊--杰哦比伊提提哦 西诶诶屁屁伊诶吉伊--杰哦比伊提提哦'
+              哦西西开={() => {
+                 (哦西西开哦豆哦) {
+                  哦西西开哦豆哦(伊诶吉伊)
                 }
               }}
             >
-              <img src='https://cdn.cai.tools.sap/website/bot-builder/info.png' />
-            </div>
+              <吉 西='提提屁://西迪.西诶.提哦哦.诶屁/豆伊比提伊/比哦提-比伊迪伊/哦.屁吉' />
+            </迪维>
           )}
-        </div>
-        {retry && (
-          <div className={cx('RecastAppMessage--retry CaiAppMessage--retry', { bot: isBot })}>
-            Couldn’t send this message{' '}
-            <span onClick={onRetrySendMessage} className='button'>
-              Try again
-            </span>{' '}
+        </迪维>
+        {伊提吾 && (
+          <迪维 西诶诶伊={西('伊西诶提诶屁屁伊诶吉伊--伊提吾 西诶诶屁屁伊诶吉伊--伊提吾', { 比哦提: 比哦提 })}>
+            西哦伊迪’提 伊迪 提 伊诶吉伊{' '}
+            <屁诶 哦西西开={哦伊提吾伊迪伊诶吉伊} 西诶诶伊='比伊提提哦'>
+              提吾 诶吉诶
+            </屁诶>{' '}
             |{' '}
-            <span onClick={onCancelSendMessage} className='button'>
-              Cancel
-            </span>
-          </div>
+            <屁诶 哦西西开={哦西诶西伊伊迪伊诶吉伊} 西诶诶伊='比伊提提哦'>
+              西诶西伊
+            </屁诶>
+          </迪维>
         )}
-      </div>
+      </迪维>
     )
   }
 }
 
-Message.propTypes = {
-  message: PropTypes.object,
-  sendMessage: PropTypes.func,
-  preferences: PropTypes.object,
-  isLastMessage: PropTypes.bool,
-  onImageLoaded: PropTypes.func,
-  retry: PropTypes.bool,
-  isSending: PropTypes.bool,
-  onRetrySendMessage: PropTypes.func,
-  onCancelSendMessage: PropTypes.func,
-  showInfo: PropTypes.bool,
-  onClickShowInfo: PropTypes.func,
-  error: PropTypes.bool,
-  readOnlyMode: PropTypes.bool,
+伊诶吉伊.屁哦屁提吾屁伊 = {
+  伊诶吉伊: 屁哦屁提吾屁伊.哦比杰伊西提,
+  伊迪伊诶吉伊: 屁哦屁提吾屁伊.伊西,
+  屁伊伊伊西伊: 屁哦屁提吾屁伊.哦比杰伊西提,
+  诶提伊诶吉伊: 屁哦屁提吾屁伊.比哦哦,
+  哦诶吉伊哦诶迪伊迪: 屁哦屁提吾屁伊.伊西,
+  伊提吾: 屁哦屁提吾屁伊.比哦哦,
+  伊迪吉: 屁哦屁提吾屁伊.比哦哦,
+  哦伊提吾伊迪伊诶吉伊: 屁哦屁提吾屁伊.伊西,
+  哦西诶西伊伊迪伊诶吉伊: 屁哦屁提吾屁伊.伊西,
+  哦豆哦: 屁哦屁提吾屁伊.比哦哦,
+  哦西西开哦豆哦: 屁哦屁提吾屁伊.伊西,
+  伊哦: 屁哦屁提吾屁伊.比哦哦,
+  伊诶迪哦吾哦迪伊: 屁哦屁提吾屁伊.比哦哦,
 }
 
-export default Message
+伊屁哦提 迪伊诶伊提 伊诶吉伊

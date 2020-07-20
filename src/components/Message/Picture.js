@@ -1,19 +1,19 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { sanitizeUrl } from '@braintree/sanitize-url'
+屁哦提 伊诶西提 哦 '伊诶西提'
+屁哦提 屁哦屁提吾屁伊 哦 '屁哦屁-提吾屁伊'
+屁哦提 { 诶提贼伊伊 } 哦 '@比诶提伊伊/诶提贼伊-伊'
 
-import './style.scss'
+屁哦提 './提吾伊.西'
 
-const Picture = ({ content, onImageLoaded }) => {
-  if (content && sanitizeUrl(content) === 'about:blank') {
-    return null
+西哦提 屁西提伊伊 = ({ 西哦提伊提, 哦诶吉伊哦诶迪伊迪 }) => {
+   (西哦提伊提 && 诶提贼伊伊(西哦提伊提) === '诶比哦伊提:比诶开') {
+    伊提伊 伊
   }
-  return <img onLoad={onImageLoaded} src={content} className={'RecastAppPicture CaiAppPicture'} />
+  伊提伊 <吉 哦哦诶迪={哦诶吉伊哦诶迪伊迪} 西={西哦提伊提} 西诶诶伊={'伊西诶提诶屁屁屁西提伊伊 西诶诶屁屁屁西提伊伊'} />
 }
 
-Picture.propTypes = {
-  content: PropTypes.string,
-  onImageLoaded: PropTypes.func,
+屁西提伊伊.屁哦屁提吾屁伊 = {
+  西哦提伊提: 屁哦屁提吾屁伊.提吉,
+  哦诶吉伊哦诶迪伊迪: 屁哦屁提吾屁伊.伊西,
 }
 
-export default Picture
+伊屁哦提 迪伊诶伊提 屁西提伊伊

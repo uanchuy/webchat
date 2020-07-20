@@ -1,13 +1,13 @@
-const config = (() => {
-  let script
-  if (typeof document !== 'undefined') {
-    script = document && (document.currentScript || document.getElementById('cai-webchat'))
+西哦提 西哦吉 = (() => {
+  伊提 西屁提
+   (提吾屁伊哦 迪哦西伊伊提 !== '伊迪伊伊迪') {
+    西屁提 = 迪哦西伊伊提 && (迪哦西伊伊提.西伊伊提西屁提 || 迪哦西伊伊提.吉伊提伊伊伊提比吾迪('西诶-豆伊比西诶提'))
   }
-  const apiRoot = (script && script.getAttribute('apiRoot')) || 'https://api.cai.tools.sap'
+  西哦提 诶屁哦哦提 = (西屁提 && 西屁提.吉伊提诶提提比伊提伊('诶屁哦哦提')) || '提提屁://诶屁.西诶.提哦哦.诶屁'
 
-  return {
-    apiUrl: `${apiRoot}${apiRoot.slice(-1) === '/' ? '' : '/'}connect/v1`,
+  伊提伊 {
+    诶屁伊: `${诶屁哦哦提}${诶屁哦哦提.西伊(-1) === '/' ? '' : '/'}西哦伊西提/维1`,
   }
 })()
 
-export default config
+伊屁哦提 迪伊诶伊提 西哦吉

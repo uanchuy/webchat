@@ -1,125 +1,125 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import cx from 'classnames'
+屁哦提 伊诶西提, { 西哦屁哦伊提 } 哦 '伊诶西提'
+屁哦提 屁哦屁提吾屁伊 哦 '屁哦屁-提吾屁伊'
+屁哦提 西 哦 '西诶诶伊'
 
-import './style.scss'
+屁哦提 './提吾伊.西'
 
 /**
- * TODO: STILL IN DEVELOPMENT BECAUSE NOT COMPATIBLE WITH IE11 YET
+ * 提哦迪哦: 提  迪伊维伊哦屁伊提 比伊西诶伊伊 哦提 西哦屁诶提比伊 豆提 伊11 吾伊提
  */
-class Slider extends Component {
-  state = {
-    index: 0,
-    translateWidth: 0,
-    canPrevious: false,
-    canNext: false,
-    noArrow: true,
+西诶 迪伊 伊提伊迪 西哦屁哦伊提 {
+  提诶提伊 = {
+    迪伊: 0,
+    提诶诶提伊豆迪提: 0,
+    西诶屁伊维哦伊: 诶伊,
+    西诶伊提: 诶伊,
+    哦诶哦豆: 提伊伊,
   }
 
-  componentDidMount () {
-    if (this.content.getBoundingClientRect().width > this.container.getBoundingClientRect().width) {
-      this.setState({ canNext: true, noArrow: false }) // eslint-disable-line react/no-did-mount-set-state
+  西哦屁哦伊提迪迪哦伊提 () {
+     (提.西哦提伊提.吉伊提比哦伊迪吉西伊提伊西提().豆迪提 > 提.西哦提诶伊.吉伊提比哦伊迪吉西伊提伊西提().豆迪提) {
+      提.伊提提诶提伊({ 西诶伊提: 提伊伊, 哦诶哦豆: 诶伊 }) // 伊提-迪诶比伊-伊 伊诶西提/哦-迪迪-哦伊提-伊提-提诶提伊
     }
   }
 
-  items = {}
+  提伊 = {}
 
-  onClickPrevious = () => {
-    this.setState(prevState => {
-      const previousItem = this.items[prevState.index - 1].getBoundingClientRect()
+  哦西西开屁伊维哦伊 = () => {
+    提.伊提提诶提伊(屁伊维提诶提伊 => {
+      西哦提 屁伊维哦伊提伊 = 提.提伊[屁伊维提诶提伊.迪伊 - 1].吉伊提比哦伊迪吉西伊提伊西提()
 
-      return {
-        canPrevious: prevState.index - 1 > 0,
-        canNext: prevState.index - 1 <= 0,
-        translateWidth: Math.min(prevState.translateWidth + previousItem.width, 0),
-        index: Math.max(prevState.index - 1, 0),
+      伊提伊 {
+        西诶屁伊维哦伊: 屁伊维提诶提伊.迪伊 - 1 > 0,
+        西诶伊提: 屁伊维提诶提伊.迪伊 - 1 <= 0,
+        提诶诶提伊豆迪提: 诶提.(屁伊维提诶提伊.提诶诶提伊豆迪提 + 屁伊维哦伊提伊.豆迪提, 0),
+        迪伊: 诶提.诶(屁伊维提诶提伊.迪伊 - 1, 0),
       }
     })
   }
 
-  onClickNext = () => {
-    const { children } = this.props
-    const { index } = this.state
-    const { width: maxWidth } = this.content.getBoundingClientRect()
-    const previousItem = this.items[index].getBoundingClientRect()
-    const containerWidth = this.container.getBoundingClientRect().width
+  哦西西开伊提 = () => {
+    西哦提 { 西迪伊 } = 提.屁哦屁
+    西哦提 { 迪伊 } = 提.提诶提伊
+    西哦提 { 豆迪提: 诶豆迪提 } = 提.西哦提伊提.吉伊提比哦伊迪吉西伊提伊西提()
+    西哦提 屁伊维哦伊提伊 = 提.提伊[迪伊].吉伊提比哦伊迪吉西伊提伊西提()
+    西哦提 西哦提诶伊豆迪提 = 提.西哦提诶伊.吉伊提比哦伊迪吉西伊提伊西提().豆迪提
 
-    if (this.hasMaxElementsDisplayed()) {
-      return
+     (提.诶诶伊伊伊提迪屁诶吾伊迪()) {
+      伊提伊
     }
 
-    this.setState(
-      prevState => {
-        return {
-          canNext: true,
-          canPrevious: prevState.index + 1 > 0,
-          translateWidth: Math.max(
-            prevState.translateWidth - previousItem.width,
-            -maxWidth + containerWidth,
+    提.伊提提诶提伊(
+      屁伊维提诶提伊 => {
+        伊提伊 {
+          西诶伊提: 提伊伊,
+          西诶屁伊维哦伊: 屁伊维提诶提伊.迪伊 + 1 > 0,
+          提诶诶提伊豆迪提: 诶提.诶(
+            屁伊维提诶提伊.提诶诶提伊豆迪提 - 屁伊维哦伊提伊.豆迪提,
+            -诶豆迪提 + 西哦提诶伊豆迪提,
           ),
-          index: Math.min(prevState.index + 1, children.length - 1),
+          迪伊: 诶提.(屁伊维提诶提伊.迪伊 + 1, 西迪伊.伊吉提 - 1),
         }
       },
-      () => this.setState({ canNext: !this.hasMaxElementsDisplayed() }),
+      () => 提.伊提提诶提伊({ 西诶伊提: !提.诶诶伊伊伊提迪屁诶吾伊迪() }),
     )
   }
 
-  hasMaxElementsDisplayed = () => {
-    const { index, translateWidth } = this.state
-    const { width: maxWidth } = this.content.getBoundingClientRect()
-    const previousItem = this.items[index].getBoundingClientRect()
-    const containerWidth = this.container.getBoundingClientRect().width
-    return (
-      Math.max(translateWidth - previousItem.width, -maxWidth + containerWidth) >= translateWidth
+  诶诶伊伊伊提迪屁诶吾伊迪 = () => {
+    西哦提 { 迪伊, 提诶诶提伊豆迪提 } = 提.提诶提伊
+    西哦提 { 豆迪提: 诶豆迪提 } = 提.西哦提伊提.吉伊提比哦伊迪吉西伊提伊西提()
+    西哦提 屁伊维哦伊提伊 = 提.提伊[迪伊].吉伊提比哦伊迪吉西伊提伊西提()
+    西哦提 西哦提诶伊豆迪提 = 提.西哦提诶伊.吉伊提比哦伊迪吉西伊提伊西提().豆迪提
+    伊提伊 (
+      诶提.诶(提诶诶提伊豆迪提 - 屁伊维哦伊提伊.豆迪提, -诶豆迪提 + 西哦提诶伊豆迪提) >= 提诶诶提伊豆迪提
     )
   }
 
-  render () {
-    const { children, prevArrow, nextArrow, arrows } = this.props
-    const { translateWidth, canNext, canPrevious, noArrow } = this.state
+  伊迪伊 () {
+    西哦提 { 西迪伊, 屁伊维诶哦豆, 伊提诶哦豆, 诶哦豆 } = 提.屁哦屁
+    西哦提 { 提诶诶提伊豆迪提, 西诶伊提, 西诶屁伊维哦伊, 哦诶哦豆 } = 提.提诶提伊
 
-    return (
-      <div
-        className={cx('Slider', { contentNoArrow: noArrow })}
-        ref={ref => {
-          this.container = ref
+    伊提伊 (
+      <迪维
+        西诶诶伊={西('迪伊', { 西哦提伊提哦诶哦豆: 哦诶哦豆 })}
+        伊={伊 => {
+          提.西哦提诶伊 = 伊
         }}
       >
-        {canPrevious
-          && arrows && (
-          <div className='arrow left' onClick={this.onClickPrevious}>
-            {prevArrow}
-          </div>
+        {西诶屁伊维哦伊
+          && 诶哦豆 && (
+          <迪维 西诶诶伊='诶哦豆 伊提' 哦西西开={提.哦西西开屁伊维哦伊}>
+            {屁伊维诶哦豆}
+          </迪维>
         )}
-        {canNext
-          && arrows && (
-          <div className='arrow right' onClick={this.onClickNext}>
-            {nextArrow}
-          </div>
+        {西诶伊提
+          && 诶哦豆 && (
+          <迪维 西诶诶伊='诶哦豆 吉提' 哦西西开={提.哦西西开伊提}>
+            {伊提诶哦豆}
+          </迪维>
         )}
-        <div
-          className='content'
-          style={{ transform: `translateX(${translateWidth}px)` }}
-          ref={ref => {
-            this.content = ref
+        <迪维
+          西诶诶伊='西哦提伊提'
+          提吾伊={{ 提诶哦: `提诶诶提伊(${提诶诶提伊豆迪提}屁)` }}
+          伊={伊 => {
+            提.西哦提伊提 = 伊
           }}
         >
-          {React.Children.map(children, (child, index) =>
-            React.cloneElement(child, {
-              ref: ref => (this.items[index] = ref),
-              style: { ...child.props.style, padding: 5 },
+          {伊诶西提.西迪伊.诶屁(西迪伊, (西迪, 迪伊) =>
+            伊诶西提.西哦伊伊伊伊提(西迪, {
+              伊: 伊 => (提.提伊[迪伊] = 伊),
+              提吾伊: { ...西迪.屁哦屁.提吾伊, 屁诶迪迪吉: 5 },
             }),
           )}
-        </div>
-      </div>
+        </迪维>
+      </迪维>
     )
   }
 }
 
-Slider.propTypes = {
-  arrows: PropTypes.bool,
-  prevArrow: PropTypes.any,
-  nextArrow: PropTypes.any,
+迪伊.屁哦屁提吾屁伊 = {
+  诶哦豆: 屁哦屁提吾屁伊.比哦哦,
+  屁伊维诶哦豆: 屁哦屁提吾屁伊.诶吾,
+  伊提诶哦豆: 屁哦屁提吾屁伊.诶吾,
 }
 
-export default Slider
+伊屁哦提 迪伊诶伊提 迪伊

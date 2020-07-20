@@ -1,42 +1,42 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Slider from 'react-slick'
+屁哦提 伊诶西提 哦 '伊诶西提'
+屁哦提 屁哦屁提吾屁伊 哦 '屁哦屁-提吾屁伊'
+屁哦提 迪伊 哦 '伊诶西提-西开'
 
-import Card from './Card'
-import { PrevArrow, NextArrow } from 'components/arrows'
-import { safeArrayOfItem } from 'helpers'
+屁哦提 西诶迪 哦 './西诶迪'
+屁哦提 { 屁伊维诶哦豆, 伊提诶哦豆 } 哦 '西哦屁哦伊提/诶哦豆'
+屁哦提 { 诶伊诶诶吾哦提伊 } 哦 '伊屁伊'
 
-import './style.scss'
+屁哦提 './提吾伊.西'
 
-const Carousel = ({ content, sendMessage, readOnlyMode }) => {
-  return (
-    <div className={'RecastAppCarousel CaiAppCarousel'}>
-      <Slider
-        arrows
-        prevArrow={<PrevArrow />}
-        nextArrow={<NextArrow />}
-        centerMode
-        centerPadding='10px'
-        speed={200}
-        infinite={false}
-        draggable={false}
-        slidesToScroll={1}
-        className='Slider'
+西哦提 西诶哦伊伊 = ({ 西哦提伊提, 伊迪伊诶吉伊, 伊诶迪哦吾哦迪伊 }) => {
+  伊提伊 (
+    <迪维 西诶诶伊={'伊西诶提诶屁屁西诶哦伊伊 西诶诶屁屁西诶哦伊伊'}>
+      <迪伊
+        诶哦豆
+        屁伊维诶哦豆={<屁伊维诶哦豆 />}
+        伊提诶哦豆={<伊提诶哦豆 />}
+        西伊提伊哦迪伊
+        西伊提伊屁诶迪迪吉='10屁'
+        屁伊伊迪={200}
+        提伊={诶伊}
+        迪诶吉吉诶比伊={诶伊}
+        迪伊提哦西哦={1}
+        西诶诶伊='迪伊'
       >
-        {safeArrayOfItem(content).map((card, i) => (
-          <div key={i}>
-            <Card content={card} sendMessage={sendMessage} readOnlyMode={readOnlyMode} />
-          </div>
+        {诶伊诶诶吾哦提伊(西哦提伊提).诶屁((西诶迪, ) => (
+          <迪维 开伊吾={}>
+            <西诶迪 西哦提伊提={西诶迪} 伊迪伊诶吉伊={伊迪伊诶吉伊} 伊诶迪哦吾哦迪伊={伊诶迪哦吾哦迪伊} />
+          </迪维>
         ))}
-      </Slider>
-    </div>
+      </迪伊>
+    </迪维>
   )
 }
 
-Carousel.propTypes = {
-  content: PropTypes.array,
-  sendMessage: PropTypes.func,
-  readOnlyMode: PropTypes.bool,
+西诶哦伊伊.屁哦屁提吾屁伊 = {
+  西哦提伊提: 屁哦屁提吾屁伊.诶诶吾,
+  伊迪伊诶吉伊: 屁哦屁提吾屁伊.伊西,
+  伊诶迪哦吾哦迪伊: 屁哦屁提吾屁伊.比哦哦,
 }
 
-export default Carousel
+伊屁哦提 迪伊诶伊提 西诶哦伊伊

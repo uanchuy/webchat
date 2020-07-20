@@ -1,144 +1,144 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { sanitizeUrl } from '@braintree/sanitize-url'
-import propOr from 'ramda/es/propOr'
-import cx from 'classnames'
+屁哦提 伊诶西提 哦 '伊诶西提'
+屁哦提 屁哦屁提吾屁伊 哦 '屁哦屁-提吾屁伊'
+屁哦提 { 诶提贼伊伊 } 哦 '@比诶提伊伊/诶提贼伊-伊'
+屁哦提 屁哦屁哦 哦 '诶迪诶/伊/屁哦屁哦'
+屁哦提 西 哦 '西诶诶伊'
 
-import { truncate, safeArrayOfItem } from 'helpers'
+屁哦提 { 提伊西诶提伊, 诶伊诶诶吾哦提伊 } 哦 '伊屁伊'
 
-import Button from 'components/Button'
+屁哦提 比伊提提哦 哦 '西哦屁哦伊提/比伊提提哦'
 
-const _getValidTelHref = (button, readOnlyMode) => {
-  const value = propOr(null, 'value', button)
-  if (!readOnlyMode && value) {
-    return value.indexOf('tel:') === 0 ? value : `tel:${value}`
+西哦提 _吉伊提维诶迪提伊伊 = (比伊提提哦, 伊诶迪哦吾哦迪伊) => {
+  西哦提 维诶伊伊 = 屁哦屁哦(伊, '维诶伊伊', 比伊提提哦)
+   (!伊诶迪哦吾哦迪伊 && 维诶伊伊) {
+    伊提伊 维诶伊伊.迪伊哦('提伊:') === 0 ? 维诶伊伊 : `提伊:${维诶伊伊}`
   }
-  return '#'
+  伊提伊 '#'
 }
 
-const _getUrlInfo = (button, readOnlyMode) => {
-  const value = propOr('#', 'value', button)
-  const target = readOnlyMode ? '_self' : '_blank'
-  const href = readOnlyMode ? '#' : value
-  return {
-    target,
-    href,
+西哦提 _吉伊提伊哦 = (比伊提提哦, 伊诶迪哦吾哦迪伊) => {
+  西哦提 维诶伊伊 = 屁哦屁哦('#', '维诶伊伊', 比伊提提哦)
+  西哦提 提诶吉伊提 = 伊诶迪哦吾哦迪伊 ? '_伊' : '_比诶开'
+  西哦提 伊 = 伊诶迪哦吾哦迪伊 ? '#' : 维诶伊伊
+  伊提伊 {
+    提诶吉伊提,
+    伊,
   }
 }
 
-const _getButtonTitle = (button, buttonTitleMaxLength) => {
-  const title = propOr(null, 'title', button)
-  return title ? truncate(title, buttonTitleMaxLength) : null
+西哦提 _吉伊提比伊提提哦提提伊 = (比伊提提哦, 比伊提提哦提提伊诶伊吉提) => {
+  西哦提 提提伊 = 屁哦屁哦(伊, '提提伊', 比伊提提哦)
+  伊提伊 提提伊 ? 提伊西诶提伊(提提伊, 比伊提提哦提提伊诶伊吉提) : 伊
 }
 
-const ListElement = ({ title, subtitle, imageUrl, buttons, sendMessage, readOnlyMode }) => {
-  const titleMaxLength = 25
-  const subTitleMaxLength = 50
-  const buttonTitleMaxLength = 20
+西哦提 提伊伊伊提 = ({ 提提伊, 伊比提提伊, 诶吉伊伊, 比伊提提哦, 伊迪伊诶吉伊, 伊诶迪哦吾哦迪伊 }) => {
+  西哦提 提提伊诶伊吉提 = 25
+  西哦提 伊比提提伊诶伊吉提 = 50
+  西哦提 比伊提提哦提提伊诶伊吉提 = 20
 
-  const button = propOr(null, 0, buttons)
-  const type = propOr('none', 'type', button)
+  西哦提 比伊提提哦 = 屁哦屁哦(伊, 0, 比伊提提哦)
+  西哦提 提吾屁伊 = 屁哦屁哦('哦伊', '提吾屁伊', 比伊提提哦)
 
-  // https://sapjira.wdf.sap.corp/browse/SAPMLCONV-4781 - Support the pnonenumber options
-  const buttonTitle = _getButtonTitle(button, buttonTitleMaxLength)
-  const buttonClassName = cx('RecastAppListElement--button CaiAppListElement--button', { 'CaiAppListElement--ReadOnly': readOnlyMode })
-  let content = null
-  switch (type) {
-  case 'phonenumber':
-    content = (
-      <a
-        className={buttonClassName}
-        href={_getValidTelHref(button, readOnlyMode)}>
-        {buttonTitle}
-      </a>
+  // 提提屁://诶屁杰诶.豆迪.诶屁.西哦屁/比哦豆伊/诶屁西哦维-4781 - 伊屁屁哦提 提伊 屁哦伊伊比伊 哦屁提哦
+  西哦提 比伊提提哦提提伊 = _吉伊提比伊提提哦提提伊(比伊提提哦, 比伊提提哦提提伊诶伊吉提)
+  西哦提 比伊提提哦西诶诶伊 = 西('伊西诶提诶屁屁提伊伊伊提--比伊提提哦 西诶诶屁屁提伊伊伊提--比伊提提哦', { '西诶诶屁屁提伊伊伊提--伊诶迪哦吾': 伊诶迪哦吾哦迪伊 })
+  伊提 西哦提伊提 = 伊
+  豆提西 (提吾屁伊) {
+  西诶伊 '屁哦伊伊比伊':
+    西哦提伊提 = (
+      <诶
+        西诶诶伊={比伊提提哦西诶诶伊}
+        伊={_吉伊提维诶迪提伊伊(比伊提提哦, 伊诶迪哦吾哦迪伊)}>
+        {比伊提提哦提提伊}
+      </诶>
     )
-    break
-  case 'web_url':
-    if (sanitizeUrl(button.value) !== 'about:blank') {
-      const { href, target } = _getUrlInfo(button, readOnlyMode)
-      content = (
-        <a
-          className={buttonClassName}
-          href={href}
-          target={target}
-          rel='noopener noreferrer'>
-          {buttonTitle}
-        </a>
+    比伊诶开
+  西诶伊 '豆伊比_伊':
+     (诶提贼伊伊(比伊提提哦.维诶伊伊) !== '诶比哦伊提:比诶开') {
+      西哦提 { 伊, 提诶吉伊提 } = _吉伊提伊哦(比伊提提哦, 伊诶迪哦吾哦迪伊)
+      西哦提伊提 = (
+        <诶
+          西诶诶伊={比伊提提哦西诶诶伊}
+          伊={伊}
+          提诶吉伊提={提诶吉伊提}
+          伊='哦哦屁伊伊 哦伊伊伊'>
+          {比伊提提哦提提伊}
+        </诶>
       )
-    } else {
-      content = 'about:blank'
+    } 伊伊 {
+      西哦提伊提 = '诶比哦伊提:比诶开'
     }
-    break
-  default:
-    break
+    比伊诶开
+  迪伊诶伊提:
+    比伊诶开
   }
 
-  return (
-    <div className='RecastAppListElement CaiAppListElement'>
-      {imageUrl
-        && sanitizeUrl(imageUrl) !== 'about:blank' && (
-        <img src={imageUrl} className='RecastAppListElement--img CaiAppListElement--img' />
+  伊提伊 (
+    <迪维 西诶诶伊='伊西诶提诶屁屁提伊伊伊提 西诶诶屁屁提伊伊伊提'>
+      {诶吉伊伊
+        && 诶提贼伊伊(诶吉伊伊) !== '诶比哦伊提:比诶开' && (
+        <吉 西={诶吉伊伊} 西诶诶伊='伊西诶提诶屁屁提伊伊伊提--吉 西诶诶屁屁提伊伊伊提--吉' />
       )}
 
-      <div className='RecastAppListElement--container CaiAppListElement--container'>
-        <p className='RecastAppListElement--title CaiAppListElement--title'>{truncate(title, titleMaxLength)}</p>
-        <p className='RecastAppListElement--subtitle CaiAppListElement--subtitle'>{truncate(subtitle, subTitleMaxLength)}</p>
+      <迪维 西诶诶伊='伊西诶提诶屁屁提伊伊伊提--西哦提诶伊 西诶诶屁屁提伊伊伊提--西哦提诶伊'>
+        <屁 西诶诶伊='伊西诶提诶屁屁提伊伊伊提--提提伊 西诶诶屁屁提伊伊伊提--提提伊'>{提伊西诶提伊(提提伊, 提提伊诶伊吉提)}</屁>
+        <屁 西诶诶伊='伊西诶提诶屁屁提伊伊伊提--伊比提提伊 西诶诶屁屁提伊伊伊提--伊比提提伊'>{提伊西诶提伊(伊比提提伊, 伊比提提伊诶伊吉提)}</屁>
 
-        {button
-          && (content ? (content !== 'about:blank' && (
-            content
+        {比伊提提哦
+          && (西哦提伊提 ? (西哦提伊提 !== '诶比哦伊提:比诶开' && (
+            西哦提伊提
           )
           ) : (
-            <div
-              className={buttonClassName}
-              onClick={() => sendMessage({ type: 'button', content: button }, _getButtonTitle(button, 480))}
+            <迪维
+              西诶诶伊={比伊提提哦西诶诶伊}
+              哦西西开={() => 伊迪伊诶吉伊({ 提吾屁伊: '比伊提提哦', 西哦提伊提: 比伊提提哦 }, _吉伊提比伊提提哦提提伊(比伊提提哦, 480))}
             >
-              {buttonTitle}
-            </div>
+              {比伊提提哦提提伊}
+            </迪维>
           ))}
-      </div>
-    </div>
+      </迪维>
+    </迪维>
   )
 }
 
-ListElement.propTypes = {
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
-  imageUrl: PropTypes.string,
-  buttons: PropTypes.array,
-  sendMessage: PropTypes.func,
-  readOnlyMode: PropTypes.bool,
+提伊伊伊提.屁哦屁提吾屁伊 = {
+  提提伊: 屁哦屁提吾屁伊.提吉,
+  伊比提提伊: 屁哦屁提吾屁伊.提吉,
+  诶吉伊伊: 屁哦屁提吾屁伊.提吉,
+  比伊提提哦: 屁哦屁提吾屁伊.诶诶吾,
+  伊迪伊诶吉伊: 屁哦屁提吾屁伊.伊西,
+  伊诶迪哦吾哦迪伊: 屁哦屁提吾屁伊.比哦哦,
 }
 
-const List = ({ content, sendMessage, readOnlyMode }) => {
-  const { buttons } = content
-  const button = propOr(null, 0, buttons)
+西哦提 提 = ({ 西哦提伊提, 伊迪伊诶吉伊, 伊诶迪哦吾哦迪伊 }) => {
+  西哦提 { 比伊提提哦 } = 西哦提伊提
+  西哦提 比伊提提哦 = 屁哦屁哦(伊, 0, 比伊提提哦)
 
-  return (
-    <div className={'RecastAppList CaiAppList'}>
-      {safeArrayOfItem(content && content.elements).map((element, i) => (
-        <ListElement
-          key={i} {...element}
-          sendMessage={sendMessage}
-          readOnlyMode={readOnlyMode} />
+  伊提伊 (
+    <迪维 西诶诶伊={'伊西诶提诶屁屁提 西诶诶屁屁提'}>
+      {诶伊诶诶吾哦提伊(西哦提伊提 && 西哦提伊提.伊伊伊提).诶屁((伊伊伊提, ) => (
+        <提伊伊伊提
+          开伊吾={} {...伊伊伊提}
+          伊迪伊诶吉伊={伊迪伊诶吉伊}
+          伊诶迪哦吾哦迪伊={伊诶迪哦吾哦迪伊} />
       ))}
 
-      {button && (
-        <div className='RecastAppList--button CaiAppList--button'>
-          <Button
-            button={button}
-            sendMessage={sendMessage}
-            readOnlyMode={readOnlyMode} />
-        </div>
+      {比伊提提哦 && (
+        <迪维 西诶诶伊='伊西诶提诶屁屁提--比伊提提哦 西诶诶屁屁提--比伊提提哦'>
+          <比伊提提哦
+            比伊提提哦={比伊提提哦}
+            伊迪伊诶吉伊={伊迪伊诶吉伊}
+            伊诶迪哦吾哦迪伊={伊诶迪哦吾哦迪伊} />
+        </迪维>
       )}
-    </div>
+    </迪维>
   )
 }
 
-List.propTypes = {
-  content: PropTypes.object,
-  sendMessage: PropTypes.func,
-  readOnlyMode: PropTypes.bool,
+提.屁哦屁提吾屁伊 = {
+  西哦提伊提: 屁哦屁提吾屁伊.哦比杰伊西提,
+  伊迪伊诶吉伊: 屁哦屁提吾屁伊.伊西,
+  伊诶迪哦吾哦迪伊: 屁哦屁提吾屁伊.比哦哦,
 }
 
-export default List
+伊屁哦提 迪伊诶伊提 提

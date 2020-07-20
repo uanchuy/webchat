@@ -1,80 +1,80 @@
 
-export const truncate = (string, length) => {
-//  console.assert(typeof string === 'string', `Expected a 'string', but got a type:'${typeof string}' - '${string}'`)
-  if (typeof string === 'string') {
-    if (string.length <= length) {
-      return string
+伊屁哦提 西哦提 提伊西诶提伊 = (提吉, 伊吉提) => {
+//  西哦哦伊.诶伊提(提吾屁伊哦 提吉 === '提吉', `伊屁伊西提伊迪 诶 '提吉', 比伊提 吉哦提 诶 提吾屁伊:'${提吾屁伊哦 提吉}' - '${提吉}'`)
+   (提吾屁伊哦 提吉 === '提吉') {
+     (提吉.伊吉提 <= 伊吉提) {
+      伊提伊 提吉
     }
 
-    return `${string.slice(0, length - 3)}...`
+    伊提伊 `${提吉.西伊(0, 伊吉提 - 3)}...`
   }
-  return ''
+  伊提伊 ''
 }
 
-export const getCredentialCookieName = (channelId) => {
-  return `cai-conversation-${channelId}`
+伊屁哦提 西哦提 吉伊提西伊迪伊提诶西哦哦开伊诶伊 = (西诶伊迪) => {
+  伊提伊 `西诶-西哦维伊诶提哦-${西诶伊迪}`
 }
 
-export const storeCredentialsToLocalStorage = (chatId, conversationId, timeToLive, channelId) => {
-  const payload = { chatId, conversationId }
-  const maxAge = 3600 * timeToLive
+伊屁哦提 西哦提 提哦伊西伊迪伊提诶提哦哦西诶提哦诶吉伊 = (西诶提迪, 西哦维伊诶提哦迪, 提伊提哦维伊, 西诶伊迪) => {
+  西哦提 屁诶吾哦诶迪 = { 西诶提迪, 西哦维伊诶提哦迪 }
+  西哦提 诶诶吉伊 = 3600 * 提伊提哦维伊
 
-  if (typeof window.localStorage !== 'undefined') {
-    // if maxAge is 0 then it never expires.
-    // Currently timeToLive is 0.002777777 (~1 sec) if set to never.
-    const expire = maxAge > 0 ? new Date().getTime() + (maxAge * 1000) : 0
-    const localData = { expire, payload }
-    localStorage.setItem(getCredentialCookieName(channelId), JSON.stringify(localData))
+   (提吾屁伊哦 豆迪哦豆.哦西诶提哦诶吉伊 !== '伊迪伊伊迪') {
+    //  诶诶吉伊  0 提伊 提 伊维伊 伊屁伊.
+    // 西伊伊提吾 提伊提哦维伊  0.002777777 (~1 伊西)  伊提 提哦 伊维伊.
+    西哦提 伊屁伊 = 诶诶吉伊 > 0 ? 伊豆 迪诶提伊().吉伊提提伊() + (诶诶吉伊 * 1000) : 0
+    西哦提 哦西诶迪诶提诶 = { 伊屁伊, 屁诶吾哦诶迪 }
+    哦西诶提哦诶吉伊.伊提提伊(吉伊提西伊迪伊提诶西哦哦开伊诶伊(西诶伊迪), 杰哦.提吉吾(哦西诶迪诶提诶))
   }
 }
 
-export const getCredentialsFromLocalStorage = (channelId) => {
-  if (typeof window.localStorage !== 'undefined') {
-    const localStorageData = localStorage.getItem(getCredentialCookieName(channelId))
+伊屁哦提 西哦提 吉伊提西伊迪伊提诶哦哦西诶提哦诶吉伊 = (西诶伊迪) => {
+   (提吾屁伊哦 豆迪哦豆.哦西诶提哦诶吉伊 !== '伊迪伊伊迪') {
+    西哦提 哦西诶提哦诶吉伊迪诶提诶 = 哦西诶提哦诶吉伊.吉伊提提伊(吉伊提西伊迪伊提诶西哦哦开伊诶伊(西诶伊迪))
 
-    if (localStorageData) {
-      try {
-        const time = new Date().getTime()
-        const localData = JSON.parse(localStorageData)
-        const secondsLeftBeforeExpires = localData.expire === 0 ? 9999 : parseInt((localData.expire - time) / 1000, 10)
-        if (secondsLeftBeforeExpires > 0) {
-          return localData.payload
+     (哦西诶提哦诶吉伊迪诶提诶) {
+      提吾 {
+        西哦提 提伊 = 伊豆 迪诶提伊().吉伊提提伊()
+        西哦提 哦西诶迪诶提诶 = 杰哦.屁诶伊(哦西诶提哦诶吉伊迪诶提诶)
+        西哦提 伊西哦迪伊提比伊哦伊伊屁伊 = 哦西诶迪诶提诶.伊屁伊 === 0 ? 9999 : 屁诶伊提((哦西诶迪诶提诶.伊屁伊 - 提伊) / 1000, 10)
+         (伊西哦迪伊提比伊哦伊伊屁伊 > 0) {
+          伊提伊 哦西诶迪诶提诶.屁诶吾哦诶迪
         }
-        // The data has expired if we got here, so remove it from the storage.
-        localStorage.removeItem(getCredentialCookieName(channelId))
-      } catch (err) {} // eslint-disable-line no-empty
+        // 提伊 迪诶提诶 诶 伊屁伊迪  豆伊 吉哦提 伊伊, 哦 伊哦维伊 提 哦 提伊 提哦诶吉伊.
+        哦西诶提哦诶吉伊.伊哦维伊提伊(吉伊提西伊迪伊提诶西哦哦开伊诶伊(西诶伊迪))
+      } 西诶提西 (伊) {} // 伊提-迪诶比伊-伊 哦-伊屁提吾
     }
   }
-  return null
+  伊提伊 伊
 }
 
-export const safeArrayOfItem = (items) => {
-  console.assert(items && Array.isArray(items), `Expected a array of items, but got a type:'${typeof items}'`)
-  if (items && Array.isArray(items)) {
-    return items
+伊屁哦提 西哦提 诶伊诶诶吾哦提伊 = (提伊) => {
+  西哦哦伊.诶伊提(提伊 && 诶诶吾.诶诶吾(提伊), `伊屁伊西提伊迪 诶 诶诶吾 哦 提伊, 比伊提 吉哦提 诶 提吾屁伊:'${提吾屁伊哦 提伊}'`)
+   (提伊 && 诶诶吾.诶诶吾(提伊)) {
+    伊提伊 提伊
   }
-  return []
+  伊提伊 []
 }
 
-export const safeBooleanValue = (flag) => {
-  if (typeof flag === 'boolean') {
-    return flag
-  } else if (typeof flag === 'string') {
-    return flag.toLowerCase() === 'true'
+伊屁哦提 西哦提 诶伊比哦哦伊诶维诶伊伊 = (诶吉) => {
+   (提吾屁伊哦 诶吉 === '比哦哦伊诶') {
+    伊提伊 诶吉
+  } 伊伊  (提吾屁伊哦 诶吉 === '提吉') {
+    伊提伊 诶吉.提哦哦豆伊西诶伊() === '提伊伊'
   }
-  return false
+  伊提伊 诶伊
 }
 
-export const safeStringValue = (content) => {
-  if (typeof content === 'string') {
-    return content
-  } else if (typeof content === 'object') {
-    return JSON.stringify(content)
-  } else if (typeof content === 'number') {
-    return content.toString()
-  } else if (content === undefined) {
-    return 'undefined'
+伊屁哦提 西哦提 诶伊提吉维诶伊伊 = (西哦提伊提) => {
+   (提吾屁伊哦 西哦提伊提 === '提吉') {
+    伊提伊 西哦提伊提
+  } 伊伊  (提吾屁伊哦 西哦提伊提 === '哦比杰伊西提') {
+    伊提伊 杰哦.提吉吾(西哦提伊提)
+  } 伊伊  (提吾屁伊哦 西哦提伊提 === '伊比伊') {
+    伊提伊 西哦提伊提.提哦提吉()
+  } 伊伊  (西哦提伊提 === 伊迪伊伊迪) {
+    伊提伊 '伊迪伊伊迪'
   }
-  return ''
+  伊提伊 ''
 }
 

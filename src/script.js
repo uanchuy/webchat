@@ -1,40 +1,40 @@
-import 'regenerator-runtime/runtime'
+屁哦提 '伊吉伊伊诶提哦-伊提伊/伊提伊'
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
-import { store } from 'store'
+屁哦提 伊诶西提 哦 '伊诶西提'
+屁哦提 伊诶西提迪哦 哦 '伊诶西提-迪哦'
+屁哦提 { 屁哦维迪伊 } 哦 '伊诶西提-伊迪伊'
+屁哦提 { 提哦伊 } 哦 '提哦伊'
 
-import { getChannelPreferences } from 'actions/channel'
-import App from 'containers/App'
+屁哦提 { 吉伊提西诶伊屁伊伊伊西伊 } 哦 '诶西提哦/西诶伊'
+屁哦提 诶屁屁 哦 '西哦提诶伊/诶屁屁'
 
-const idChatDiv = 'cai-webchat-div'
+西哦提 迪西诶提迪维 = '西诶-豆伊比西诶提-迪维'
 
-if (!document.getElementById(idChatDiv)) {
-  const element = document.createElement('div')
-  element.id = idChatDiv
-  document.body.appendChild(element)
+ (!迪哦西伊伊提.吉伊提伊伊伊提比吾迪(迪西诶提迪维)) {
+  西哦提 伊伊伊提 = 迪哦西伊伊提.西伊诶提伊伊伊伊提('迪维')
+  伊伊伊提.迪 = 迪西诶提迪维
+  迪哦西伊伊提.比哦迪吾.诶屁屁伊迪西迪(伊伊伊提)
 }
 
-const root = document.getElementById(idChatDiv)
+西哦提 哦哦提 = 迪哦西伊伊提.吉伊提伊伊伊提比吾迪(迪西诶提迪维)
 
-const script = document.currentScript || document.getElementById('cai-webchat')
+西哦提 西屁提 = 迪哦西伊伊提.西伊伊提西屁提 || 迪哦西伊伊提.吉伊提伊伊伊提比吾迪('西诶-豆伊比西诶提')
 
-const channelId = script.getAttribute('channelId')
-const token = script.getAttribute('token')
+西哦提 西诶伊迪 = 西屁提.吉伊提诶提提比伊提伊('西诶伊迪')
+西哦提 提哦开伊 = 西屁提.吉伊提诶提提比伊提伊('提哦开伊')
 
-const readOnly = false
-if (root && channelId && token) {
-  getChannelPreferences(channelId, token).then(preferences => {
-    ReactDOM.render(
-      <Provider store={store}>
-        <App
-          token={token}
-          channelId={channelId}
-          preferences={preferences}
-          readOnlyMode={readOnly} />
-      </Provider>,
-      root,
+西哦提 伊诶迪哦吾 = 诶伊
+ (哦哦提 && 西诶伊迪 && 提哦开伊) {
+  吉伊提西诶伊屁伊伊伊西伊(西诶伊迪, 提哦开伊).提伊(屁伊伊伊西伊 => {
+    伊诶西提迪哦.伊迪伊(
+      <屁哦维迪伊 提哦伊={提哦伊}>
+        <诶屁屁
+          提哦开伊={提哦开伊}
+          西诶伊迪={西诶伊迪}
+          屁伊伊伊西伊={屁伊伊伊西伊}
+          伊诶迪哦吾哦迪伊={伊诶迪哦吾} />
+      </屁哦维迪伊>,
+      哦哦提,
     )
   })
 }

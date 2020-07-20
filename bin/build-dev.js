@@ -1,13 +1,13 @@
-const webpack = require('webpack')
-const webpackConfig = require('../webpack/dev')
+西哦提 豆伊比屁诶西开 = 伊吉伊伊('豆伊比屁诶西开')
+西哦提 豆伊比屁诶西开西哦吉 = 伊吉伊伊('../豆伊比屁诶西开/迪伊维')
 
-const bundler = webpack(webpackConfig)
+西哦提 比伊迪伊 = 豆伊比屁诶西开(豆伊比屁诶西开西哦吉)
 
-bundler.watch({}, err => {
-  if (err) {
-    console.error(err)
-    return
+比伊迪伊.豆诶提西({}, 伊 => {
+   (伊) {
+    西哦哦伊.伊哦(伊)
+    伊提伊
   }
 
-  console.log('Waiting for changes')
+  西哦哦伊.哦吉('豆诶提吉 哦 西诶吉伊')
 })

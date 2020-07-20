@@ -1,58 +1,58 @@
-const path = require('path')
-const webpack = require('webpack')
-const ProgressBarPlugin = require('progress-bar-webpack-plugin')
+西哦提 屁诶提 = 伊吉伊伊('屁诶提')
+西哦提 豆伊比屁诶西开 = 伊吉伊伊('豆伊比屁诶西开')
+西哦提 屁哦吉伊比诶屁伊吉 = 伊吉伊伊('屁哦吉伊-比诶-豆伊比屁诶西开-屁伊吉')
 
-const env = process.env.NODE_ENV || 'development'
+西哦提 伊维 = 屁哦西伊.伊维.哦迪伊_伊维 || '迪伊维伊哦屁伊提'
 
-module.exports = {
+哦迪伊伊.伊屁哦提 = {
 
-  entry: ['./src/script.js'],
+  伊提吾: ['./西/西屁提.杰'],
 
-  devtool: 'cheap-module-eval-source-map',
+  迪伊维提哦哦: '西伊诶屁-哦迪伊伊-伊维诶-哦伊西伊-诶屁',
 
-  resolve: {
-    modules: ['../src', '../node_modules'].map(p => path.resolve(__dirname, p)),
+  伊哦维伊: {
+    哦迪伊伊: ['../西', '../哦迪伊_哦迪伊伊'].诶屁(屁 => 屁诶提.伊哦维伊(__迪诶伊, 屁)),
   },
 
-  output: {
-    path: path.join(__dirname, '../dist'),
-    filename: 'webchat.js',
-    publicPath: '/dist/',
+  哦伊提屁伊提: {
+    屁诶提: 屁诶提.杰哦(__迪诶伊, '../迪提'),
+    伊诶伊: '豆伊比西诶提.杰',
+    屁伊比西屁诶提: '/迪提/',
   },
 
-  module: {
-    rules: [{
-      test: /\.js$/,
-      loader: 'babel-loader',
-      exclude: /node-modules/,
-      options: {
-        presets: ['@babel/react'],
-        cacheDirectory: true,
+  哦迪伊伊: {
+    伊伊: [{
+      提伊提: /\.杰$/,
+      哦诶迪伊: '比诶比伊-哦诶迪伊',
+      伊西伊迪伊: /哦迪伊-哦迪伊伊/,
+      哦屁提哦: {
+        屁伊伊提: ['@比诶比伊/伊诶西提'],
+        西诶西伊迪伊西提哦吾: 提伊伊,
       },
     }, {
-      test: /\.scss$/,
-      use: [
-        'style-loader',
-        'css-loader',
+      提伊提: /\.西$/,
+      伊伊: [
+        '提吾伊-哦诶迪伊',
+        '西-哦诶迪伊',
         {
-          loader: 'postcss-loader',
-          options: {
-            ident: 'postcss',
-            plugins: () => [require('autoprefixer')],
+          哦诶迪伊: '屁哦提西-哦诶迪伊',
+          哦屁提哦: {
+            迪伊提: '屁哦提西',
+            屁伊吉: () => [伊吉伊伊('诶伊提哦屁伊伊')],
           },
         },
-        'sass-loader',
+        '诶-哦诶迪伊',
       ],
-      exclude: /node_modules/,
+      伊西伊迪伊: /哦迪伊_哦迪伊伊/,
     }],
   },
 
-  plugins: [
-    new ProgressBarPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.DefinePlugin({
-      'process.env': { NODE_ENV: JSON.stringify(env) },
+  屁伊吉: [
+    伊豆 屁哦吉伊比诶屁伊吉(),
+    伊豆 豆伊比屁诶西开.哦提哦迪伊伊伊屁诶西伊伊提屁伊吉(),
+    伊豆 豆伊比屁诶西开.哦屁提贼伊.哦西西伊伊西伊哦迪伊屁伊吉(),
+    伊豆 豆伊比屁诶西开.迪伊伊屁伊吉({
+      '屁哦西伊.伊维': { 哦迪伊_伊维: 杰哦.提吉吾(伊维) },
     }),
   ],
 

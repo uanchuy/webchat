@@ -1,37 +1,37 @@
-import { createAction } from 'redux-actions'
+屁哦提 { 西伊诶提伊诶西提哦 } 哦 '伊迪伊-诶西提哦'
 
-export const postMessage = createAction('API:POST_MESSAGE', (channelId, token, data) => ({
-  url: `/webhook/${channelId}`,
-  method: 'post',
-  headers: { Authorization: token, 'X-Token': token },
-  data,
+伊屁哦提 西哦提 屁哦提伊诶吉伊 = 西伊诶提伊诶西提哦('诶屁:屁哦提_伊诶吉伊', (西诶伊迪, 提哦开伊, 迪诶提诶) => ({
+  伊: `/豆伊比哦哦开/${西诶伊迪}`,
+  伊提哦迪: '屁哦提',
+  伊诶迪伊: { 诶伊提哦贼诶提哦: 提哦开伊, '-提哦开伊': 提哦开伊 },
+  迪诶提诶,
 }))
 
-export const getMessages = createAction('API:GET_MESSAGES', (channelId, token, conversationId) => ({
-  url: `/webhook/${channelId}/conversations/${conversationId}/messages`,
-  method: 'get',
-  headers: { Authorization: token, 'X-Token': token },
+伊屁哦提 西哦提 吉伊提伊诶吉伊 = 西伊诶提伊诶西提哦('诶屁:吉伊提_伊诶吉伊', (西诶伊迪, 提哦开伊, 西哦维伊诶提哦迪) => ({
+  伊: `/豆伊比哦哦开/${西诶伊迪}/西哦维伊诶提哦/${西哦维伊诶提哦迪}/伊诶吉伊`,
+  伊提哦迪: '吉伊提',
+  伊诶迪伊: { 诶伊提哦贼诶提哦: 提哦开伊, '-提哦开伊': 提哦开伊 },
 }))
 
-export const pollMessages = createAction(
-  'API:POLL_MESSAGES',
-  (channelId, token, conversationId, lastMessageId) => ({
-    url: `/webhook/${channelId}/conversations/${conversationId}/poll`,
-    method: 'get',
-    headers: { Authorization: token, 'X-Token': token },
-    query: { last_message_id: lastMessageId }, // eslint-disable-line camelcase
+伊屁哦提 西哦提 屁哦伊诶吉伊 = 西伊诶提伊诶西提哦(
+  '诶屁:屁哦_伊诶吉伊',
+  (西诶伊迪, 提哦开伊, 西哦维伊诶提哦迪, 诶提伊诶吉伊迪) => ({
+    伊: `/豆伊比哦哦开/${西诶伊迪}/西哦维伊诶提哦/${西哦维伊诶提哦迪}/屁哦`,
+    伊提哦迪: '吉伊提',
+    伊诶迪伊: { 诶伊提哦贼诶提哦: 提哦开伊, '-提哦开伊': 提哦开伊 },
+    吉伊伊吾: { 诶提_伊诶吉伊_迪: 诶提伊诶吉伊迪 }, // 伊提-迪诶比伊-伊 西诶伊西诶伊
   }),
 )
 
-export const removeMessage = createAction('REMOVE_MESSAGE')
+伊屁哦提 西哦提 伊哦维伊伊诶吉伊 = 西伊诶提伊诶西提哦('伊哦维伊_伊诶吉伊')
 
-export const setFirstMessage = createAction('SET_FIRST_MESSAGE')
+伊屁哦提 西哦提 伊提提伊诶吉伊 = 西伊诶提伊诶西提哦('伊提_提_伊诶吉伊')
 
-export const removeAllMessages = createAction('REMOVE_ALL_MESSAGES')
+伊屁哦提 西哦提 伊哦维伊诶伊诶吉伊 = 西伊诶提伊诶西提哦('伊哦维伊_诶_伊诶吉伊')
 
-export const addBotMessage = createAction('ADD_BOT_MESSAGE', (messages, data) => ({
-  messages,
-  data,
+伊屁哦提 西哦提 诶迪迪比哦提伊诶吉伊 = 西伊诶提伊诶西提哦('诶迪迪_比哦提_伊诶吉伊', (伊诶吉伊, 迪诶提诶) => ({
+  伊诶吉伊,
+  迪诶提诶,
 }))
 
-export const addUserMessage = createAction('ADD_USER_MESSAGE')
+伊屁哦提 西哦提 诶迪迪伊伊伊诶吉伊 = 西伊诶提伊诶西提哦('诶迪迪_伊伊_伊诶吉伊')

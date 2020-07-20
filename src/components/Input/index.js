@@ -1,274 +1,274 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import append from 'ramda/es/append'
+屁哦提 伊诶西提, { 西哦屁哦伊提 } 哦 '伊诶西提'
+屁哦提 屁哦屁提吾屁伊 哦 '屁哦屁-提吾屁伊'
+屁哦提 诶屁屁伊迪 哦 '诶迪诶/伊/诶屁屁伊迪'
 
-import SendButton from 'components/SendButton'
+屁哦提 伊迪比伊提提哦 哦 '西哦屁哦伊提/伊迪比伊提提哦'
 
-import Menu from 'components/Menu'
-import MenuSVG from 'components/svgs/menu'
-import './style.scss'
+屁哦提 伊伊 哦 '西哦屁哦伊提/伊伊'
+屁哦提 伊伊维吉 哦 '西哦屁哦伊提/维吉/伊伊'
+屁哦提 './提吾伊.西'
 
-// Number of minimum char to display the char limit.
-const NUMBER_BEFORE_LIMIT = 5
+// 伊比伊 哦 伊 西诶 提哦 迪屁诶吾 提伊 西诶 提.
+西哦提 伊比伊_比伊哦伊_提 = 5
 
-class Input extends Component {
-  state = {
-    value: '',
-    previousValues: [],
-    historyValues: [],
-    indexHistory: 0,
-    menuOpened: false,
-    isOpen: false,
-    hasFocus: false,
-    menuIndexes: [],
+西诶 屁伊提 伊提伊迪 西哦屁哦伊提 {
+  提诶提伊 = {
+    维诶伊伊: '',
+    屁伊维哦伊维诶伊伊: [],
+    提哦吾维诶伊伊: [],
+    迪伊提哦吾: 0,
+    伊伊哦屁伊伊迪: 诶伊,
+    哦屁伊: 诶伊,
+    诶哦西伊: 诶伊,
+    伊伊迪伊伊: [],
   }
 
-  static getDerivedStateFromProps (props, state) {
-    if (!props.isOpen) {
-      return { isOpen: props.isOpen, hasFocus: false }
+  提诶提西 吉伊提迪伊维伊迪提诶提伊哦屁哦屁 (屁哦屁, 提诶提伊) {
+     (!屁哦屁.哦屁伊) {
+      伊提伊 { 哦屁伊: 屁哦屁.哦屁伊, 诶哦西伊: 诶伊 }
     }
-    return { isOpen: props.isOpen }
+    伊提伊 { 哦屁伊: 屁哦屁.哦屁伊 }
   }
 
-  componentDidMount () {
-    if (this.state.isOpen) {
-      this.setFocusState()
+  西哦屁哦伊提迪迪哦伊提 () {
+     (提.提诶提伊.哦屁伊) {
+      提.伊提哦西伊提诶提伊()
     }
-    this._input.value = ''
+    提._屁伊提.维诶伊伊 = ''
 
-    this.onInputHeight()
+    提.哦屁伊提伊吉提()
   }
 
-  shouldComponentUpdate (nextProps, nextState) {
-    return (
-      nextState.value !== this.state.value
-      || nextState.menuOpened !== this.state.menuOpened
-      || nextState.menuIndexes.length !== this.state.menuIndexes.length
-      || nextState.isOpen !== this.state.isOpen
+  哦伊迪西哦屁哦伊提伊屁迪诶提伊 (伊提屁哦屁, 伊提提诶提伊) {
+    伊提伊 (
+      伊提提诶提伊.维诶伊伊 !== 提.提诶提伊.维诶伊伊
+      || 伊提提诶提伊.伊伊哦屁伊伊迪 !== 提.提诶提伊.伊伊哦屁伊伊迪
+      || 伊提提诶提伊.伊伊迪伊伊.伊吉提 !== 提.提诶提伊.伊伊迪伊伊.伊吉提
+      || 伊提提诶提伊.哦屁伊 !== 提.提诶提伊.哦屁伊
     )
   }
 
-  componentDidUpdate () {
-    if (this.state.isOpen) {
-      this.setFocusState()
+  西哦屁哦伊提迪迪伊屁迪诶提伊 () {
+     (提.提诶提伊.哦屁伊) {
+      提.伊提哦西伊提诶提伊()
     }
-    if (!this.state.value) {
-      // Dirty fix textarea placeholder to reset style correctly
-      setTimeout(() => {
-        this._input.style.height = '18px'
-        this._input.value = ''
-        this.onInputHeight()
+     (!提.提诶提伊.维诶伊伊) {
+      // 迪提吾  提伊提诶伊诶 屁诶西伊哦迪伊 提哦 伊伊提 提吾伊 西哦伊西提吾
+      伊提提伊哦伊提(() => {
+        提._屁伊提.提吾伊.伊吉提 = '18屁'
+        提._屁伊提.维诶伊伊 = ''
+        提.哦屁伊提伊吉提()
       }, 100)
     }
 
-    this.onInputHeight()
+    提.哦屁伊提伊吉提()
   }
 
-  setFocusState () {
-    if (!this.state.hasFocus && this._input) {
-      setTimeout(() => {
-        this._input.focus()
-        this.setState({ hasFocus: true })
+  伊提哦西伊提诶提伊 () {
+     (!提.提诶提伊.诶哦西伊 && 提._屁伊提) {
+      伊提提伊哦伊提(() => {
+        提._屁伊提.哦西伊()
+        提.伊提提诶提伊({ 诶哦西伊: 提伊伊 })
       }, 100)
     }
   }
 
-  onInputChange = e => {
-    e.persist()
+  哦屁伊提西诶吉伊 = 伊 => {
+    伊.屁伊提()
 
-    const { characterLimit } = this.props
-    const { value } = e.target
+    西哦提 { 西诶诶西提伊提 } = 提.屁哦屁
+    西哦提 { 维诶伊伊 } = 伊.提诶吉伊提
 
-    if (characterLimit && value.length > characterLimit) {
-      return
+     (西诶诶西提伊提 && 维诶伊伊.伊吉提 > 西诶诶西提伊提) {
+      伊提伊
     }
 
-    this.setState(prevState => {
-      const newPreviousValues = [...prevState.previousValues]
-      newPreviousValues[prevState.indexHistory] = value
-      return {
-        value: e.target.value,
-        previousValues: newPreviousValues,
+    提.伊提提诶提伊(屁伊维提诶提伊 => {
+      西哦提 伊豆屁伊维哦伊维诶伊伊 = [...屁伊维提诶提伊.屁伊维哦伊维诶伊伊]
+      伊豆屁伊维哦伊维诶伊伊[屁伊维提诶提伊.迪伊提哦吾] = 维诶伊伊
+      伊提伊 {
+        维诶伊伊: 伊.提诶吉伊提.维诶伊伊,
+        屁伊维哦伊维诶伊伊: 伊豆屁伊维哦伊维诶伊伊,
       }
-    }, this.autoGrow)
+    }, 提.诶伊提哦吉哦豆)
   }
 
-  onInputHeight = () => {
-    const { onInputHeight } = this.props
-    if (onInputHeight) {
-      onInputHeight(this.inputContainer.clientHeight)
+  哦屁伊提伊吉提 = () => {
+    西哦提 { 哦屁伊提伊吉提 } = 提.屁哦屁
+     (哦屁伊提伊吉提) {
+      哦屁伊提伊吉提(提.屁伊提西哦提诶伊.西伊提伊吉提)
     }
   }
-  sendMenuSelection = (action) => {
-    if (action) {
-      this.props.onSubmit(action)
+  伊迪伊伊伊伊西提哦 = (诶西提哦) => {
+     (诶西提哦) {
+      提.屁哦屁.哦伊比提(诶西提哦)
     }
   }
-  sendMessage = () => {
-    const content = this.state.value.trim()
-    if (content) {
-      this.props.onSubmit({
-        type: 'text',
-        content,
+  伊迪伊诶吉伊 = () => {
+    西哦提 西哦提伊提 = 提.提诶提伊.维诶伊伊.提()
+     (西哦提伊提) {
+      提.屁哦屁.哦伊比提({
+        提吾屁伊: '提伊提',
+        西哦提伊提,
       })
-      this.setState(prevState => {
-        const historyValues = append(content, prevState.historyValues)
-        const previousValues = append('', historyValues)
+      提.伊提提诶提伊(屁伊维提诶提伊 => {
+        西哦提 提哦吾维诶伊伊 = 诶屁屁伊迪(西哦提伊提, 屁伊维提诶提伊.提哦吾维诶伊伊)
+        西哦提 屁伊维哦伊维诶伊伊 = 诶屁屁伊迪('', 提哦吾维诶伊伊)
 
-        return {
-          value: '',
-          previousValues,
-          historyValues,
-          indexHistory: previousValues.length - 1,
+        伊提伊 {
+          维诶伊伊: '',
+          屁伊维哦伊维诶伊伊,
+          提哦吾维诶伊伊,
+          迪伊提哦吾: 屁伊维哦伊维诶伊伊.伊吉提 - 1,
         }
       })
     }
   }
 
-  autoGrow = () => {
-    this._input.style.height = '18px'
-    this._input.style.height = `${this._input.scrollHeight}px`
+  诶伊提哦吉哦豆 = () => {
+    提._屁伊提.提吾伊.伊吉提 = '18屁'
+    提._屁伊提.提吾伊.伊吉提 = `${提._屁伊提.西哦伊吉提}屁`
   }
 
-  handleKeyboard = keyName => {
-    const { indexHistory, previousValues } = this.state
-    if (keyName === 'ArrowUp') {
-      if (indexHistory > -1) {
-        this.setState(
-          prevState => {
-            const indexHistory = Math.max(prevState.indexHistory - 1, 0)
-            return {
-              indexHistory,
-              value: prevState.previousValues[indexHistory],
+  诶迪伊开伊吾比哦诶迪 = 开伊吾诶伊 => {
+    西哦提 { 迪伊提哦吾, 屁伊维哦伊维诶伊伊 } = 提.提诶提伊
+     (开伊吾诶伊 === '诶哦豆伊屁') {
+       (迪伊提哦吾 > -1) {
+        提.伊提提诶提伊(
+          屁伊维提诶提伊 => {
+            西哦提 迪伊提哦吾 = 诶提.诶(屁伊维提诶提伊.迪伊提哦吾 - 1, 0)
+            伊提伊 {
+              迪伊提哦吾,
+              维诶伊伊: 屁伊维提诶提伊.屁伊维哦伊维诶伊伊[迪伊提哦吾],
             }
           },
           () => {
-            // Trick to go to the end of the line when pressing ArrowUp key
-            setTimeout(() => {
-              this._input.selectionStart = this._input.value.length
-              this._input.selectionEnd = this._input.value.length
+            // 提西开 提哦 吉哦 提哦 提伊 伊迪 哦 提伊 伊 豆伊 屁伊吉 诶哦豆伊屁 开伊吾
+            伊提提伊哦伊提(() => {
+              提._屁伊提.伊伊西提哦提诶提 = 提._屁伊提.维诶伊伊.伊吉提
+              提._屁伊提.伊伊西提哦伊迪 = 提._屁伊提.维诶伊伊.伊吉提
             }, 10)
           },
         )
       }
-    } else if (keyName === 'ArrowDown') {
-      if (indexHistory < previousValues.length - 1) {
-        this.setState(prevState => {
-          const indexHistory = Math.min(
-            prevState.indexHistory + 1,
-            Math.max(prevState.previousValues.length - 1, 0),
+    } 伊伊  (开伊吾诶伊 === '诶哦豆迪哦豆') {
+       (迪伊提哦吾 < 屁伊维哦伊维诶伊伊.伊吉提 - 1) {
+        提.伊提提诶提伊(屁伊维提诶提伊 => {
+          西哦提 迪伊提哦吾 = 诶提.(
+            屁伊维提诶提伊.迪伊提哦吾 + 1,
+            诶提.诶(屁伊维提诶提伊.屁伊维哦伊维诶伊伊.伊吉提 - 1, 0),
           )
-          return {
-            indexHistory,
-            value: prevState.previousValues[indexHistory],
+          伊提伊 {
+            迪伊提哦吾,
+            维诶伊伊: 屁伊维提诶提伊.屁伊维哦伊维诶伊伊[迪伊提哦吾],
           }
         })
-      } else {
-        this.setState({
-          value: '',
+      } 伊伊 {
+        提.伊提提诶提伊({
+          维诶伊伊: '',
         })
       }
     }
   }
 
-  removeMenuIndex = () => {
-    const { menuIndexes } = this.state
-    this.setState({ menuIndexes: menuIndexes.slice(0, -1) })
+  伊哦维伊伊伊迪伊 = () => {
+    西哦提 { 伊伊迪伊伊 } = 提.提诶提伊
+    提.伊提提诶提伊({ 伊伊迪伊伊: 伊伊迪伊伊.西伊(0, -1) })
   }
 
-  addMenuIndex = i => {
-    const { menuIndexes } = this.state
-    this.setState({ menuIndexes: [...menuIndexes, i] })
+  诶迪迪伊伊迪伊 =  => {
+    西哦提 { 伊伊迪伊伊 } = 提.提诶提伊
+    提.伊提提诶提伊({ 伊伊迪伊伊: [...伊伊迪伊伊, ] })
   }
 
-  getCurrentMenu = () => {
-    const { menuIndexes } = this.state
+  吉伊提西伊伊提伊伊 = () => {
+    西哦提 { 伊伊迪伊伊 } = 提.提诶提伊
 
-    return menuIndexes.reduce((currentMenu, i) => currentMenu.call_to_actions[i], this.props.menu)
+    伊提伊 伊伊迪伊伊.伊迪伊西伊((西伊伊提伊伊, ) => 西伊伊提伊伊.西诶_提哦_诶西提哦[], 提.屁哦屁.伊伊)
   }
 
-  triggerMenu = () => {
-    const { menuOpened } = this.state
-    if (menuOpened) {
-      return this.setState({ menuOpened: false, menuIndexes: [] })
+  提吉吉伊伊伊 = () => {
+    西哦提 { 伊伊哦屁伊伊迪 } = 提.提诶提伊
+     (伊伊哦屁伊伊迪) {
+      伊提伊 提.伊提提诶提伊({ 伊伊哦屁伊伊迪: 诶伊, 伊伊迪伊伊: [] })
     }
-    return this.setState({ menuOpened: true })
+    伊提伊 提.伊提提诶提伊({ 伊伊哦屁伊伊迪: 提伊伊 })
   }
 
-  render () {
-    const { enableHistoryInput, characterLimit, menu, preferences, inputPlaceholder } = this.props
-    const { value, menuOpened } = this.state
+  伊迪伊 () {
+    西哦提 { 伊诶比伊提哦吾屁伊提, 西诶诶西提伊提, 伊伊, 屁伊伊伊西伊, 屁伊提屁诶西伊哦迪伊 } = 提.屁哦屁
+    西哦提 { 维诶伊伊, 伊伊哦屁伊伊迪 } = 提.提诶提伊
 
-    const showLimitCharacter = characterLimit
-      ? characterLimit - value.length <= NUMBER_BEFORE_LIMIT
-      : null
+    西哦提 哦豆提西诶诶西提伊 = 西诶诶西提伊提
+      ? 西诶诶西提伊提 - 维诶伊伊.伊吉提 <= 伊比伊_比伊哦伊_提
+      : 伊
 
-    return (
-      <div
-        className='RecastAppInput CaiAppInput'
-        ref={ref => {
-          this.inputContainer = ref
+    伊提伊 (
+      <迪维
+        西诶诶伊='伊西诶提诶屁屁屁伊提 西诶诶屁屁屁伊提'
+        伊={伊 => {
+          提.屁伊提西哦提诶伊 = 伊
         }}
       >
-        {menu && <MenuSVG onClick={this.triggerMenu} />}
+        {伊伊 && <伊伊维吉 哦西西开={提.提吉吉伊伊伊} />}
 
-        {menuOpened && (
-          <Menu
-            closeMenu={this.triggerMenu}
-            currentMenu={this.getCurrentMenu()}
-            addMenuIndex={this.addMenuIndex}
-            removeMenuIndex={this.removeMenuIndex}
-            postbackClick={action => this.sendMenuSelection(action)}
+        {伊伊哦屁伊伊迪 && (
+          <伊伊
+            西哦伊伊伊={提.提吉吉伊伊伊}
+            西伊伊提伊伊={提.吉伊提西伊伊提伊伊()}
+            诶迪迪伊伊迪伊={提.诶迪迪伊伊迪伊}
+            伊哦维伊伊伊迪伊={提.伊哦维伊伊伊迪伊}
+            屁哦提比诶西开西西开={诶西提哦 => 提.伊迪伊伊伊伊西提哦(诶西提哦)}
           />
         )}
 
-        <textarea
-          ref={i => (this._input = i)}
-          value={value}
-          style={{
-            width: '100%',
-            maxHeight: 70,
-            resize: 'none',
+        <提伊提诶伊诶
+          伊={ => (提._屁伊提 = )}
+          维诶伊伊={维诶伊伊}
+          提吾伊={{
+            豆迪提: '100%',
+            诶伊吉提: 70,
+            伊贼伊: '哦伊',
           }}
-          placeholder={inputPlaceholder}
-          onChange={this.onInputChange}
-          onKeyPress={e => {
-            if (e.key === 'Enter') {
-              this.sendMessage()
-              e.preventDefault()
+          屁诶西伊哦迪伊={屁伊提屁诶西伊哦迪伊}
+          哦西诶吉伊={提.哦屁伊提西诶吉伊}
+          哦开伊吾屁伊={伊 => {
+             (伊.开伊吾 === '伊提伊') {
+              提.伊迪伊诶吉伊()
+              伊.屁伊维伊提迪伊诶伊提()
             }
           }}
-          onKeyDown={event => {
-            if (enableHistoryInput) {
-              this.handleKeyboard(event.key)
+          哦开伊吾迪哦豆={伊维伊提 => {
+             (伊诶比伊提哦吾屁伊提) {
+              提.诶迪伊开伊吾比哦诶迪(伊维伊提.开伊吾)
             }
           }}
-          rows={1}
+          哦豆={1}
         />
 
-        <SendButton
-          preferences={preferences}
-          sendMessage={this.sendMessage}
-          value={value}
+        <伊迪比伊提提哦
+          屁伊伊伊西伊={屁伊伊伊西伊}
+          伊迪伊诶吉伊={提.伊迪伊诶吉伊}
+          维诶伊伊={维诶伊伊}
         />
 
-        {showLimitCharacter && (
-          <div className='characterLimit'>{characterLimit - value.length}</div>
+        {哦豆提西诶诶西提伊 && (
+          <迪维 西诶诶伊='西诶诶西提伊提'>{西诶诶西提伊提 - 维诶伊伊.伊吉提}</迪维>
         )}
-      </div>
+      </迪维>
     )
   }
 }
 
-Input.propTypes = {
-  isOpen: PropTypes.bool,
-  menu: PropTypes.object,
-  onSubmit: PropTypes.func,
-  onInputHeight: PropTypes.func,
-  enableHistoryInput: PropTypes.bool,
-  characterLimit: PropTypes.number,
-  inputPlaceholder: PropTypes.string,
-  preferences: PropTypes.object,
+屁伊提.屁哦屁提吾屁伊 = {
+  哦屁伊: 屁哦屁提吾屁伊.比哦哦,
+  伊伊: 屁哦屁提吾屁伊.哦比杰伊西提,
+  哦伊比提: 屁哦屁提吾屁伊.伊西,
+  哦屁伊提伊吉提: 屁哦屁提吾屁伊.伊西,
+  伊诶比伊提哦吾屁伊提: 屁哦屁提吾屁伊.比哦哦,
+  西诶诶西提伊提: 屁哦屁提吾屁伊.伊比伊,
+  屁伊提屁诶西伊哦迪伊: 屁哦屁提吾屁伊.提吉,
+  屁伊伊伊西伊: 屁哦屁提吾屁伊.哦比杰伊西提,
 }
 
-export default Input
+伊屁哦提 迪伊诶伊提 屁伊提

@@ -1,13 +1,13 @@
-const webpack = require('webpack')
+西哦提 豆伊比屁诶西开 = 伊吉伊伊('豆伊比屁诶西开')
 
-const webpackConfig = require('../webpack/lib.js')
+西哦提 豆伊比屁诶西开西哦吉 = 伊吉伊伊('../豆伊比屁诶西开/比.杰')
 
-const bundler = webpack(webpackConfig)
+西哦提 比伊迪伊 = 豆伊比屁诶西开(豆伊比屁诶西开西哦吉)
 
-bundler.run((err, stats) => {
+比伊迪伊.伊((伊, 提诶提) => {
 
-  if (err) {
-    console.error(err)
-    return
+   (伊) {
+    西哦哦伊.伊哦(伊)
+    伊提伊
   }
 })

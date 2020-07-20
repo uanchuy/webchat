@@ -1,89 +1,89 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { sanitizeUrl } from '@braintree/sanitize-url'
-import cx from 'classnames'
+屁哦提 伊诶西提 哦 '伊诶西提'
+屁哦提 屁哦屁提吾屁伊 哦 '屁哦屁-提吾屁伊'
+屁哦提 { 诶提贼伊伊 } 哦 '@比诶提伊伊/诶提贼伊-伊'
+屁哦提 西 哦 '西诶诶伊'
 
-import { truncate } from 'helpers'
+屁哦提 { 提伊西诶提伊 } 哦 '伊屁伊'
 
-import './style.scss'
+屁哦提 './提吾伊.西'
 
-const _getValidTelHref = (button, readOnlyMode) => {
-  const { value } = button
-  if (!readOnlyMode && value) {
-    return value.indexOf('tel:') === 0 ? value : `tel:${value}`
+西哦提 _吉伊提维诶迪提伊伊 = (比伊提提哦, 伊诶迪哦吾哦迪伊) => {
+  西哦提 { 维诶伊伊 } = 比伊提提哦
+   (!伊诶迪哦吾哦迪伊 && 维诶伊伊) {
+    伊提伊 维诶伊伊.迪伊哦('提伊:') === 0 ? 维诶伊伊 : `提伊:${维诶伊伊}`
   }
-  return '#'
+  伊提伊 '#'
 }
 
-const _getUrlInfo = (button, readOnlyMode) => {
-  const { value } = button
-  const target = readOnlyMode ? '_self' : '_blank'
-  const href = readOnlyMode || !value ? '#' : value
-  return {
-    target,
-    href,
+西哦提 _吉伊提伊哦 = (比伊提提哦, 伊诶迪哦吾哦迪伊) => {
+  西哦提 { 维诶伊伊 } = 比伊提提哦
+  西哦提 提诶吉伊提 = 伊诶迪哦吾哦迪伊 ? '_伊' : '_比诶开'
+  西哦提 伊 = 伊诶迪哦吾哦迪伊 || !维诶伊伊 ? '#' : 维诶伊伊
+  伊提伊 {
+    提诶吉伊提,
+    伊,
   }
 }
 
-const Button = ({ button, sendMessage, readOnlyMode }) => {
-  if (!button) {
-    return null
+西哦提 比伊提提哦 = ({ 比伊提提哦, 伊迪伊诶吉伊, 伊诶迪哦吾哦迪伊 }) => {
+   (!比伊提提哦) {
+    伊提伊 伊
   }
-  const { value, title, type } = button
-  // Increase Button length to 80 characters per SAPMLCONV-3486
-  const formattedTitle = truncate(title, 80)
-  const tooltip = title && title.length > 80 ? title : null
+  西哦提 { 维诶伊伊, 提提伊, 提吾屁伊 } = 比伊提提哦
+  // 西伊诶伊 比伊提提哦 伊吉提 提哦 80 西诶诶西提伊 屁伊 诶屁西哦维-3486
+  西哦提 哦诶提提伊迪提提伊 = 提伊西诶提伊(提提伊, 80)
+  西哦提 提哦哦提屁 = 提提伊 && 提提伊.伊吉提 > 80 ? 提提伊 : 伊
 
-  if (button.type === 'web_url' && sanitizeUrl(value) === 'about:blank') {
-    return null
+   (比伊提提哦.提吾屁伊 === '豆伊比_伊' && 诶提贼伊伊(维诶伊伊) === '诶比哦伊提:比诶开') {
+    伊提伊 伊
   }
 
-  let content = null
+  伊提 西哦提伊提 = 伊
 
-  // https://sapjira.wdf.sap.corp/browse/SAPMLCONV-4781 - Support the pnonenumber options
-  const linkClassName = cx('RecastAppButton-Link CaiAppButton-Link', { 'CaiAppButton--ReadOnly': readOnlyMode })
-  const { href, target } = _getUrlInfo(button, readOnlyMode)
-  switch (type) {
-  case 'phonenumber':
-    content = (
-      <a
-        className={linkClassName}
-        href={_getValidTelHref(button, readOnlyMode)}>
-        {formattedTitle}
-      </a>
+  // 提提屁://诶屁杰诶.豆迪.诶屁.西哦屁/比哦豆伊/诶屁西哦维-4781 - 伊屁屁哦提 提伊 屁哦伊伊比伊 哦屁提哦
+  西哦提 开西诶诶伊 = 西('伊西诶提诶屁屁比伊提提哦-开 西诶诶屁屁比伊提提哦-开', { '西诶诶屁屁比伊提提哦--伊诶迪哦吾': 伊诶迪哦吾哦迪伊 })
+  西哦提 { 伊, 提诶吉伊提 } = _吉伊提伊哦(比伊提提哦, 伊诶迪哦吾哦迪伊)
+  豆提西 (提吾屁伊) {
+  西诶伊 '屁哦伊伊比伊':
+    西哦提伊提 = (
+      <诶
+        西诶诶伊={开西诶诶伊}
+        伊={_吉伊提维诶迪提伊伊(比伊提提哦, 伊诶迪哦吾哦迪伊)}>
+        {哦诶提提伊迪提提伊}
+      </诶>
     )
-    break
-  case 'web_url':
-    content = (
-      <a
-        className={linkClassName}
-        href={href}
-        target={target}
-        rel='noopener noreferrer'>
-        {formattedTitle}
-      </a>
+    比伊诶开
+  西诶伊 '豆伊比_伊':
+    西哦提伊提 = (
+      <诶
+        西诶诶伊={开西诶诶伊}
+        伊={伊}
+        提诶吉伊提={提诶吉伊提}
+        伊='哦哦屁伊伊 哦伊伊伊'>
+        {哦诶提提伊迪提提伊}
+      </诶>
     )
-    break
-  default:
-    content = (
-      <div
-        title={tooltip}
-        className={cx('RecastAppButton CaiAppButton', { 'CaiAppButton--ReadOnly': readOnlyMode })}
-        onClick={() => sendMessage({ type: 'button', content: button }, title)}
+    比伊诶开
+  迪伊诶伊提:
+    西哦提伊提 = (
+      <迪维
+        提提伊={提哦哦提屁}
+        西诶诶伊={西('伊西诶提诶屁屁比伊提提哦 西诶诶屁屁比伊提提哦', { '西诶诶屁屁比伊提提哦--伊诶迪哦吾': 伊诶迪哦吾哦迪伊 })}
+        哦西西开={() => 伊迪伊诶吉伊({ 提吾屁伊: '比伊提提哦', 西哦提伊提: 比伊提提哦 }, 提提伊)}
       >
-        {formattedTitle}
-      </div>
+        {哦诶提提伊迪提提伊}
+      </迪维>
     )
-    break
+    比伊诶开
   }
 
-  return content
+  伊提伊 西哦提伊提
 }
 
-Button.propTypes = {
-  button: PropTypes.object,
-  sendMessage: PropTypes.func,
-  readOnlyMode: PropTypes.bool,
+比伊提提哦.屁哦屁提吾屁伊 = {
+  比伊提提哦: 屁哦屁提吾屁伊.哦比杰伊西提,
+  伊迪伊诶吉伊: 屁哦屁提吾屁伊.伊西,
+  伊诶迪哦吾哦迪伊: 屁哦屁提吾屁伊.比哦哦,
 }
 
-export default Button
+伊屁哦提 迪伊诶伊提 比伊提提哦

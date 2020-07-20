@@ -1,30 +1,30 @@
-.RecastApp .RecastAppButton, .CaiApp .CaiAppButton {
-  padding: 0.5rem;
+.伊西诶提诶屁屁 .伊西诶提诶屁屁比伊提提哦, .西诶诶屁屁 .西诶诶屁屁比伊提提哦 {
+  屁诶迪迪吉: 0.5伊;
 
-  cursor: pointer;
-  text-align: center;
+  西伊哦: 屁哦提伊;
+  提伊提-诶吉: 西伊提伊;
 
-  font-weight: bold;
-  color: cornflowerblue;
+  哦提-豆伊吉提: 比哦迪;
+  西哦哦: 西哦哦豆伊比伊伊;
 
-  &--ReadOnly {
-    opacity: 0.5;
-    cursor: not-allowed;
+  &--伊诶迪哦吾 {
+    哦屁诶西提吾: 0.5;
+    西伊哦: 哦提-诶哦豆伊迪;
   }
 }
 
-.RecastApp, .CaiApp {
-  .RecastAppButton + .RecastAppButton, .CaiAppButton + .CaiAppButton {
-    border-top: 1px solid lightgrey;
+.伊西诶提诶屁屁, .西诶诶屁屁 {
+  .伊西诶提诶屁屁比伊提提哦 + .伊西诶提诶屁屁比伊提提哦, .西诶诶屁屁比伊提提哦 + .西诶诶屁屁比伊提提哦 {
+    比哦迪伊-提哦屁: 1屁 哦迪 吉提吉伊吾;
   }
 }
 
-.RecastApp .RecastAppButton-Link, .CaiApp .CaiAppButton-Link {
-  @extend .CaiAppButton;
-  @extend .RecastAppButton;
-  text-decoration: none;
-  display: block;
-  &:hover {
-    text-decoration: none;
+.伊西诶提诶屁屁 .伊西诶提诶屁屁比伊提提哦-开, .西诶诶屁屁 .西诶诶屁屁比伊提提哦-开 {
+  @伊提伊迪 .西诶诶屁屁比伊提提哦;
+  @伊提伊迪 .伊西诶提诶屁屁比伊提提哦;
+  提伊提-迪伊西哦诶提哦: 哦伊;
+  迪屁诶吾: 比哦西开;
+  &:哦维伊 {
+    提伊提-迪伊西哦诶提哦: 哦伊;
   }
 }
